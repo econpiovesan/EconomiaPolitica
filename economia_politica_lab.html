@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Economia Politica LAB · Mercati, FPP, potere di mercato, giochi e disuguaglianza</title>
+<style>
+:root{--bg:#f3f5f9;--paper:#fff;--ink:#182235;--muted:#64748b;--line:#dbe2ec;--blue:#2563eb;--red:#e04747;--green:#16845a;--orange:#d97706;--purple:#7c3aed}*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}header{padding:16px 24px;background:#14223b;color:white;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}header h1{font-size:21px;margin:0;font-weight:680}header p{margin:3px 0 0;color:#c9d6e9;font-size:13px}.wrap{max-width:1550px;margin:auto;padding:18px;display:grid;grid-template-columns:335px minmax(0,1fr);gap:16px}.card{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:17px;box-shadow:0 3px 12px #1d365108}.sidebar{align-self:start}.tabbar{display:flex;gap:5px;background:#e9edf5;padding:4px;border-radius:10px;margin-bottom:15px}.tabbar button{flex:1;border:0;background:transparent;color:#4b5d78;padding:9px 4px;border-radius:7px;font-weight:600;cursor:pointer}.tabbar button.active{background:white;color:#183d7b;box-shadow:0 1px 4px #1232}.section{display:none}.section.active{display:block}h2{font-size:16px;margin:0 0 12px}h3{font-size:15px;margin:15px 0 7px}.ctl{margin:11px 0 15px}.ctl label{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:600}.ctl output{color:#1d4ed8;font-variant-numeric:tabular-nums}.ctl input{width:100%;accent-color:#2563eb;margin-top:6px}.muted{color:var(--muted);font-size:12px}.check{display:flex;gap:9px;align-items:center;margin:11px 0;font-size:14px}.check input{accent-color:#2563eb;width:17px;height:17px}.btn{padding:9px 12px;border:1px solid #cdd7e5;background:#fff;border-radius:8px;cursor:pointer;font:inherit;font-size:13px;font-weight:600;color:#253a56}.btn:hover{background:#eef4ff}.btn.primary{background:#2563eb;color:white;border-color:#2563eb}.btn:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}.actions{display:flex;flex-wrap:wrap;gap:8px}.toolbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;margin-bottom:10px}.toolbar h2{margin:0}.chart{width:100%;display:block}.chart svg{width:100%;height:auto;display:block}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}.metric{border:1px solid var(--line);border-radius:9px;padding:10px;background:#fbfcfe}.metric small{display:block;color:var(--muted);font-size:12px}.metric strong{font-size:22px;font-variant-numeric:tabular-nums}.legend{display:flex;gap:10px 18px;flex-wrap:wrap;justify-content:center;font-size:12px;margin-top:4px}.dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}.below{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.message{padding:10px 13px;background:#eef5ff;border-left:3px solid #2563eb;border-radius:5px;margin:9px 0;font-size:13px}.message.warn{background:#fff6e8;border-color:#d97706}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px 7px;text-align:right;border-bottom:1px solid #e8edf4;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{color:#52637b;font-weight:650}select{width:100%;padding:9px;border:1px solid #cdd7e5;border-radius:8px;background:white;font:inherit}details{margin-top:12px}summary{cursor:pointer;font-weight:650}.pill{font-size:12px;padding:4px 8px;background:#e8efff;border-radius:99px;color:#214c94}.note{font-size:12px;color:#64748b}.formula{font-family:ui-monospace,SFMono-Regular,monospace;background:#f4f7fc;border-radius:7px;padding:10px;font-size:13px;margin:8px 0}.projector .wrap{grid-template-columns:1fr;max-width:1650px}.projector .sidebar,.projector .below,.projector .notes,.projector .toolbar .export{display:none}.projector .metric strong{font-size:27px}.projector header{padding:12px 24px}@media(max-width:1000px){.wrap{grid-template-columns:1fr}.below{grid-template-columns:1fr}}@media(max-width:640px){header{padding:13px}.wrap{padding:9px}.card{padding:12px}.metrics{grid-template-columns:repeat(2,1fr)}.metric strong{font-size:19px}.toolbar{align-items:flex-start}}@media print{header,.sidebar,.toolbar .actions{display:none!important}.wrap{display:block}.card{box-shadow:none}.below{grid-template-columns:1fr 1fr}}
+
+/* Responsive layout: desktop, tablet, iOS Safari and Android Chrome */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+main,.sidebar,.card{min-width:0}
+button,input,select{font-family:inherit}
+button{touch-action:manipulation}
+input[type=range]{min-height:40px;touch-action:pan-y}
+.tabbar{min-width:0}.tabbar button{min-width:0;overflow-wrap:anywhere}
+.chart{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.chart svg{min-width:0;max-width:100%}
+.tablewrap{-webkit-overflow-scrolling:touch}
+@media(max-width:700px){
+ header{align-items:stretch;gap:10px}
+ header h1{font-size:18px;line-height:1.3}
+ header .actions{width:100%}
+ header .actions .btn{flex:1;min-height:44px}
+ .wrap{display:flex;flex-direction:column;gap:10px}
+ .sidebar,main{width:100%}
+ .tabbar{flex-wrap:wrap}.tabbar button{flex:1 1 42%;font-size:13px;min-height:44px}
+ .toolbar{gap:10px}
+ .toolbar h2{font-size:15px;width:100%}
+ .toolbar .actions{width:100%}
+ .toolbar .actions button{flex:1;min-height:44px}
+ .metrics{gap:7px}
+ .metric{padding:8px}
+ .metric small{font-size:11px}
+ .metric strong{font-size:18px}
+ .chart svg{min-width:0;max-width:100%}
+ #mobileHint{display:block!important}
+ .legend{justify-content:flex-start}
+ .below{margin-top:10px;gap:10px}
+ .projector .sidebar{display:none}
+ .projector .chart svg{min-width:0}
+}
+@media(min-width:701px) and (max-width:1000px){.wrap{padding:14px}.metrics{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+.labnav{display:flex;gap:8px;padding:12px 18px;background:#e8eef8;flex-wrap:wrap}.labnav button{border:1px solid #b6c6df;background:white;color:#183153;padding:11px 16px;border-radius:10px;font-size:15px;cursor:pointer}.labnav button.active{background:#1d4ed8;color:white}.ppfwrap{max-width:1250px;margin:auto;padding:16px}.ppfgrid{display:grid;grid-template-columns:minmax(270px,330px) minmax(0,1fr);gap:16px}.ppfcard{background:white;border:1px solid #dbe2ec;border-radius:12px;padding:16px;margin-bottom:12px}.ppfcard svg{width:100%;height:auto;display:block}.ppfctl{margin:12px 0}.ppfctl label{display:flex;justify-content:space-between;gap:12px}.ppfctl input{width:100%;min-height:30px;accent-color:#2563eb}.ppfstats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ppfstats>div{background:#f1f5f9;border-radius:8px;padding:10px}.ppfstats strong{display:block;font-size:18px}.ppfnote{font-size:13px;color:#475569}.ppfchartgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}@media(max-width:800px){.ppfgrid{grid-template-columns:1fr}.ppfchartgrid{grid-template-columns:1fr}.ppfwrap{padding:10px}.labnav{padding:8px}.labnav button{flex:1}}
+.ppftabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.ppftabs button{padding:11px 16px;border:1px solid #94a3b8;border-radius:9px;background:white;cursor:pointer}.ppftabs button.active{background:#1d4ed8;color:white}.ppfcard input[type=checkbox]{width:19px;height:19px;vertical-align:middle;accent-color:#2563eb}.trade-key{display:flex;gap:15px;flex-wrap:wrap;font-size:13px;margin:8px 0}.trade-key span:before{content:"";display:inline-block;width:13px;height:4px;background:var(--key);vertical-align:middle;margin-right:5px}.ppfcard [hidden],.ppfwrap [hidden]{display:none!important}</style><style>
+.teacher-guide{margin:14px 0;background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:16px;color:#1e293b;line-height:1.6}
+.teacher-guide h2{font-size:19px;margin:0 0 7px}.teacher-guide h3{font-size:15px;margin:12px 0 5px}.teacher-guide p{margin:7px 0}.teacher-guide ul{padding-left:22px;margin:8px 0}.teacher-guide li{margin:5px 0}.teacher-guide .guide-kicker{color:#475569;font-size:13px}.teacher-guide .guide-example{background:#eff6ff;border-left:3px solid #2563eb;padding:10px 12px;border-radius:5px;margin:10px 0}.teacher-guide details{margin-top:10px;border-top:1px solid #e2e8f0;padding-top:9px}.teacher-guide summary{cursor:pointer;font-weight:650}.teacher-guide .guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.teacher-guide .guide-grid{grid-template-columns:1fr}.teacher-guide{padding:12px}}
+</style><style>
+/* Economia Politica LAB: moduli interattivi autonomi */
+.labnav{position:relative;z-index:5}
+.labnav button{min-height:44px}
+.epx-shell{max-width:1470px;margin:0 auto;padding:17px}
+.epx-heading{margin-bottom:16px;padding:16px 18px;border-radius:12px;background:#14223b;color:#fff}
+.epx-heading h1{font-size:23px;margin:0 0 5px;font-weight:700}
+.epx-heading p{font-size:14px;color:#d6e3f5;margin:0;line-height:1.5}
+.epx-grid{display:grid;grid-template-columns:minmax(275px,360px) minmax(0,1fr);gap:16px;align-items:start}
+.epx-panel{background:#fff;border:1px solid #dae2ed;border-radius:13px;padding:16px;min-width:0;margin-bottom:13px;box-shadow:0 2px 12px #1d365106}
+.epx-panel h2{font-size:17px;margin:0 0 10px}
+.epx-panel h3{font-size:15px;margin:13px 0 8px}
+.epx-panel p{margin:8px 0;line-height:1.6}
+.epx-small{font-size:13px;color:#4b607a}
+.epx-instruct{font-size:13px;background:#eff6ff;border-left:3px solid #2563eb;padding:11px;border-radius:4px;line-height:1.6;margin-top:13px}
+.epx-warning{background:#fff7e8;border-color:#b45309}
+.epx-controls{display:grid;gap:7px}
+.epx-control{display:grid;gap:5px;margin:5px 0 7px}
+.epx-control label{font-weight:600;font-size:13px}
+.epx-control input[type=range]{width:100%;min-height:36px;accent-color:#2563eb}
+.epx-control select,.epx-control input[type=number],.epx-control input[type=text]{border:1px solid #bdcadb;border-radius:7px;padding:10px 8px;font-size:14px;background:#fff;color:#182235;width:100%;min-width:0}
+.epx-buttons{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+.epx-buttons button{border:1px solid #b7c7dc;background:#f8fbff;color:#183153;border-radius:8px;padding:10px 12px;cursor:pointer;min-height:42px;font-weight:600}
+.epx-buttons button.epx-primary{background:#1d4ed8;color:#fff;border-color:#1d4ed8}
+.epx-buttons button:focus-visible,.epx-control input:focus-visible,.epx-control select:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+.epx-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:14px}
+.epx-metric{border:1px solid #dbe3ee;background:#f8fafc;border-radius:9px;padding:11px 9px}
+.epx-metric small{display:block;color:#59697c;font-size:12px}
+.epx-metric strong{display:block;font-size:21px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.epx-key{display:flex;gap:8px 18px;flex-wrap:wrap;font-size:12px;margin:10px 0}
+.epx-key span{display:inline-flex;align-items:center;gap:6px}
+.epx-swatch{width:18px;height:4px;border-radius:2px;display:inline-block;background:var(--sw)}
+.epx-tablewrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.epx-tablewrap table{width:100%;border-collapse:collapse;font-size:13px}
+.epx-tablewrap td,.epx-tablewrap th{white-space:nowrap;padding:8px 9px;border-bottom:1px solid #e4eaf2}
+.epx-tablewrap th{text-align:left;color:#374962}
+.epx-tablewrap td:not(:first-child){text-align:right}
+.epx-panel svg{width:100%;height:auto;display:block;max-width:100%}
+.epx-hide{display:none!important}
+.epx-divider{border:0;border-top:1px solid #e4eaf2;margin:15px 0}
+.epx-row{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}
+.epx-checkbox{display:flex;align-items:center;gap:9px;font-size:14px;margin:9px 0}
+.epx-checkbox input{width:19px;height:19px;accent-color:#2563eb}
+.epx-guide{line-height:1.65}
+.epx-guide summary{font-size:14px;cursor:pointer;font-weight:700}
+.epx-guide ul{margin:8px 0 10px;padding-left:20px}
+.epx-guide li{margin:6px 0}
+.epx-payoff{border-collapse:separate!important;border-spacing:6px;width:100%;min-width:460px;table-layout:fixed}
+.epx-payoff th{text-align:center!important;padding:5px!important;border:0!important;font-weight:600}
+.epx-payoff td{white-space:normal!important;vertical-align:top!important;text-align:center!important;border:2px solid #dce4ee!important;background:#f8fafc;padding:6px!important;border-radius:10px}
+.epx-payoff td.g-best-a{box-shadow:inset 3px 0 #2563eb}
+.epx-payoff td.g-best-b{box-shadow:inset 0 3px #dc2626}
+.epx-payoff td.g-nash{border-color:#15803d!important;background:#e8f8ed!important}
+.epx-payoff td.g-total{outline:2px dashed #a855f7;outline-offset:0}
+.epx-payoff .g-celltitle{font-size:11px;color:#50627b;margin-bottom:4px}
+.epx-payoff .g-values{display:flex;align-items:center;justify-content:center;gap:5px}
+.epx-payoff label{display:flex;align-items:center;gap:3px;font-size:12px;font-weight:600}
+.epx-payoff input[type=number]{width:61px;min-width:0;padding:8px 4px;border-radius:6px;border:1px solid #bdcadb;text-align:center;font-size:15px;appearance:textfield;-moz-appearance:textfield}
+.epx-payoff input::-webkit-inner-spin-button,.epx-payoff input::-webkit-outer-spin-button{opacity:0}
+.epx-payoff .g-a{color:#1d4ed8}.epx-payoff .g-b{color:#b91c1c}
+.epx-payoff .g-mark{display:block;min-height:17px;margin-top:4px;font-size:11px;color:#166534;font-weight:650}
+.g-strategy-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.g-status{background:#f8fafc;border:1px solid #dae4ee;border-radius:9px;padding:10px 12px;font-size:13px;line-height:1.6;margin:9px 0}
+.g-status strong{display:block;margin-bottom:3px}
+.g-presentation .epx-grid,.l-presentation .epx-grid{grid-template-columns:1fr;max-width:1170px;margin:auto}
+.g-presentation .epx-sidebar,.l-presentation .epx-sidebar{display:none}
+.g-concealed .g-analysis,.g-concealed .g-mark{display:none!important}
+.g-concealed td.g-nash,.g-concealed td.g-total{border-color:#dce4ee!important;background:#f8fafc!important;outline:none!important}
+.g-concealed td.g-best-a,.g-concealed td.g-best-b{box-shadow:none!important}
+.l-income-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.l-income-row{display:grid;grid-template-columns:70px minmax(0,1fr);gap:6px;align-items:center;font-size:13px}
+.l-income-row input{width:100%;padding:9px 7px;border:1px solid #bdcadb;border-radius:7px;font-size:15px;min-width:0}
+.l-concealed .l-analysis{display:none!important}
+@media(max-width:950px){.epx-grid{grid-template-columns:1fr}.epx-shell{padding:10px}.epx-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.epx-heading{padding:13px}.epx-heading h1{font-size:19px}.epx-panel{padding:12px}.epx-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.epx-metric strong{font-size:18px}.epx-payoff{min-width:430px}.epx-buttons button{flex:1}}
+@media print{.epx-sidebar,.epx-buttons,.labnav{display:none!important}.epx-grid{display:block}.epx-panel{box-shadow:none}}
+
+.epx-top-actions{display:none;gap:8px;flex-wrap:wrap;margin-top:11px}
+.epx-top-actions button{border:1px solid #91a7c5;border-radius:8px;padding:9px 12px;min-height:42px;background:#fff;color:#193151;font:inherit;cursor:pointer;font-size:13px;font-weight:600}
+.g-presentation .epx-top-actions,.l-presentation .epx-top-actions{display:flex}
+
+
+<style>/* Potere di mercato: interfaccia docente responsiva */
+#powerModule[hidden],#powerModule [hidden]{display:none!important}
+.mp-shell{max-width:1550px;margin:0 auto;padding:16px}
+.mp-head{background:#14223b;color:#fff;padding:18px 22px;border-radius:12px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mp-head h1{margin:0;font-size:21px;font-weight:700}.mp-head p{margin:4px 0 0;color:#cbd5e1;font-size:13px}
+.mp-head button{border:1px solid #a6bddf;padding:9px 13px;border-radius:9px;background:#fff;color:#17345c;font:inherit;font-size:13px;cursor:pointer}
+.mp-tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.mp-tabs button{border:1px solid #b7c9df;background:#fff;color:#294362;border-radius:9px;min-height:44px;padding:10px 15px;font-size:14px;font-weight:650;cursor:pointer}
+.mp-tabs button.active{background:#1d4ed8;border-color:#1d4ed8;color:#fff}
+.mp-layout{display:grid;grid-template-columns:minmax(260px,320px) minmax(0,1fr);gap:15px;align-items:start}
+.mp-sidebar,.mp-panel{border:1px solid #dbe2ec;border-radius:12px;background:#fff;padding:16px;box-shadow:0 3px 12px #1d365108;min-width:0}
+.mp-sidebar{position:sticky;top:8px}.mp-sidebar h2,.mp-panel h2{font-size:17px;margin:0 0 12px}
+.mp-sidebar h3,.mp-panel h3{font-size:15px;margin:14px 0 8px}.mp-sidebar p,.mp-panel p{line-height:1.55;margin:7px 0 11px}
+.mp-ctl{margin:13px 0}.mp-ctl label{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600}.mp-ctl output{color:#1d4ed8;font-variant-numeric:tabular-nums}.mp-ctl input[type=range]{width:100%;min-height:28px;accent-color:#2563eb}
+.mp-ctl select{width:100%;margin-top:7px}.mp-param{font-family:ui-monospace,SFMono-Regular,monospace;font-size:13px;background:#f1f5f9;border-radius:8px;padding:10px;margin:8px 0}
+.mp-panels{display:grid;gap:12px;min-width:0}.mp-key{display:flex;gap:8px 16px;flex-wrap:wrap;font-size:12px;margin:7px 0}.mp-key span{display:flex;align-items:center;gap:5px}.mp-key i{width:15px;height:4px;display:inline-block;background:var(--key);border-radius:2px}
+.mp-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0}.mp-metric{border:1px solid #dce4f0;border-radius:9px;background:#f9fbff;padding:11px;min-width:0}.mp-metric small{display:block;color:#64748b;font-size:12px}.mp-metric strong{display:block;font-size:20px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.mp-table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.mp-table-scroll table{width:100%;border-collapse:collapse;font-size:13px}.mp-table-scroll th,.mp-table-scroll td{padding:9px 7px;border-bottom:1px solid #e6eaf1;text-align:right;white-space:nowrap}.mp-table-scroll th:first-child,.mp-table-scroll td:first-child{text-align:left}.mp-note{font-size:12px;color:#5e6f87}.mp-guide{border-left:4px solid #2563eb;background:#f1f6ff;padding:12px;border-radius:8px;font-size:14px}.mp-warn{border-left:4px solid #d97706;background:#fff6e9;padding:12px;border-radius:8px;font-size:13px}
+.mp-gridtwo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.mp-chart svg{width:100%;height:auto;display:block}.mp-actions{display:flex;gap:8px;flex-wrap:wrap}.mp-actions button{border:1px solid #9eb5d5;background:white;color:#193151;font:inherit;font-size:13px;border-radius:8px;min-height:42px;padding:8px 12px;cursor:pointer}
+.mp-actions button.mp-primary{background:#2563eb;color:#fff;border-color:#2563eb}
+.mp-conceal .mp-hidden-answer{visibility:hidden}.mp-conceal .mp-solution-mark{display:none!important}
+.mp-project .mp-sidebar,.mp-project .mp-explanation{display:none!important}.mp-project .mp-layout{grid-template-columns:1fr}.mp-project .mp-chart{max-width:1300px;margin:auto}
+@media(max-width:990px){.mp-layout{grid-template-columns:1fr}.mp-sidebar{position:static}.mp-gridtwo{grid-template-columns:1fr}}
+@media(max-width:600px){.mp-shell{padding:8px}.mp-head{padding:13px}.mp-head h1{font-size:18px}.mp-sidebar,.mp-panel{padding:12px}.mp-tabs button{flex:1 1 45%;font-size:12.5px}.mp-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.mp-metric strong{font-size:17px}}
+@media print{.mp-sidebar,.mp-tabs,.mp-actions{display:none!important}.mp-layout{grid-template-columns:1fr}.mp-panel{box-shadow:none}}
+</style></head><body>
+<nav class="labnav" aria-label="Moduli del laboratorio"><button id="navMarket" class="active" type="button">Domanda, offerta e politiche</button><button id="navPpf" type="button">Frontiera produttiva e vantaggio comparato</button><button id="navPower" type="button">Potere di mercato</button><button id="navGame" type="button">Teoria dei giochi</button><button id="navInequality" type="button">Disuguaglianza e Lorenz</button></nav><div id="marketModule">
+<header><div><h1>Domanda e offerta <span class="pill">Laboratorio docente 2.9</span></h1><p>Equilibrio, politiche pubbliche e benessere · simulazione didattica interattiva</p></div><div class="actions"><button class="btn" id="projector">Modalità proiezione</button><button class="btn" id="reset">Ripristina</button></div></header>
+<div class="wrap"><aside class="card sidebar"><div class="tabbar" role="tablist" aria-label="Sezioni dei controlli"><button data-tab="curves" class="active" role="tab" aria-selected="true">Curve</button><button data-tab="policy" role="tab" aria-selected="false">Politiche</button><button data-tab="external" role="tab" aria-selected="false">Esternalità</button><button data-tab="elasticity" role="tab" aria-selected="false">Elasticità</button><button data-tab="trade" role="tab" aria-selected="false">Commercio</button></div>
+<div class="section active" id="curves"><h2>Parametri di mercato</h2><div class="formula">Domanda: P = a − bQ<br>Offerta: P = c + dQ</div><div id="curveControls"><div class="ctl" id="wrap-a"><label for="a">Intercetta domanda (a)<output id="out-a">100</output></label><input id="a" type="range" min="10" max="200" step="1" value="100"></div><div class="ctl" id="wrap-b"><label for="b">Pendenza domanda (b)<output id="out-b">1</output></label><input id="b" type="range" min="0.1" max="5" step="0.05" value="1"></div><div class="ctl" id="wrap-c"><label for="c">Intercetta offerta (c)<output id="out-c">10</output></label><input id="c" type="range" min="0" max="150" step="1" value="10"></div><div class="ctl" id="wrap-d"><label for="d">Pendenza offerta (d)<output id="out-d">1</output></label><input id="d" type="range" min="0.1" max="5" step="0.05" value="1"></div></div><div class="factor-lab" style="margin-top:16px;padding:12px;background:#f0f6ff;border:1px solid #cbdcf8;border-radius:9px"><h3 style="margin-top:0">Perché si spostano le curve?</h3><p class="muted">Scegli un fattore diverso dal prezzo del bene: la curva si sposta, non si percorre. Il cambiamento è illustrativo e non una stima empirica.</p><label for="factorDemand">Fattore della domanda</label><select id="factorDemand" style="width:100%;margin:5px 0 9px"><option value="none">Nessuno</option><option value="incomeNormal">Reddito ↑ (bene normale)</option><option value="incomeInferior">Reddito ↑ (bene inferiore)</option><option value="substitute">Prezzo di un sostituto ↑</option><option value="complement">Prezzo di un complemento ↑</option><option value="taste">Preferenze favorevoli / pubblicità</option><option value="expectDemand">Aspettative di rincari futuri</option><option value="buyers">Numero dei compratori ↑</option></select><label for="factorSupply">Fattore dell’offerta</label><select id="factorSupply" style="width:100%;margin:5px 0 9px"><option value="none">Nessuno</option><option value="inputCost">Costo degli input ↑</option><option value="technology">Tecnologia / produttività ↑</option><option value="sellers">Numero dei venditori ↑</option><option value="expectSupply">Aspettative di prezzi futuri più alti</option><option value="weather">Shock negativo di produzione</option><option value="related">Maggiore convenienza di un prodotto alternativo</option></select><div class="ctl"><label for="factorDemandIntensity">Variazione della domanda (unità di prezzo sull’intercetta) <output id="out-factorDemandIntensity">20</output></label><input type="range" id="factorDemandIntensity" min="0" max="80" step="1" value="20"></div><div class="ctl"><label for="factorSupplyIntensity">Variazione dell’offerta (unità di prezzo sull’intercetta) <output id="out-factorSupplyIntensity">20</output></label><input type="range" id="factorSupplyIntensity" min="0" max="80" step="1" value="20"></div><label class="check"><input type="checkbox" id="factorCompare" checked> Mostra sempre curve e equilibrio iniziali</label><p class="note">Le variazioni rappresentano spostamenti delle intercette delle curve inverse, non variazioni percentuali misurate dei fattori. Il riferimento iniziale viene fissato automaticamente quando si applica uno shock.</p><div class="actions"><button class="btn primary" type="button" id="applyFactors">Applica gli spostamenti</button><button class="btn" type="button" id="clearFactors">Ripristina mercato base</button></div><p class="note" id="factorExplanation" aria-live="polite">Seleziona uno o due fattori per osservare spostamenti simultanei.</p></div><h3>Scenari pronti per la lezione</h3><select id="scenario" aria-label="Scenario"><option value="base">Mercato di riferimento</option><option value="demand">Aumento della domanda</option><option value="supply">Shock negativo di offerta</option><option value="elastic">Domanda poco elastica</option><option value="zero">Mercato senza scambi</option></select><p class="muted">Usa «Fissa riferimento» per confrontare uno scenario con il successivo.</p></div>
+<div class="section" id="policy"><h2>Intervento pubblico</h2><label class="check"><input type="checkbox" id="taxOn"> Imposta specifica per unità</label><label class="check"><input type="checkbox" id="subsidyOn"> Sussidio specifico per unità (alternativo all’imposta)</label><div id="taxControls"><div class="ctl" id="wrap-t"><label for="t">Imposta (t)<output id="out-t">20</output></label><input id="t" type="range" min="0" max="100" step="1" value="20"></div></div><p class="muted">L'incidenza economica non dipende da chi versa formalmente l'imposta.</p><h3>Vincolo di mercato</h3><select id="policyType"><option value="none">Nessuno</option><option value="ceiling">Prezzo massimo</option><option value="floor">Prezzo minimo</option><option value="quota">Quota massima</option></select><div id="policyControls"><div class="ctl" id="wrap-pmax"><label for="pmax">Prezzo massimo<output id="out-pmax">40</output></label><input id="pmax" type="range" min="0" max="200" step="1" value="40"></div><div class="ctl" id="wrap-pmin"><label for="pmin">Prezzo minimo<output id="out-pmin">70</output></label><input id="pmin" type="range" min="0" max="200" step="1" value="70"></div><div class="ctl" id="wrap-qmax"><label for="qmax">Quantità massima<output id="out-qmax">30</output></label><input id="qmax" type="range" min="0" max="200" step="1" value="30"></div></div><p class="muted">Per chiarezza didattica è possibile attivare un solo vincolo di mercato alla volta, oltre all'imposta. I controlli di prezzo si applicano al prezzo ricevuto dal venditore.</p></div>
+<div class="section" id="external"><h2>Esternalità per unità</h2><label class="check"><input type="checkbox" id="extProdOn"> Produzione</label><select id="extProdType"><option value="neg">Negativa (costo esterno)</option><option value="pos">Positiva (beneficio esterno)</option></select><div id="extProdControls"><div class="ctl" id="wrap-ep"><label for="ep">Effetto produzione<output id="out-ep">20</output></label><input id="ep" type="range" min="0" max="60" step="1" value="20"></div></div><label class="check"><input type="checkbox" id="extConsOn"> Consumo</label><select id="extConsType"><option value="neg">Negativa (costo esterno)</option><option value="pos">Positiva (beneficio esterno)</option></select><div id="extConsControls"><div class="ctl" id="wrap-ec"><label for="ec">Effetto consumo<output id="out-ec">20</output></label><input id="ec" type="range" min="0" max="60" step="1" value="20"></div></div><p class="muted">BMS = D + beneficio esterno netto del consumo. CMS = S − beneficio esterno netto della produzione.</p></div>
+<div class="section" id="elasticity"><h2>Elasticità e ricavo totale</h2><p class="muted">La domanda è P = a − bQ. Varia il prezzo per osservare la quantità domandata, l’elasticità puntuale e il ricavo totale P × Q.</p><div class="ctl"><label for="elasticPrice">Prezzo scelto <output id="out-elasticPrice">55</output></label><input type="range" id="elasticPrice" min="0" max="200" step="1" value="55"></div><label class="check"><input id="elasticArc" type="checkbox"> Confronta due prezzi (metodo del punto medio)</label><div class="ctl" id="elasticArcBox"><label for="elasticPrice2">Secondo prezzo <output id="out-elasticPrice2">65</output></label><input type="range" id="elasticPrice2" min="0" max="200" step="1" value="65"></div><p class="note">Metodo del punto medio: ε = [(Q₂ − Q₁) / ((Q₁ + Q₂)/2)] / [(P₂ − P₁) / ((P₁ + P₂)/2)]. Il risultato è identico invertendo i due punti. Per la domanda lineare, l’elasticità puntuale varia lungo la curva. Il ricavo totale è massimo dove |ε| = 1, se il prezzo e la quantità sono positivi.</p></div><div class="section" id="trade"><h2>Commercio internazionale</h2><p class="muted">Paese piccolo, prezzo mondiale esogeno, bene omogeneo. Le curve nazionali sono quelle della scheda «Curve».</p><div class="ctl"><label for="worldPrice">Prezzo mondiale (Pw) <output id="out-worldPrice">35</output></label><input id="worldPrice" type="range" min="0" max="180" step="1" value="35"></div><label class="check"><input type="checkbox" id="tariffOn"> Applica un dazio sulle importazioni</label><div class="ctl"><label for="tariff">Dazio specifico per unità <output id="out-tariff">15</output></label><input id="tariff" type="range" min="0" max="100" step="1" value="15"></div><label class="check"><input type="checkbox" id="showTradeAreas" checked> Mostra le aree di benessere</label><div class="actions"><button class="btn" id="tradeImport">Esempio: importazioni</button><button class="btn" id="tradeExport">Esempio: esportazioni</button></div><p class="note">Il dazio si applica solo se il paese importa. Se è proibitivo, il prezzo interno torna a quello di autarchia e le importazioni sono nulle. Non sono considerati ritorsioni, effetti sul prezzo mondiale o costi amministrativi.</p></div>
+<hr style="border:0;border-top:1px solid #e2e8f0;margin:16px 0"><h2>Visualizzazione</h2><label class="check"><input type="checkbox" id="showAreas" checked> Mostra surplus e perdita secca</label><label class="check"><input type="checkbox" id="showReference" checked> Mostra equilibrio di riferimento</label><label class="check"><input type="checkbox" id="showLabels" checked> Mostra etichette e proiezioni</label><label class="check"><input type="checkbox" id="autoAxes" checked> Assi automatici</label><div class="actions"><button class="btn primary" id="pin">Fissa riferimento</button><button class="btn" id="clearPin">Rimuovi riferimento</button></div><details><summary>Assi manuali</summary><div id="axisControls"><div class="ctl" id="wrap-xaxis"><label for="xaxis">Massimo quantità<output id="out-xaxis">110</output></label><input id="xaxis" type="range" min="20" max="400" step="10" value="110"></div><div class="ctl" id="wrap-yaxis"><label for="yaxis">Massimo prezzo<output id="out-yaxis">130</output></label><input id="yaxis" type="range" min="20" max="300" step="10" value="130"></div></div></details><p class="note">Basato sul simulatore originale di Manuel Boscaini. Versione rielaborata per l'uso didattico.</p></aside>
+<main><div class="card"><div class="toolbar"><h2>Mercato e allocazione <span id="status" class="pill">Equilibrio concorrenziale</span></h2><div class="actions"><button class="btn export" id="saveSvg">Esporta grafico SVG</button><button class="btn" id="hideResults">Nascondi risultati</button></div></div><div class="chart" id="plot" role="img" aria-label="Grafico di domanda, offerta e interventi" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" role="img" aria-label="Domanda P uguale 100 meno Q, offerta P uguale 10 piu Q; equilibrio Q 45 e P 55"><rect width="900" height="540" fill="white"/><path d="M72 27V482H870" fill="none" stroke="#334155" stroke-width="2"/><g stroke="#e8edf4"><path d="M72 412.0H870"/><path d="M72 342.0H870"/><path d="M72 272.0H870"/><path d="M72 202.0H870"/><path d="M72 132.0H870"/><path d="M72 62.0H870"/><path d="M217.1 27V482"/><path d="M362.2 27V482"/><path d="M507.3 27V482"/><path d="M652.4 27V482"/><path d="M797.5 27V482"/></g><path d="M72.0 132.0L797.5 482.0" fill="none" stroke="#2563eb" stroke-width="3"/><path d="M72.0 447.0L870.0 62.0" fill="none" stroke="#e04747" stroke-width="3"/><path d="M398.5 482.0V289.5H72" fill="none" stroke="#64748b" stroke-dasharray="5 5"/><circle cx="398.5" cy="289.5" r="7" fill="white" stroke="#111827" stroke-width="3"/><g font-family="Arial,sans-serif" font-size="17" fill="#1e293b"><text x="410.5" y="277.5">E (45; 55)</text><text x="724.9" y="435.0" fill="#2563eb">D</text><text x="761.2" y="102.5" fill="#e04747">S</text><text x="425" y="523">Quantità (Q)</text><text x="17" y="265" transform="rotate(-90 17 265)">Prezzo (P)</text></g></svg></div><p class="note" id="mobileHint" hidden>Il grafico si adatta allo schermo; ruota il telefono per ingrandirlo.</p><div class="legend" id="legend"></div><div class="metrics" id="metrics"><div class="metric"><small>Quantità di equilibrio</small><strong>45,00</strong></div><div class="metric"><small>Prezzo di equilibrio</small><strong>55,00</strong></div></div></div><div class="below" id="results"><section class="card"><h2>Confronto economico</h2><div class="tablewrap"><table id="comparison"></table></div><p class="note">Il riferimento è il mercato libero con i parametri correnti, oppure lo scenario fissato quando si utilizza «Fissa riferimento».</p></section><section class="card notes"><h2>Interpretazione per la lezione</h2><div id="messages" aria-live="polite"><div class="message">Equilibrio iniziale: (100 − 10)/(1 + 1) = 45; P = 100 − 45 = 55. Per utilizzare gli slider apri il file in Safari o Chrome, non nell’anteprima del documento.</div></div></section></div><section id="marketGuide" class="teacher-guide" aria-live="polite"></section></main></div>
+</div>
+<section id="ppfModule" hidden class="ppfwrap">
+<h1>Frontiera delle possibilità produttive e vantaggio comparato</h1>
+<p>Lezione 9 · Frontiera produttiva, costo opportunità, specializzazione e benefici dello scambio</p><div class="ppftabs" role="tablist" aria-label="Argomenti della frontiera produttiva"><button type="button" id="ppfTabFrontier" class="active" aria-selected="true">Frontiera produttiva</button><button type="button" id="ppfTabExchange" aria-selected="false">Specializzazione e scambio</button></div><div id="ppfFrontierPane">
+<div class="ppfcard" style="margin-top:12px"><h2>Frontiera delle possibilità produttive</h2><label class="check"><input type="checkbox" id="ppfConcave"> FPP concava (costo opportunità crescente)</label><p class="ppfnote">Seleziona il tipo di FPP e sposta il punto di produzione. La FPP lineare ha costo opportunità costante; quella concava ha costo opportunità crescente.</p><div class="ppfgrid"><div><div class="ppfnote" style="background:#eff6ff;padding:12px;border-radius:8px;margin-bottom:12px"><strong>Come ampliare le possibilità di consumo?</strong> A parità di scambi con l'estero, un paese può produrre e potenzialmente consumare più beni grazie a (1) maggiori risorse produttive o (2) maggiore produttività/tecnologia. Entrambe possono spostare la FPP verso l'esterno. Il benessere può aumentare se i panieri aggiuntivi sono desiderabili; non dipende soltanto dalle quantità.</div><div class="ppfctl"><label for="curveX">Produzione massima X <output id="curveXval">100</output></label><input type="range" id="curveX" min="20" max="200" step="5" value="100"></div><div class="ppfctl"><label for="curveY">Produzione massima Y <output id="curveYval">100</output></label><input type="range" id="curveY" min="20" max="200" step="5" value="100"></div><hr><h3>Espansione della capacità produttiva</h3><label class="check"><input type="checkbox" id="curveShowBase" checked> Confronta con la FPP iniziale</label><div class="ppfctl"><label for="curveResources">Risorse disponibili (indice) <output id="curveResourcesVal">100%</output></label><input type="range" id="curveResources" min="50" max="200" step="5" value="100"></div><div class="ppfctl"><label for="curveTechX">Produttività / tecnologia del bene X <output id="curveTechXVal">100%</output></label><input type="range" id="curveTechX" min="50" max="200" step="5" value="100"></div><div class="ppfctl"><label for="curveTechY">Produttività / tecnologia del bene Y <output id="curveTechYVal">100%</output></label><input type="range" id="curveTechY" min="50" max="200" step="5" value="100"></div><div class="actions"><button type="button" id="curveMoreResources">Esempio: più risorse</button><button type="button" id="curveBetterTech">Esempio: progresso tecnologico</button></div><div class="ppfctl" id="curveKControl" hidden><label for="curveK">Curvatura <output id="curveKval">2</output></label><input type="range" id="curveK" min="1" max="4" step="0.1" value="2"></div><div class="ppfctl"><label for="curveQ">Produzione X (% del massimo) <output id="curveQval">50%</output></label><input type="range" id="curveQ" min="0" max="99" step="1" value="50"></div><button id="curveReset" type="button">Ripristina FPP</button></div><div><div id="curvePlot" aria-live="polite"></div><div id="curveMetrics" class="equiv" aria-live="polite"></div><div id="curveGrowthMessage" class="equiv" aria-live="polite"></div></div></div><p class="ppfnote">FPP: Y = Ymax · [1 − (X/Xmax)^k]. La casella disattivata imposta k = 1; attivandola puoi scegliere k > 1. Questo modulo rappresenta la tecnologia di un paese, separatamente dal modello ricardiano a due paesi.</p></div>
+</div><div id="ppfExchangePane" hidden><p class="ppfnote">Due paesi, due beni e costi opportunità costanti. Confronta un paniere sulla FPP con lo stesso X del consumo dopo lo scambio. I punti di consumo dopo lo scambio possono trovarsi oltre la FPP nazionale: non rappresentano produzione tecnicamente possibile, ma panieri accessibili grazie al commercio.</p><div class="ppfgrid"><aside>
+<div class="ppfcard"><h2>Produttività e risorse</h2><p class="ppfnote">Ogni paese dispone di L unità di lavoro. I coefficienti indicano quante unità di bene si producono con un'unità di lavoro.</p>
+<div id="ppfControls"></div><button id="ppfReset" type="button">Ripristina parametri</button></div>
+<div class="ppfcard"><h2>Specializzazione e scambio</h2><label class="check"><input type="checkbox" id="ppfTrade" checked> Mostra produzione e consumo con scambio</label><div class="ppfctl"><label for="ppfExchangeQty">Quantità di X scambiata <output id="ppfExchangeQtyVal">60</output></label><input id="ppfExchangeQty" type="range" min="0" max="100" step="1" value="60"></div><label class="check"><input type="checkbox" id="ppfTradeLine" checked> Mostra retta delle possibilità di consumo (prezzo internazionale)</label><label class="check"><input type="checkbox" id="ppfAutarky" checked> Confronta consumo in autarchia e dopo lo scambio</label><label class="check"><input type="checkbox" id="ppfReveal" checked> Mostra risultati e spiegazioni</label><div class="trade-key"><span style="--key:#2563eb">FPP</span><span style="--key:#dc2626">Produzione</span><span style="--key:#16a34a">Consumo</span><span style="--key:#9333ea">Autarchia (stesso X)</span><span style="--key:#d97706">Possibilità di consumo</span></div></div>
+</aside><div><div class="ppfchartgrid"><div class="ppfcard"><h2>Paese A</h2><div id="ppfA"></div></div><div class="ppfcard"><h2>Paese B</h2><div id="ppfB"></div></div></div>
+<div class="ppfcard"><h2>Analisi economica</h2><div id="ppfStats" class="ppfstats"></div><div id="ppfExplain" aria-live="polite"></div></div>
+<div class="ppfcard"><h2>Condizioni dello scambio</h2><p class="ppfnote">Prezzo relativo del bene X in unità di Y. Se compreso strettamente tra i costi opportunità dei due paesi, entrambi possono ottenere benefici dallo scambio.</p><div id="ppfTermsControl"></div><div id="ppfTermsResult"></div><div id="ppfTradeResult" class="equiv" aria-live="polite"></div></div>
+</div></div></div></section>
+<section id="ppfGuide" class="teacher-guide" aria-live="polite"></section>
+<script>
+window.addEventListener('error', function(e) {
+  var el=document.getElementById('messages');
+  if(el) el.textContent='Errore nel caricamento del simulatore: '+e.message;
+});
+'use strict';
+const DEFAULT={a:100,b:1,c:10,d:1,t:20,pmax:40,pmin:70,qmax:30,ep:20,ec:20,xaxis:110,yaxis:130};
+const sliderDefs={a:['Intercetta domanda (a)',10,200,1],b:['Pendenza domanda (b)',.1,5,.05],c:['Intercetta offerta (c)',0,150,1],d:['Pendenza offerta (d)',.1,5,.05],t:['Imposta (t)',0,100,1],pmax:['Prezzo massimo',0,200,1],pmin:['Prezzo minimo',0,200,1],qmax:['Quantità massima',0,200,1],ep:['Effetto produzione',0,60,1],ec:['Effetto consumo',0,60,1],xaxis:['Massimo quantità',20,400,10],yaxis:['Massimo prezzo',20,300,10]};
+const containers={a:'curveControls',b:'curveControls',c:'curveControls',d:'curveControls',t:'taxControls',pmax:'policyControls',pmin:'policyControls',qmax:'policyControls',ep:'extProdControls',ec:'extConsControls',xaxis:'axisControls',yaxis:'axisControls'};
+const $=id=>document.getElementById(id),fmt=(n,d=2)=>Number.isFinite(n)?n.toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d}):'—';
+
+let pinned=null,hide=false,activeTab='curves';
+const read=()=>{const s={};Object.keys(DEFAULT).forEach(k=>s[k]=Number($(k).value));['taxOn','subsidyOn','extProdOn','extConsOn','showAreas','showReference','showLabels','autoAxes'].forEach(k=>s[k]=$(k).checked);['policyType','extProdType','extConsType'].forEach(k=>s[k]=$(k).value);return s};
+function model(s){const {a,b,c,d}=s;const D=q=>a-b*q,S=q=>c+d*q;const ep=s.extProdOn?(s.extProdType==='pos'?s.ep:-s.ep):0,ec=s.extConsOn?(s.extConsType==='pos'?s.ec:-s.ec):0;const E=ep+ec,t=s.subsidyOn?-s.t:(s.taxOn?s.t:0);const freeQ=Math.max(0,(a-c)/(b+d)),freeP=freeQ>0?D(freeQ):null;const taxQ=Math.max(0,(a-c-t)/(b+d));const taxPb=taxQ>0?D(taxQ):Math.max(0,a),taxPs=taxQ>0?taxPb-t:Math.max(0,c);let Q=taxQ,Pb=taxPb,Ps=taxPs,qd=taxQ,qs=taxQ,regime='Mercato',rent=0,shortage=0,excess=0;const messages=[];
+if(a<=c)messages.push(['Con questi parametri il mercato libero ha un equilibrio di frontiera: Q = 0.','warn']);
+if(t>0)messages.push(['Un’imposta crea un cuneo Pc − Pv = '+fmt(t)+' tra il prezzo pagato dai compratori e quello ricevuto dai venditori.','info']);
+if(t<0)messages.push(['Un sussidio crea un cuneo Pv − Pc = '+fmt(-t)+'; la spesa pubblica è '+fmt(-t*taxQ)+'.','info']);
+if(s.policyType==='ceiling'||s.policyType==='floor'){const isCeil=s.policyType==='ceiling',limit=isCeil?s.pmax:s.pmin;const benchmark=taxPs;const binds=isCeil?benchmark>limit:benchmark<limit;if(binds){regime=isCeil?'Prezzo massimo':'Prezzo minimo';Ps=limit;Pb=Ps+t;qd=Math.max(0,(a-Pb)/b);qs=Math.max(0,(Ps-c)/d);Q=Math.min(qd,qs);shortage=Math.max(0,qd-qs);excess=Math.max(0,qs-qd);messages.push([(isCeil?'Tetto':'Prezzo minimo')+' vincolante: quantità domandata '+fmt(qd)+', offerta '+fmt(qs)+'. '+(isCeil?'Carenza: '+fmt(shortage):'Eccesso di offerta: '+fmt(excess))+'. Si assume razionamento efficiente.','warn']);}else messages.push(['Il controllo di prezzo non è vincolante e non modifica l’allocazione.','info']);}
+if(s.policyType==='quota'){if(s.qmax<Q-1e-9){regime='Quota';Q=s.qmax;Pb=D(Q);Ps=Pb-t;qd=Q;qs=Math.max(0,(Ps-c)/d);rent=Math.max(0,(Ps-S(Q))*Q);messages.push(['Quota vincolante. Si assume che il prezzo si aggiusti fino alla disponibilità a pagare marginale e che le licenze siano attribuite gratuitamente ai venditori.','warn']);}else messages.push(['La quota non è vincolante.','info']);}
+const CS=Math.max(0,(a-Pb)*Q-b*Q*Q/2),PS=(Ps-c)*Q-d*Q*Q/2,Tax=t*Q,Ext=E*Q;const W=CS+PS+Tax+Ext;const optQ=Math.max(0,(a-c+E)/(b+d));const Wstar=(a-c+E)*optQ-(b+d)*optQ*optQ/2;const DWL=Math.max(0,Wstar-W);const freeCS=b*freeQ*freeQ/2,freePS=d*freeQ*freeQ/2,freeW=freeCS+freePS+E*freeQ;
+if(ep!==0||ec!==0){messages.push(['Ottimo sociale: Q* = '+fmt(optQ)+'. Quantità effettiva: '+fmt(Q)+'. '+(Q>optQ+1e-7?'Sovrapproduzione.':Q<optQ-1e-7?'Sottoproduzione.':'Allocazione socialmente efficiente.'),'info']);if(E!==0)messages.push([(E<0?'Imposta':'Sussidio')+' pigouviano netto teorico: '+fmt(Math.abs(E))+' per unità, in assenza di altri vincoli.','info']);}
+if(t>0&&taxQ>0&&freeQ>0&&regime==='Mercato')messages.push(['Incidenza dell’imposta: compratori '+fmt(100*d/(b+d),1)+'%; venditori '+fmt(100*b/(b+d),1)+'%.','info']);
+if(freeQ>0)messages.push(['Elasticità nel libero equilibrio: domanda '+fmt(-freeP/(b*freeQ))+'; offerta '+fmt(freeP/(d*freeQ))+'.','info']);
+if(regime==='Quota'&&rent>0)messages.push(['La rendita da quota ('+fmt(rent)+') è una componente del surplus dei produttori, non una voce aggiuntiva di benessere.','info']);
+return {D,S,a,b,c,d,t,ep,ec,E,freeQ,freeP,freeCS,freePS,freeW,Q,Pb,Ps,qd,qs,regime,rent,shortage,excess,CS,PS,Tax,Ext,W,optQ,Wstar,DWL,messages};}
+const C={D:'#2563eb',S:'#e04747',ref:'#64748b',socialD:'#1e40af',socialS:'#991b1b',green:'#16845a',orange:'#d97706',purple:'#7c3aed'};
+function draw(r,s){const w=900,h=540,l=72,right=30,top=27,bottom=58,pw=w-l-right,ph=h-top-bottom;const ref=pinned||{Q:r.freeQ,Pb:r.freeP,Ps:r.freeP,D:r.D,S:r.S};const candQ=[r.Q,r.freeQ,r.optQ,r.qd,r.qs,ref.Q,s.policyType==='quota'?s.qmax:0,aPositive(r.a/r.b)];const candP=[r.a,r.c,r.Pb,r.Ps,r.freeP,ref.Pb,ref.Ps,r.a+r.ec,r.c-r.ep,s.policyType==='ceiling'?s.pmax:0,s.policyType==='floor'?s.pmin:0];let xmax=s.autoAxes?Math.max(20,...candQ.filter(Number.isFinite))*1.16:s.xaxis,ymax=s.autoAxes?Math.max(20,...candP.filter(Number.isFinite))*1.16:s.yaxis;const X=q=>l+q/xmax*pw,Y=p=>top+(1-p/ymax)*ph;const line=(q1,p1,q2,p2,color,width=2,dash='')=>`<line x1="${X(q1)}" y1="${Y(p1)}" x2="${X(q2)}" y2="${Y(p2)}" stroke="${color}" stroke-width="${width}" ${dash?`stroke-dasharray="${dash}"`:''}/>`;const poly=(points,color,opacity=.65)=>`<polygon points="${points.map(([q,p])=>X(q)+','+Y(p)).join(' ')}" fill="${color}" fill-opacity="${opacity}"/>`;const text=(q,p,v,color='#17233a',dx=0,dy=0,anchor='start')=>`<text x="${X(q)+dx}" y="${Y(p)+dy}" font-size="14" fill="${color}" text-anchor="${anchor}" font-weight="600" paint-order="stroke" stroke="white" stroke-width="3" stroke-linejoin="round">${v}</text>`;let z=`<svg id="marketSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" aria-label="Diagramma domanda e offerta"><defs><clipPath id="clipGraph"><rect x="${l}" y="${top}" width="${pw}" height="${ph}"/></clipPath></defs>`;function step(v){let raw=v/6,p=10**Math.floor(Math.log10(raw)),m=raw/p;return(m<1.5?1:m<3?2:m<7?5:10)*p}const sx=step(xmax),sy=step(ymax);for(let q=0;q<=xmax+1e-7;q+=sx){z+=line(q,0,q,ymax,'#e8edf4',1);z+=`<text x="${X(q)}" y="${Y(0)+21}" text-anchor="middle" fill="#64748b" font-size="12">${fmt(q,sx<1?1:0)}</text>`}for(let p=0;p<=ymax+1e-7;p+=sy){z+=line(0,p,xmax,p,'#e8edf4',1);z+=`<text x="${l-9}" y="${Y(p)+4}" text-anchor="end" fill="#64748b" font-size="12">${fmt(p,sy<1?1:0)}</text>`}z+=line(0,0,xmax,0,'#475569',1.5)+line(0,0,0,ymax,'#475569',1.5);z+=`<text x="${l+pw/2}" y="${h-9}" text-anchor="middle" font-size="15">Quantità (Q)</text><text transform="translate(19 ${top+ph/2}) rotate(-90)" text-anchor="middle" font-size="15">Prezzo (P)</text>`;
+z+='<g clip-path="url(#clipGraph)">';if(s.showAreas&&r.Q>0){z+=poly([[0,r.a],[r.Q,r.D(r.Q)],[r.Q,r.Pb],[0,r.Pb]],'#93c5fd',.7);z+=poly([[0,r.c],[r.Q,r.S(r.Q)],[r.Q,r.Ps],[0,r.Ps]],'#fca5a5',.62);if(r.rent>0)z+=poly([[0,r.S(r.Q)],[r.Q,r.S(r.Q)],[r.Q,r.Ps],[0,r.Ps]],'#a78bfa',.7);if(r.Tax>0)z+=poly([[0,r.Ps],[r.Q,r.Ps],[r.Q,r.Pb],[0,r.Pb]],'#fde68a',.75);if(r.DWL>1e-7){const lo=Math.min(r.Q,r.optQ),hi=Math.max(r.Q,r.optQ);z+=poly([[lo,r.D(lo)+r.ec],[hi,r.D(hi)+r.ec],[hi,r.S(hi)-r.ep],[lo,r.S(lo)-r.ep]],'#94a3b8',.48)}}
+if(s.showReference&&pinned&&(!factorBase||$('factorCompare').checked)){z+=line(0,pinned.D(0),xmax,pinned.D(xmax),'#64748b',2.5,'7 5');z+=line(0,pinned.S(0),xmax,pinned.S(xmax),'#a16207',2.5,'7 5')}
+z+=line(0,r.a,xmax,r.D(xmax),C.D,3)+line(0,r.c,xmax,r.S(xmax),C.S,3);if(r.t!==0)z+=line(0,r.c+r.t,xmax,r.S(xmax)+r.t,C.S,2,'8 5');if(r.ep!==0)z+=line(0,r.c-r.ep,xmax,r.S(xmax)-r.ep,C.socialS,2,'3 5');if(r.ec!==0)z+=line(0,r.a+r.ec,xmax,r.D(xmax)+r.ec,C.socialD,2,'3 5');if(s.policyType==='ceiling')z+=line(0,s.pmax,xmax,s.pmax,C.green,2,'9 5');if(s.policyType==='floor')z+=line(0,s.pmin,xmax,s.pmin,C.orange,2,'9 5');if(s.policyType==='quota')z+=line(s.qmax,0,s.qmax,ymax,C.purple,2,'9 5');z+='</g>';
+if(s.showReference&&(!factorBase||$('factorCompare').checked)&&ref.Q>0&&ref.Pb!=null){z+=`<circle cx="${X(ref.Q)}" cy="${Y(ref.Pb)}" r="7" fill="white" stroke="${C.ref}" stroke-width="2.5"/>`;if(s.showLabels)z+=text(ref.Q,ref.Pb,pinned?'Riferimento':'E₀',C.ref,11,-11)}
+if(r.Q>0){z+=`<circle cx="${X(r.Q)}" cy="${Y(r.Pb)}" r="6" fill="${C.D}" stroke="white" stroke-width="2"/><circle cx="${X(r.Q)}" cy="${Y(r.Ps)}" r="6" fill="${C.S}" stroke="white" stroke-width="2"/>`;if(s.showLabels){z+=line(r.Q,0,r.Q,Math.max(r.Pb,r.Ps),'#64748b',1,'3 5');z+=line(0,r.Pb,r.Q,r.Pb,'#64748b',1,'3 5');z+=line(0,r.Ps,r.Q,r.Ps,'#64748b',1,'3 5');z+=text(r.Q,0,'Q = '+fmt(r.Q,1),'#334155',8,-10);z+=text(0,r.Pb,'Pc = '+fmt(r.Pb,1),C.D,9,-9);if(Math.abs(r.Pb-r.Ps)>.01)z+=text(0,r.Ps,'Pv = '+fmt(r.Ps,1),C.S,9,18)}}
+if((r.ep!==0||r.ec!==0)&&r.optQ>0){const p=r.D(r.optQ)+r.ec;z+=`<rect x="${X(r.optQ)-5}" y="${Y(p)-5}" width="10" height="10" fill="${C.green}" transform="rotate(45 ${X(r.optQ)} ${Y(p)})"/>`;if(s.showLabels)z+=text(r.optQ,p,'Ottimo sociale',C.green,12,-10)}
+if(s.showLabels){if(factorBase&&pinned&&$('factorCompare').checked){z+=text(xmax*.08,pinned.D(xmax*.08),'D₀','#64748b',7,-9)+text(xmax*.64,pinned.S(xmax*.64),'S₀','#a16207',7,-9)}const qd=Math.min(xmax*.86,Math.max(0,(r.a-ymax*.17)/r.b));const qs=Math.min(xmax*.85,Math.max(0,(ymax*.83-r.c)/r.d));z+=text(qd,r.D(qd),'D',C.D,9,-7)+text(qs,r.S(qs),'S',C.S,9,-7);if(r.ep!==0)z+=text(Math.min(xmax*.72,qs),r.S(Math.min(xmax*.72,qs))-r.ep,'CMS',C.socialS,8,16);if(r.ec!==0)z+=text(Math.min(xmax*.7,qd),r.D(Math.min(xmax*.7,qd))+r.ec,'BMS',C.socialD,8,-9)}z+='</svg>';$('plot').innerHTML=z;
+const legend=[['Domanda',C.D],['Offerta',C.S]];if(r.t!==0)legend.push([r.t>0?'Offerta + imposta':'Offerta − sussidio',C.S]);if(r.ep!==0)legend.push(['Costo marginale sociale',C.socialS]);if(r.ec!==0)legend.push(['Beneficio marginale sociale',C.socialD]);if(pinned&&s.showReference&&(!factorBase||$('factorCompare').checked))legend.push(['Curve di riferimento',C.ref]);if(s.showAreas)legend.push(['Surplus consumatori','#93c5fd'],['Surplus produttori','#fca5a5'],[r.Tax>=0?'Gettito':'Spesa per sussidio','#fde68a'],['Perdita secca','#94a3b8']);$('legend').innerHTML=legend.map(([name,color])=>`<span><i class="dot" style="background:${color}"></i>${name}</span>`).join('');}
+function aPositive(v){return Number.isFinite(v)&&v>0?v:0}
+function render(){if(activeTab==='trade'){renderTrade();return;}if(activeTab==='elasticity'){renderElasticity();return;}const s=read();Object.keys(DEFAULT).forEach(k=>$('out-'+k).textContent=fmt(s[k],['b','d'].includes(k)?2:0));['t'].forEach(k=>$('wrap-'+k).style.display=(s.taxOn||s.subsidyOn)?'':'none');['pmax','pmin','qmax'].forEach(k=>$('wrap-'+k).style.display=s.policyType===({pmax:'ceiling',pmin:'floor',qmax:'quota'}[k])?'':'none');$('wrap-ep').style.display=s.extProdOn?'':'none';$('wrap-ec').style.display=s.extConsOn?'':'none';const r=model(s);$('status').textContent=r.regime;draw(r,s);const cells=[['Quantità scambiata',r.Q],['Prezzo compratori',r.Q>0?r.Pb:null],['Prezzo venditori',r.Q>0?r.Ps:null],['Benessere sociale',r.W]];$('metrics').innerHTML=cells.map(([k,v])=>`<div class="metric"><small>${k}</small><strong>${fmt(v)}</strong></div>`).join('');const base=pinned?{Q:pinned.Q,Pb:pinned.Pb,Ps:pinned.Ps,CS:pinned.CS,PS:pinned.PS,Tax:pinned.Tax,Ext:pinned.Ext,W:pinned.W,DWL:pinned.DWL}:{Q:r.freeQ,Pb:r.freeP,Ps:r.freeP,CS:r.freeCS,PS:r.freePS,Tax:0,Ext:r.E*r.freeQ,W:r.freeW,DWL:Math.max(0,r.Wstar-r.freeW)};const rows=[['Quantità',base.Q,r.Q],['Prezzo compratori',base.Pb,r.Q>0?r.Pb:null],['Prezzo venditori',base.Ps,r.Q>0?r.Ps:null],['Surplus consumatori',base.CS,r.CS],['Surplus produttori',base.PS,r.PS],['Gettito (+) / spesa per sussidio (−)',base.Tax,r.Tax],['Effetti esterni',base.Ext,r.Ext],['Benessere sociale',base.W,r.W],['Perdita secca',base.DWL,r.DWL]];$('comparison').innerHTML='<thead><tr><th>Grandezza</th><th>Riferimento</th><th>Attuale</th><th>Δ</th></tr></thead><tbody>'+rows.map(([k,x,y])=>`<tr><td>${k}</td><td>${fmt(x)}</td><td>${fmt(y)}</td><td>${x==null||y==null?'—':fmt(y-x)}</td></tr>`).join('')+'</tbody>';$('messages').innerHTML=r.messages.map(([txt,level])=>`<div class="message ${level==='warn'?'warn':''}">${txt}</div>`).join('')||'<div class="message">Sposta i parametri per osservare il nuovo equilibrio. Fissa un riferimento per confrontare due scenari.</div>';}
+$('taxOn').addEventListener('change',()=>{if($('taxOn').checked)$('subsidyOn').checked=false});$('subsidyOn').addEventListener('change',()=>{if($('subsidyOn').checked)$('taxOn').checked=false});
+document.querySelectorAll('input,select').forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render)});document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(x=>{x.classList.toggle('active',x===btn);x.setAttribute('aria-selected',String(x===btn))});activeTab=btn.dataset.tab;document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===btn.dataset.tab));render()}));
+function setValues(obj){Object.entries(obj).forEach(([k,v])=>{if($(k))$(k).value=v});render()}
+$('scenario').addEventListener('change',e=>{const cases={base:{a:100,b:1,c:10,d:1},demand:{a:135,b:1,c:10,d:1},supply:{a:100,b:1,c:40,d:1},elastic:{a:100,b:3,c:10,d:1},zero:{a:45,b:1,c:70,d:1}};setValues(cases[e.target.value])});
+$('pin').addEventListener('click',()=>{const s=read(),r=model(s);pinned={...r};render()});$('clearPin').addEventListener('click',()=>{pinned=null;render()});$('reset').addEventListener('click',()=>{Object.entries(DEFAULT).forEach(([k,v])=>$(k).value=v);['taxOn','subsidyOn','extProdOn','extConsOn'].forEach(k=>$(k).checked=false);['showAreas','showReference','showLabels','autoAxes'].forEach(k=>$(k).checked=true);$('policyType').value='none';$('extProdType').value='neg';$('extConsType').value='neg';$('scenario').value='base';$('factorDemand').value='none';$('factorSupply').value='none';$('factorDemandIntensity').value=20;$('factorSupplyIntensity').value=20;$('out-factorDemandIntensity').textContent='20';$('out-factorSupplyIntensity').textContent='20';$('factorCompare').checked=true;$('factorExplanation').textContent='Seleziona uno o due fattori per osservare spostamenti simultanei.';$('worldPrice').value=35;$('tariff').value=15;$('tariffOn').checked=false;$('showTradeAreas').checked=true;$('elasticPrice').value=55;$('elasticPrice2').value=65;$('elasticArc').checked=false;pinned=null;factorBase=null;hide=false;$('results').hidden=false;$('hideResults').textContent='Nascondi risultati';render()});$('projector').addEventListener('click',()=>{document.body.classList.toggle('projector');$('projector').textContent=document.body.classList.contains('projector')?'Esci da proiezione':'Modalità proiezione'});$('hideResults').addEventListener('click',()=>{hide=!hide;$('results').hidden=hide;$('hideResults').textContent=hide?'Mostra risultati':'Nascondi risultati'});$('saveSvg').addEventListener('click',()=>{const svg=$('marketSvg').cloneNode(true);svg.setAttribute('xmlns','http://www.w3.org/2000/svg');const blob=new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='domanda-offerta-grafico.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+$('tradeImport').addEventListener('click',()=>{$('worldPrice').value=35;render()});
+$('tradeExport').addEventListener('click',()=>{$('worldPrice').value=75;$('tariffOn').checked=false;render()});
+const FACTOR_D={none:[0,'Nessuno shock di domanda.'],incomeNormal:[1,'Reddito maggiore: domanda del bene normale a destra.'],incomeInferior:[-1,'Reddito maggiore: domanda del bene inferiore a sinistra.'],substitute:[1,'Sostituto più caro: domanda di questo bene a destra.'],complement:[-1,'Complemento più caro: domanda di questo bene a sinistra.'],taste:[1,'Preferenze più favorevoli: domanda a destra.'],expectDemand:[1,'Attesa di rincari: domanda corrente a destra.'],buyers:[1,'Più compratori: domanda di mercato a destra.']};
+const FACTOR_S={none:[0,'Nessuno shock di offerta.'],inputCost:[1,'Input più costosi: offerta a sinistra (intercetta c più alta).'],technology:[-1,'Progresso tecnico: offerta a destra (intercetta c più bassa).'],sellers:[-1,'Più venditori: offerta di mercato a destra.'],expectSupply:[1,'Attesa di prezzi futuri più alti: offerta corrente potenzialmente a sinistra, nell’ipotesi di produzione rinviabile.'],weather:[1,'Shock produttivo negativo: offerta a sinistra.'],related:[1,'Prodotto alternativo più redditizio: offerta di questo bene a sinistra.']};
+let factorBase=null;
+function applyFactorShifts(){
+ const fd=FACTOR_D[$('factorDemand').value],fs=FACTOR_S[$('factorSupply').value];
+ if(!factorBase){factorBase={a:Number($('a').value),b:Number($('b').value),c:Number($('c').value),d:Number($('d').value)};}
+ const da=fd[0]*Number($('factorDemandIntensity').value),dc=fs[0]*Number($('factorSupplyIntensity').value);
+ const bound=(id,value)=>Math.max(Number($(id).min),Math.min(Number($(id).max),value));
+ $('a').value=bound('a',factorBase.a+da);$('c').value=bound('c',factorBase.c+dc);
+ const q0=Math.max(0,(factorBase.a-factorBase.c)/(factorBase.b+factorBase.d));
+ const p0=q0>0?factorBase.a-factorBase.b*q0:null;
+ pinned={Q:q0,Pb:p0,Ps:p0,D:q=>factorBase.a-factorBase.b*q,S:q=>factorBase.c+factorBase.d*q,CS:factorBase.b*q0*q0/2,PS:factorBase.d*q0*q0/2,Tax:0,Ext:0,W:(factorBase.a-factorBase.c)*q0-(factorBase.b+factorBase.d)*q0*q0/2,DWL:0};
+ $('out-factorDemandIntensity').textContent=$('factorDemandIntensity').value;
+ $('out-factorSupplyIntensity').textContent=$('factorSupplyIntensity').value;
+ const q1=Math.max(0,(Number($('a').value)-Number($('c').value))/(Number($('b').value)+Number($('d').value)));
+ const p1=q1>0?Number($('a').value)-Number($('b').value)*q1:null;
+ $('factorExplanation').textContent=fd[1]+' '+fs[1]+' Intercette: domanda '+factorBase.a+' → '+$('a').value+', offerta '+factorBase.c+' → '+$('c').value+'. Equilibrio: Q '+q0.toFixed(2)+' → '+q1.toFixed(2)+(p0!==null&&p1!==null?', P '+p0.toFixed(2)+' → '+p1.toFixed(2):'')+'. Le curve tratteggiate rappresentano il mercato prima dello shock.';
+ render();
+}
+['factorDemand','factorSupply','factorDemandIntensity','factorSupplyIntensity'].forEach(id=>$(id).addEventListener('input',applyFactorShifts));
+$('factorCompare').addEventListener('change',render);
+$('applyFactors').addEventListener('click',applyFactorShifts);
+$('clearFactors').addEventListener('click',()=>{$('factorDemand').value='none';$('factorSupply').value='none';$('factorDemandIntensity').value=20;$('factorSupplyIntensity').value=20;if(factorBase){$('a').value=factorBase.a;$('b').value=factorBase.b;$('c').value=factorBase.c;$('d').value=factorBase.d;}factorBase=null;pinned=null;$('factorExplanation').textContent='Mercato iniziale ripristinato. Seleziona un fattore per confrontare le curve.';render()});
+
+function renderElasticity(){
+ const s=read(),a=s.a,b=s.b,c=s.c,d=s.d;
+ const maxP=Math.max(1,a), p=Number($('elasticPrice').value),p2=Number($('elasticPrice2').value);
+ const q=Math.max(0,(a-p)/b),q2=Math.max(0,(a-p2)/b),rev=p*q,rev2=p2*q2;
+ const e=q>0&&p>=0?-p/(b*q):null;
+ const arc=$('elasticArc').checked;
+ const ea=arc&&p!==p2&&q+q2>0&&p+p2>0?((q2-q)/((q2+q)/2))/((p2-p)/((p2+p)/2)):null;
+ $('out-elasticPrice').textContent=fmt(p,0);$('out-elasticPrice2').textContent=fmt(p2,0);
+ $('elasticArcBox').style.display=arc?'':'none';
+ const w=900,h=540,l=72,right=35,top=30,bottom=58,pw=w-l-right,ph=h-top-bottom;
+ const xmax=Math.max(20,a/b*1.12),ymax=Math.max(20,a*1.12),X=x=>l+x/xmax*pw,Y=y=>top+(1-y/ymax)*ph;
+ let z=`<svg id="marketSvg" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" aria-label="Domanda ed elasticità"><rect width="${w}" height="${h}" fill="white"/>`;
+ for(let i=0;i<=5;i++){let x=xmax*i/5,y=ymax*i/5;z+=`<line x1="${X(x)}" y1="${top}" x2="${X(x)}" y2="${Y(0)}" stroke="#e8edf4"/><line x1="${l}" y1="${Y(y)}" x2="${X(xmax)}" y2="${Y(y)}" stroke="#e8edf4"/><text x="${X(x)}" y="${Y(0)+20}" text-anchor="middle" font-size="12">${fmt(x,0)}</text><text x="${l-8}" y="${Y(y)+4}" text-anchor="end" font-size="12">${fmt(y,0)}</text>`}
+ z+=`<line x1="${l}" y1="${Y(0)}" x2="${X(xmax)}" y2="${Y(0)}" stroke="#334155"/><line x1="${l}" y1="${top}" x2="${l}" y2="${Y(0)}" stroke="#334155"/><polygon points="${X(0)},${Y(0)} ${X(q)},${Y(0)} ${X(q)},${Y(p)} ${X(0)},${Y(p)}" fill="#bfdbfe" opacity=".65"/><line x1="${X(0)}" y1="${Y(a)}" x2="${X(a/b)}" y2="${Y(0)}" stroke="#2563eb" stroke-width="3"/><circle cx="${X(q)}" cy="${Y(p)}" r="7" fill="#1d4ed8"/><text x="${X(q)+12}" y="${Y(p)-10}" font-size="16" fill="#1d4ed8">P=${fmt(p,0)}; Q=${fmt(q,1)}</text>`;
+ if(arc)z+=`<circle cx="${X(q2)}" cy="${Y(p2)}" r="7" fill="#d97706"/><line x1="${X(q)}" y1="${Y(p)}" x2="${X(q2)}" y2="${Y(p2)}" stroke="#d97706" stroke-dasharray="6 5" stroke-width="2"/>`;
+ z+=`<text x="${l+pw/2}" y="${h-8}" text-anchor="middle" font-size="15">Quantità domandata (Q)</text><text transform="translate(20 ${top+ph/2}) rotate(-90)" text-anchor="middle" font-size="15">Prezzo (P)</text></svg>`;
+ $('plot').innerHTML=z;$('legend').innerHTML='<span>Area azzurra: ricavo totale (P × Q)</span>';
+ $('status').textContent='Elasticità della domanda';
+ const items=[['Prezzo',p],['Quantità domandata',q],['Elasticità puntuale',e],['Ricavo totale',rev]];
+ $('metrics').innerHTML=items.map(([k,v])=>`<div class="metric"><small>${k}</small><strong>${fmt(v)}</strong></div>`).join('');
+ const rows=[['Prezzo',p,arc?p2:null],['Quantità',q,arc?q2:null],['Ricavo totale',rev,arc?rev2:null],['Elasticità puntuale',e,arc&&q2>0?-p2/(b*q2):null],['Elasticità con metodo del punto medio',arc?ea:null,arc?ea:null]];
+ $('comparison').innerHTML='<thead><tr><th>Grandezza</th><th>Primo punto</th><th>Secondo punto</th><th>Δ</th></tr></thead><tbody>'+rows.map(([k,v1,v2])=>`<tr><td>${k}</td><td>${fmt(v1)}</td><td>${fmt(v2)}</td><td>${v1==null||v2==null?'—':fmt(v2-v1)}</td></tr>`).join('')+'</tbody>';
+ $('messages').innerHTML=`<div class="message">${q<=0?'Quantità domandata nulla: elasticità puntuale non definita nel punto.':Math.abs(e)>1?'Domanda elastica: un aumento del prezzo riduce il ricavo totale.':Math.abs(e)<1?'Domanda anelastica: un aumento del prezzo accresce il ricavo totale finché si resta nel tratto anelastico.':'Elasticità unitaria: ricavo totale massimo.'}</div>`+(arc?`<div class="message">Elasticità ad arco (metodo del punto medio): ${p===p2?'non definita: ΔP = 0':fmt(ea)+' (ΔQ = '+fmt(q2-q)+'; Q media = '+fmt((q+q2)/2)+'; ΔP = '+fmt(p2-p)+'; P medio = '+fmt((p+p2)/2)+')'}.</div>`:'');
+}
+function renderTrade(){
+ const s=read(),a=s.a,b=s.b,c=s.c,d=s.d,pa=a>c?(a*d+b*c)/(b+d):null,qa=Math.max(0,(a-c)/(b+d));
+ const pw=Number($('worldPrice').value),tar=Number($('tariff').value),on=$('tariffOn').checked;
+ $('out-worldPrice').textContent=fmt(pw,0);$('out-tariff').textContent=fmt(tar,0);$('tariff').disabled=!on;
+ const demand=p=>Math.max(0,(a-p)/b),supply=p=>Math.max(0,(p-c)/d);
+ const importer=a<=c?pw<a-1e-8:pw<pa-1e-8,exporter=a<=c?pw>c+1e-8:pw>pa+1e-8;
+ const p=importer?Math.min(a<=c?a:pa,pw+(on?tar:0)):pw;
+ const qd=demand(p),qs=supply(p),imports=Math.max(0,qd-qs),exports=Math.max(0,qs-qd),qdf=demand(pw),qsf=supply(pw);
+ const cs=P=>b*demand(P)**2/2,ps=P=>d*supply(P)**2/2;
+ const revenue=importer&&on?Math.max(0,p-pw)*imports:0;
+ const csNow=cs(p),psNow=ps(p),csFree=cs(pw),psFree=ps(pw),wNow=csNow+psNow+revenue,wFree=csFree+psFree;
+ const dwl=Math.max(0,wFree-wNow),type=importer?'Paese importatore':exporter?'Paese esportatore':'Nessuno scambio internazionale';
+ $('status').textContent=type;
+ const metrics=[['Prezzo interno',p],['Domanda nazionale',qd],['Offerta nazionale',qs],[importer?'Importazioni':exporter?'Esportazioni':'Scambi esteri',importer?imports:exports]];
+ $('metrics').innerHTML=metrics.map(([name,v])=>`<div class="metric"><small>${name}</small><strong>${fmt(v)}</strong></div>`).join('');
+ const rows=[['Prezzo interno',pw,p],['Quantità domandata',qdf,qd],['Quantità offerta',qsf,qs],['Importazioni',Math.max(0,qdf-qsf),imports],['Esportazioni',Math.max(0,qsf-qdf),exports],['Surplus consumatori',csFree,csNow],['Surplus produttori',psFree,psNow],['Gettito da dazi',0,revenue],['Benessere nazionale',wFree,wNow],['Perdita secca rispetto al libero scambio',0,dwl]];
+ $('comparison').innerHTML='<thead><tr><th>Grandezza</th><th>Libero scambio</th><th>Scenario</th><th>Δ</th></tr></thead><tbody>'+rows.map(([k,x,y])=>`<tr><td>${k}</td><td>${fmt(x)}</td><td>${fmt(y)}</td><td>${fmt(y-x)}</td></tr>`).join('')+'</tbody>';
+ const notes=[];if(a<=c){notes.push('In autarchia Q = 0 e non vi è un prezzo di equilibrio unico: qualunque prezzo tra '+fmt(a)+' e '+fmt(c)+' è compatibile con scambi nulli.');if(importer)notes.push('Il paese importa al prezzo mondiale corrente.');else if(exporter)notes.push('Il paese esporta al prezzo mondiale corrente.');else notes.push('Non avvengono scambi internazionali.');}else if(importer)notes.push('Il prezzo mondiale è inferiore al prezzo di autarchia ('+fmt(pa)+'): il paese importa.');else if(exporter)notes.push('Il prezzo mondiale supera il prezzo di autarchia ('+fmt(pa)+'): il paese esporta.');else notes.push('Prezzo mondiale uguale al prezzo di autarchia: commercio netto nullo.');
+ if(on&&importer){notes.push(imports>0?'Il dazio aumenta il prezzo interno da '+fmt(pw)+' a '+fmt(p)+', riduce le importazioni e genera gettito di '+fmt(revenue)+'.':'Dazio proibitivo: nessuna importazione; il prezzo interno coincide con quello di autarchia.');notes.push('Rispetto al libero scambio, variazione del benessere nazionale: '+fmt(wNow-wFree)+'. La perdita secca è '+fmt(dwl)+'.');}
+ if(on&&!importer)notes.push('Il dazio sulle importazioni non è operativo perché il paese non importa.');
+ notes.push('Ipotesi: paese piccolo, concorrenza perfetta, nessuna esternalità. Imposte interne, controlli di prezzo e quote delle altre schede non sono cumulati con il commercio.');
+ $('messages').innerHTML=notes.map((t,i)=>`<div class="message ${i===1&&on&&importer?'warn':''}">${t}</div>`).join('');
+ const w=900,h=540,l=72,rr=32,top=27,bot=58,pwidth=w-l-rr,pheight=h-top-bot;
+ const xmax=s.autoAxes?Math.max(25,a/b,qd,qs,qdf,qsf,qa)*1.12:s.xaxis;
+ const ymax=s.autoAxes?Math.max(25,a,c,pw,p,pa)*1.18:s.yaxis;
+ const X=q=>l+q/xmax*pwidth,Y=z=>top+(1-z/ymax)*pheight;
+ const line=(x1,y1,x2,y2,color,width=2,dash='')=>`<line x1="${X(x1)}" y1="${Y(y1)}" x2="${X(x2)}" y2="${Y(y2)}" stroke="${color}" stroke-width="${width}" ${dash?'stroke-dasharray="'+dash+'"':''}/>`;
+ const poly=(arr,color,opacity)=>`<polygon points="${arr.map(([x,y])=>X(x)+','+Y(y)).join(' ')}" fill="${color}" fill-opacity="${opacity}"/>`;
+ const txt=(x,y,t,color='#334155',dx=8,dy=-9)=>`<text x="${X(x)+dx}" y="${Y(y)+dy}" font-size="15" fill="${color}" font-weight="600" paint-order="stroke" stroke="white" stroke-width="3">${t}</text>`;
+ let svg=`<svg id="marketSvg" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" aria-label="Commercio internazionale, domanda, offerta e dazi"><defs><clipPath id="tradeClip"><rect x="${l}" y="${top}" width="${pwidth}" height="${pheight}"/></clipPath></defs>`;
+ const step=v=>{const z=v/6,m=10**Math.floor(Math.log10(z)),k=z/m;return(k<1.5?1:k<3?2:k<7?5:10)*m};
+ for(let q=0;q<=xmax+1e-8;q+=step(xmax)){svg+=line(q,0,q,ymax,'#e8edf4',1)+`<text x="${X(q)}" y="${Y(0)+21}" font-size="12" text-anchor="middle" fill="#64748b">${fmt(q,0)}</text>`}
+ for(let z=0;z<=ymax+1e-8;z+=step(ymax)){svg+=line(0,z,xmax,z,'#e8edf4',1)+`<text x="${l-8}" y="${Y(z)+4}" font-size="12" text-anchor="end" fill="#64748b">${fmt(z,0)}</text>`}
+ svg+=line(0,0,xmax,0,'#475569',1.5)+line(0,0,0,ymax,'#475569',1.5)+`<text x="${l+pwidth/2}" y="${h-9}" text-anchor="middle" font-size="15">Quantità (Q)</text><text transform="translate(19 ${top+pheight/2}) rotate(-90)" text-anchor="middle" font-size="15">Prezzo (P)</text>`;
+ svg+='<g clip-path="url(#tradeClip)">';
+ if($('showTradeAreas').checked){if(qd>0)svg+=poly([[0,a],[qd,a-b*qd],[qd,p],[0,p]],'#93c5fd',.48);if(qs>0)svg+=poly([[0,c],[qs,c+d*qs],[qs,p],[0,p]],'#fca5a5',.48);
+ if(revenue>0)svg+=poly([[qs,pw],[qd,pw],[qd,p],[qs,p]],'#fde68a',.8);
+ if(dwl>1e-7&&importer){svg+=poly([[qsf,pw],[qs,p],[qs,pw]],'#94a3b8',.7);svg+=poly([[qd,p],[qdf,pw],[qd,pw]],'#94a3b8',.7)}}
+ svg+=line(0,a,xmax,a-b*xmax,'#2563eb',3)+line(0,c,xmax,c+d*xmax,'#e04747',3);
+ svg+=line(0,pw,xmax,pw,'#16845a',2.5,'10 5');if(on&&importer&&p>pw)svg+=line(0,p,xmax,p,'#d97706',2.5,'10 5');
+ svg+='</g>';
+ if(qa>0)svg+=`<circle cx="${X(qa)}" cy="${Y(pa)}" r="6" fill="white" stroke="#475569" stroke-width="2"/>`;
+ if(s.showLabels){if(qa>0)svg+=txt(qa,pa,'Autarchia','#475569',9,-12);svg+=txt(0,pw,'Pw = '+fmt(pw,0),'#16845a',8,-9);if(on&&importer&&p>pw)svg+=txt(0,p,'Pw + dazio = '+fmt(p,0),'#d97706',8,-9);svg+=txt(Math.min(xmax*.83,a/b*.78),a-b*Math.min(xmax*.83,a/b*.78),'D','#2563eb');svg+=txt(Math.min(xmax*.8,Math.max(0,(ymax*.8-c)/d)),c+d*Math.min(xmax*.8,Math.max(0,(ymax*.8-c)/d)),'S','#e04747');svg+=line(qd,0,qd,p,'#64748b',1,'3 4')+line(qs,0,qs,p,'#64748b',1,'3 4');svg+=txt(qd,0,'Qd = '+fmt(qd,1),'#2563eb',6,-9)+txt(qs,0,'Qs = '+fmt(qs,1),'#e04747',6,-29)}
+ svg+='</svg>';$('plot').innerHTML=svg;
+ const legend=[['Domanda','#2563eb'],['Offerta','#e04747'],['Prezzo mondiale','#16845a']];if(on&&importer)legend.push(['Prezzo con dazio','#d97706']);if($('showTradeAreas').checked)legend.push(['Surplus consumatori','#93c5fd'],['Surplus produttori','#fca5a5'],['Gettito dazio','#fde68a'],['Perdita secca','#94a3b8']);$('legend').innerHTML=legend.map(([name,color])=>`<span><i class="dot" style="background:${color}"></i>${name}</span>`).join('');
+}
+render();
+</script>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const market=$('marketModule'), ppf=$('ppfModule');
+function switchModule(name){const isPpf=name==='ppf';market.hidden=isPpf;ppf.hidden=!isPpf;$('navMarket').classList.toggle('active',!isPpf);$('navPpf').classList.toggle('active',isPpf);if(isPpf)updatePpf();}
+$('navMarket').addEventListener('click',()=>switchModule('market'));
+$('navPpf').addEventListener('click',()=>switchModule('ppf'));
+const defs={LA:100,xA:4,yA:2,LB:100,xB:2,yB:3,terms:1};
+const controls=[['LA','Lavoro A',20,200,10],['xA','Produttività X · A',1,10,0.5],['yA','Produttività Y · A',1,10,0.5],['LB','Lavoro B',20,200,10],['xB','Produttività X · B',1,10,0.5],['yB','Produttività Y · B',1,10,0.5]];
+function makeCtl(id,label,min,max,step){const d=document.createElement('div');d.className='ppfctl';const l=document.createElement('label');l.htmlFor='ppf_'+id;l.textContent=label;const o=document.createElement('output');o.id='ppfo_'+id;l.appendChild(o);const input=document.createElement('input');input.id='ppf_'+id;input.type='range';input.min=min;input.max=max;input.step=step;input.value=defs[id];input.addEventListener('input',updatePpf);d.append(l,input);return d;}
+controls.forEach(c=>$('ppfControls').appendChild(makeCtl(...c)));
+$('ppfTermsControl').appendChild(makeCtl('terms','Prezzo relativo X/Y',0.1,5,0.05));
+const fmt=n=>Number(n).toLocaleString('it-IT',{maximumFractionDigits:2});
+function read(id){const v=Number($('ppf_'+id).value);$('ppfo_'+id).textContent=fmt(v);return v;}
+function svgPPF(xmax,ymax,label,production,consumption,autarky,terms,showTradeLine){
+ const W=500,H=365,l=58,r=22,t=20,b=53,w=W-l-r,h=H-t-b;
+ const interceptY=production&&terms>0?production[1]+terms*production[0]:0;const interceptX=production&&terms>0?production[0]+production[1]/terms:0;const xlim=Math.max(xmax,consumption?consumption[0]:0,showTradeLine?interceptX:0)*1.15,ylim=Math.max(ymax,consumption?consumption[1]:0,showTradeLine?interceptY:0)*1.15,X=x=>l+x/xlim*w,Y=y=>t+h-y/ylim*h;
+ let s=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frontiera produttiva e paniere di consumo del paese ${label}"><rect width="500" height="365" fill="white"/><path d="M${l} ${t}V${t+h}H${l+w}" stroke="#334155" fill="none" stroke-width="2"/>`;
+ for(let i=0;i<=5;i++){let xx=xlim*i/5,yy=ylim*i/5;s+=`<path d="M${X(xx)} ${t}V${t+h} M${l} ${Y(yy)}H${l+w}" stroke="#edf2f7"/><text x="${X(xx)}" y="${t+h+19}" font-size="12" text-anchor="middle">${fmt(xx)}</text><text x="${l-8}" y="${Y(yy)+4}" font-size="12" text-anchor="end">${fmt(yy)}</text>`;}
+ s+=`<path d="M${X(0)} ${Y(ymax)}L${X(xmax)} ${Y(0)}" stroke="#2563eb" stroke-width="3" fill="none"/><text x="${l+w/2}" y="${H-7}" font-size="15" text-anchor="middle">Bene X</text><text x="15" y="${t+h/2}" transform="rotate(-90 15 ${t+h/2})" font-size="15" text-anchor="middle">Bene Y</text>`;
+ if(production&&showTradeLine&&terms>0){s+=`<path d="M${X(0)} ${Y(interceptY)} L${X(interceptX)} ${Y(0)}" fill="none" stroke="#d97706" stroke-width="2.8" stroke-dasharray="9 5"/><text x="${X(interceptX*.55)}" y="${Y(interceptY*.45)-10}" font-size="12" fill="#b45309">Possibilità di consumo</text>`;}
+ if(production){s+=`<circle cx="${X(production[0])}" cy="${Y(production[1])}" r="7" fill="#dc2626" stroke="white" stroke-width="2"/><text x="${X(production[0])+8}" y="${Y(production[1])-9}" font-size="13" fill="#b91c1c">Produzione</text>`;}
+ if(autarky){s+=`<circle cx="${X(autarky[0])}" cy="${Y(autarky[1])}" r="6" fill="#9333ea" stroke="white" stroke-width="2"/><text x="${X(autarky[0])+8}" y="${Y(autarky[1])+17}" font-size="12" fill="#7e22ce">Autarchia</text>`;if(consumption){s+=`<path d="M${X(autarky[0])} ${Y(autarky[1])}V${Y(consumption[1])}" stroke="#9333ea" stroke-dasharray="3 4" stroke-width="2"/>`;}}
+ if(consumption){s+=`<path d="M${X(production[0])} ${Y(production[1])}L${X(consumption[0])} ${Y(consumption[1])}" stroke="#16a34a" stroke-dasharray="6 5" stroke-width="2"/><circle cx="${X(consumption[0])}" cy="${Y(consumption[1])}" r="7" fill="#16a34a" stroke="white" stroke-width="2"/><text x="${X(consumption[0])+8}" y="${Y(consumption[1])-9}" font-size="13" fill="#15803d">Consumo</text>`;}
+ return s+'</svg>';
+}
+function updatePpf(){
+ let LA=read('LA'),xA=read('xA'),yA=read('yA'),LB=read('LB'),xB=read('xB'),yB=read('yB'),terms=read('terms');
+ let ca=yA/xA,cb=yB/xB,aX=LA*xA,aY=LA*yA,bX=LB*xB,bY=LB*yB;
+ let trade=$('ppfTrade').checked,reveal=$('ppfReveal').checked,showAutarky=$('ppfAutarky').checked,showTradeLine=$('ppfTradeLine').checked;
+ let advantage=ca<cb?'A':ca>cb?'B':'nessuno';
+ let specA=advantage==='A'?[aX,0]:advantage==='B'?[0,aY]:null;
+ let specB=advantage==='A'?[0,bY]:advantage==='B'?[bX,0]:null;
+ let low=Math.min(ca,cb),high=Math.max(ca,cb),inside=terms>low+1e-9&&terms<high-1e-9;
+ let maxTrade=advantage==='A'?Math.min(aX,bY/terms):advantage==='B'?Math.min(bX,aY/terms):0;
+ let amount=Math.min(+$('ppfExchangeQty').value,maxTrade);
+ $('ppfExchangeQty').max=Math.max(1,Math.floor(maxTrade));
+ if(+$('ppfExchangeQty').value>maxTrade){$('ppfExchangeQty').value=Math.floor(maxTrade);amount=+$('ppfExchangeQty').value;}
+ $('ppfExchangeQtyVal').textContent=fmt(amount);
+ let consumeA=null,consumeB=null;
+ if(trade&&inside&&amount>0&&advantage==='A'){consumeA=[aX-amount,terms*amount];consumeB=[amount,bY-terms*amount];}
+ if(trade&&inside&&amount>0&&advantage==='B'){consumeA=[amount,aY-terms*amount];consumeB=[bX-amount,terms*amount];}
+ const autA=consumeA&&showAutarky?[consumeA[0],aY*(1-consumeA[0]/aX)]:null;
+ const autB=consumeB&&showAutarky?[consumeB[0],bY*(1-consumeB[0]/bX)]:null;
+ $('ppfA').innerHTML=svgPPF(aX,aY,'A',trade?specA:null,consumeA,autA,terms,trade&&inside&&showTradeLine);
+ $('ppfB').innerHTML=svgPPF(bX,bY,'B',trade?specB:null,consumeB,autB,terms,trade&&inside&&showTradeLine);
+ $('ppfStats').hidden=!reveal;$('ppfExplain').hidden=!reveal;$('ppfTermsResult').hidden=!reveal;$('ppfTradeResult').hidden=!reveal;
+ $('ppfStats').innerHTML=`<div>Costo opportunità di 1 X · A<strong>${fmt(ca)} Y</strong></div><div>Costo opportunità di 1 X · B<strong>${fmt(cb)} Y</strong></div><div>Produzione massima X · A / B<strong>${fmt(aX)} / ${fmt(bX)}</strong></div><div>Produzione massima Y · A / B<strong>${fmt(aY)} / ${fmt(bY)}</strong></div>`;
+ let absX=xA>xB?'A':xB>xA?'B':'pari',absY=yA>yB?'A':yB>yA?'B':'pari';
+ $('ppfExplain').textContent=`Vantaggio assoluto: X ${absX}; Y ${absY}. ${advantage==='nessuno'?'Nessun vantaggio comparato distinto.':`Il paese ${advantage} ha vantaggio comparato in X; l'altro in Y.`}`;
+ $('ppfTermsResult').textContent=advantage==='nessuno'?'Costi opportunità uguali: nessun intervallo di prezzi per guadagni stretti reciproci.':inside?`Prezzo relativo ${fmt(terms)} Y per X: compreso tra ${fmt(low)} e ${fmt(high)}. Entrambi possono consumare oltre la rispettiva FPP.`:`Prezzo relativo ${fmt(terms)} fuori dall'intervallo aperto (${fmt(low)}; ${fmt(high)}): lo scambio non produce il vantaggio reciproco illustrato.`;
+ const beyond=(p,xmax,ymax)=>p&&p[1]>ymax*(1-p[0]/xmax)+1e-8;
+ const gainText=autA&&autB?` Confronto a parità di X: A ottiene ${fmt(consumeA[1]-autA[1])} unità aggiuntive di Y; B ottiene ${fmt(consumeB[1]-autB[1])} unità aggiuntive di Y rispetto alla rispettiva FPP. I punti viola sono panieri di riferimento sulla FPP, non necessariamente quelli effettivamente scelti in autarchia.`:'';
+ $('ppfTradeResult').textContent=consumeA&&consumeB?`Paese A: produce (${fmt(specA[0])}; ${fmt(specA[1])}), consuma (${fmt(consumeA[0])}; ${fmt(consumeA[1])}) ${beyond(consumeA,aX,aY)?'— oltre la FPP.':'— sulla o entro la FPP.'} Paese B: produce (${fmt(specB[0])}; ${fmt(specB[1])}), consuma (${fmt(consumeB[0])}; ${fmt(consumeB[1])}) ${beyond(consumeB,bX,bY)?'— oltre la FPP.':'— sulla o entro la FPP.'}${gainText}`:trade?'Seleziona un prezzo relativo strettamente compreso tra i costi opportunità e una quantità scambiata positiva per visualizzare i panieri di consumo esterni alla FPP.':'Attiva lo scambio per visualizzare i punti di produzione e consumo.';
+}
+$('ppfReset').addEventListener('click',()=>{Object.entries(defs).forEach(([k,v])=>$('ppf_'+k).value=v);$('ppfTrade').checked=true;$('ppfAutarky').checked=true;$('ppfTradeLine').checked=true;$('ppfReveal').checked=true;$('ppfExchangeQty').value=60;updatePpf();});
+$('ppfExchangeQty').addEventListener('input',updatePpf);
+ $('ppfAutarky').addEventListener('change',updatePpf);$('ppfTradeLine').addEventListener('change',updatePpf);$('ppfTrade').addEventListener('change',updatePpf);$('ppfReveal').addEventListener('change',updatePpf);updatePpf();
+})();
+</script>
+<script>
+(function(){
+'use strict';
+const ids=['curveX','curveY','curveK','curveQ','curveResources','curveTechX','curveTechY'];
+const fmt=n=>Number(n).toLocaleString('it-IT',{maximumFractionDigits:2});
+function redraw(){
+ const el=id=>document.getElementById(id);
+ const baseX=+el('curveX').value,baseY=+el('curveY').value,k=el('ppfConcave').checked?+el('curveK').value:1,f=+el('curveQ').value/100;
+ const resources=+el('curveResources').value/100,tx=+el('curveTechX').value/100,ty=+el('curveTechY').value/100;
+ const A=baseX*resources*tx,B=baseY*resources*ty;
+ el('curveKControl').hidden=!el('ppfConcave').checked;
+ for(const id of ['curveX','curveY','curveK'])el(id+'val').textContent=fmt(+el(id).value);
+ el('curveQval').textContent=fmt(f*100)+'%';
+ for(const id of ['curveResources','curveTechX','curveTechY'])el(id+'Val').textContent=fmt(+el(id).value)+'%';
+ const x=A*f,y=B*(1-Math.pow(f,k)),mc=B*k/A*Math.pow(f,k-1);
+ const W=560,H=385,L=66,R=24,T=25,Bottom=57,pw=W-L-R,ph=H-T-Bottom;
+ const limX=Math.max(A,baseX)*1.12,limY=Math.max(B,baseY)*1.12;
+ const X=v=>L+v/limX*pw,Y=v=>T+ph-v/limY*ph;
+ let svg=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frontiera produttiva, espansione delle risorse e progresso tecnologico"><rect width="${W}" height="${H}" fill="white"/>`;
+ for(let i=0;i<=5;i++){const xx=limX*i/5,yy=limY*i/5;svg+=`<path d="M${X(xx)} ${T}V${T+ph} M${L} ${Y(yy)}H${L+pw}" stroke="#e8edf5"/><text x="${X(xx)}" y="${T+ph+20}" text-anchor="middle" font-size="12">${fmt(xx)}</text><text x="${L-9}" y="${Y(yy)+4}" text-anchor="end" font-size="12">${fmt(yy)}</text>`;}
+ svg+=`<path d="M${L} ${T}V${T+ph}H${L+pw}" fill="none" stroke="#334155" stroke-width="2"/><text x="${L+pw/2}" y="${H-10}" text-anchor="middle" font-size="15">Bene X</text><text transform="translate(17 ${T+ph/2}) rotate(-90)" text-anchor="middle" font-size="15">Bene Y</text>`;
+ const makePath=(xx,yy)=>{let path='';for(let i=0;i<=150;i++){const u=i/150;path+=(i?'L':'M')+X(xx*u).toFixed(2)+' '+Y(yy*(1-Math.pow(u,k))).toFixed(2)+' ';}return path;};
+ if(el('curveShowBase').checked)svg+=`<path d="${makePath(baseX,baseY)}" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="7 5"/>`;
+ svg+=`<path d="${makePath(A,B)}" fill="none" stroke="#2563eb" stroke-width="3.5"/><path d="M${X(x)} ${Y(y)}V${Y(0)} M${L} ${Y(y)}H${X(x)}" stroke="#64748b" stroke-dasharray="5 5" fill="none"/><circle cx="${X(x)}" cy="${Y(y)}" r="7" fill="#dc2626" stroke="white" stroke-width="2"/>`;
+ if(f>0&&f<.98){const dx=A*.13;svg+=`<path d="M${X(Math.max(0,x-dx))} ${Y(y+mc*Math.min(dx,x))} L${X(Math.min(A,x+dx))} ${Y(y-mc*Math.min(dx,A-x))}" stroke="#d97706" stroke-width="2.2" stroke-dasharray="7 4" fill="none"/>`;}
+ svg+='</svg>';el('curvePlot').innerHTML=svg;
+ el('curveMetrics').textContent=`Produzione: X = ${fmt(x)}, Y = ${fmt(y)}. Costo opportunità marginale di 1 X = ${fmt(mc)} unità di Y. ${k===1?'La FPP è lineare: costo opportunità costante.':'La FPP è concava: costo opportunità crescente al crescere di X.'}`;
+ const growthX=A/baseX,growthY=B/baseY;
+ const mode=resources!==1?'Risorse: la dotazione di fattori è cambiata. ':'',tech=(tx!==1||ty!==1)?'Tecnologia: è cambiata la produttività per unità di risorsa. ':'';
+ el('curveGrowthMessage').textContent=`${mode}${tech}Capacità massima: X ${fmt(baseX)} → ${fmt(A)} (${fmt((growthX-1)*100)}%); Y ${fmt(baseY)} → ${fmt(B)} (${fmt((growthY-1)*100)}%). ${growthX>=1&&growthY>=1?'La FPP si espande (o rimane invariata) in entrambe le direzioni: sono possibili panieri con più X e più Y rispetto a prima, senza che ciò implichi automaticamente un aumento di utilità.':'Una o entrambe le capacità si riducono: non è uno spostamento uniformemente verso l’esterno.'} La curva grigia tratteggiata è la FPP iniziale; la blu è quella attuale.`;
+}
+ids.forEach(id=>document.getElementById(id).addEventListener('input',redraw));
+for(const id of ['ppfConcave','curveShowBase'])document.getElementById(id).addEventListener('change',redraw);
+document.getElementById('curveMoreResources').addEventListener('click',()=>{document.getElementById('curveResources').value=150;document.getElementById('curveTechX').value=100;document.getElementById('curveTechY').value=100;redraw();});
+document.getElementById('curveBetterTech').addEventListener('click',()=>{document.getElementById('curveResources').value=100;document.getElementById('curveTechX').value=150;document.getElementById('curveTechY').value=150;redraw();});
+document.getElementById('curveReset').addEventListener('click',()=>{[['curveX',100],['curveY',100],['curveK',2],['curveQ',50],['curveResources',100],['curveTechX',100],['curveTechY',100]].forEach(([id,v])=>document.getElementById(id).value=v);redraw();});
+redraw();
+})();
+</script>
+<script>(function(){const a=document.getElementById('ppfTabFrontier'),b=document.getElementById('ppfTabExchange'),pa=document.getElementById('ppfFrontierPane'),pb=document.getElementById('ppfExchangePane');function choose(exchange){pa.hidden=exchange;pb.hidden=!exchange;a.classList.toggle('active',!exchange);b.classList.toggle('active',exchange);a.setAttribute('aria-selected',String(!exchange));b.setAttribute('aria-selected',String(exchange));}a.addEventListener('click',()=>choose(false));b.addEventListener('click',()=>choose(true));choose(false);})();</script>
+<script>
+(function(){
+ const $=id=>document.getElementById(id), n=id=>Number($(id)?.value||0), on=id=>!!$(id)?.checked;
+ const f=x=>Number.isFinite(x)?x.toLocaleString('it-IT',{maximumFractionDigits:2}):'non definito';
+ const card=(heading,intro,example,details)=>`<h2>${heading}</h2><p class="guide-kicker">Guida per la lezione · i valori si aggiornano con i controlli</p><p>${intro}</p><div class="guide-example">${example}</div><details open><summary>Interpretazione economica e ipotesi</summary>${details}</details>`;
+ function market(){
+  const target=$('marketGuide');if(!target)return;
+  const tab=document.querySelector('.tabbar button.active')?.dataset.tab||'curves';
+  const a=n('a'),b=n('b'),c=n('c'),d=n('d'),q=Math.max(0,(a-c)/(b+d)),p=a-b*q;
+  const base=`Con D: P = ${f(a)} − ${f(b)}Q e S: P = ${f(c)} + ${f(d)}Q, l'equilibrio senza interventi è Q* = ${f(q)} e P* = ${q>0?f(p):'non applicabile (assenza di scambi)'}.`;
+  const common='<h3>Domanda per la classe</h3><p>Prima di spostare lo slider, chiedi: quale curva cambia? In quale direzione? Che cosa succede a prezzo, quantità e surplus? Poi verifica graficamente la previsione.</p>';
+  if(tab==='curves'){
+   target.innerHTML=card('Domanda e offerta: leggere il grafico','La domanda descrive la disponibilità marginale a pagare; l’offerta rappresenta il costo marginale privato. Un cambiamento del prezzo del bene provoca un movimento lungo la curva, mentre reddito, preferenze, costi di produzione o tecnologia possono spostare le curve.',base,`<h3>Come interpretare i parametri</h3><ul><li><b>a aumenta:</b> domanda verso destra, a parità delle altre condizioni; in genere P* e Q* aumentano.</li><li><b>c diminuisce:</b> offerta verso destra, P* diminuisce e Q* aumenta.</li><li><b>b e d:</b> modificano la pendenza delle curve inverse, non sono semplici traslazioni parallele.</li><li><b>Due curve si spostano insieme:</b> l'effetto su P* può essere ambiguo, mentre la quantità può avere un segno prevedibile in alcuni casi.</li></ul><h3>Fattori che spostano la domanda</h3><p>Reddito (distinguendo beni normali e inferiori), prezzi di sostituti e complementi, gusti e preferenze, aspettative, numero di compratori. Il prezzo del bene determina invece un movimento lungo la domanda, a parità di altri fattori.</p><h3>Fattori che spostano l’offerta</h3><p>Prezzi degli input, tecnologia, produttività, numero di venditori, aspettative, condizioni naturali e redditività di produzioni alternative. Il prezzo del bene determina un movimento lungo l’offerta.</p><h3>Benessere</h3><p>Il surplus del consumatore è l'area tra domanda e prezzo; quello del produttore è tra prezzo e offerta. In assenza di distorsioni ed esternalità, l'equilibrio competitivo massimizza il surplus totale, nel modello considerato.</p>${common}`);
+  }else if(tab==='policy'){
+   const tax=on('taxOn'),sub=on('subsidyOn'),type=$('policyType')?.value||'none',t=n('t');
+   let specific=tax?`Imposta di ${f(t)} per unità: introduce un cuneo Pc − Pv = ${f(t)}. In equilibrio senza altri vincoli, Q = ${f(Math.max(0,(a-c-t)/(b+d)))}.`:sub?`Sussidio di ${f(t)} per unità: Pc − Pv = −${f(t)}. Il sussidio aumenta gli scambi nel modello standard, ma comporta spesa pubblica.`:'Nessuna imposta o sussidio attivo.';
+   const controls={ceiling:'Prezzo massimo: se inferiore al prezzo di equilibrio rilevante, è vincolante e genera scarsità (domanda eccede offerta).',floor:'Prezzo minimo: se superiore al prezzo di equilibrio rilevante, è vincolante e genera eccesso di offerta.',quota:'Quota: limita la quantità scambiata; l’allocazione delle licenze determina chi ottiene la rendita.',none:'Attiva un controllo di prezzo o una quota per confrontare un mercato regolamentato con il riferimento.'};
+   target.innerHTML=card('Politiche pubbliche: chi guadagna e chi perde?','Le politiche modificano incentivi, prezzi e quantità. Il benessere va valutato distinguendo consumatori, produttori e bilancio pubblico; il gettito è un trasferimento, mentre la perdita secca misura scambi reciprocamente vantaggiosi non realizzati.',specific,`<h3>Intervento selezionato</h3><p>${controls[type]||controls.none}</p><h3>Incidenza fiscale</h3><p>Chi versa formalmente l’imposta non determina, da solo, chi ne sostiene l’onere economico. Con curve lineari e imposta non proibitiva, la quota dell’onere sui compratori è d/(b+d) = ${f(100*d/(b+d))}% e sui venditori è b/(b+d) = ${f(100*b/(b+d))}%.</p><h3>Attenzione</h3><p>Prezzi massimi e minimi richiedono ipotesi su razionamento e rispetto della norma. Per i sussidi, la spesa pubblica va sottratta al benessere totale. Combinazioni di più interventi vanno interpretate con cautela.</p>${common}`);
+  }else if(tab==='external'){
+   const ep=on('extProdOn')?(($('extProdType')?.value==='pos')?1:-1)*n('ep'):0;
+   const ec=on('extConsOn')?(($('extConsType')?.value==='pos')?1:-1)*n('ec'):0;
+   const qopt=Math.max(0,(a-c+ep+ec)/(b+d));
+   target.innerHTML=card('Esternalità: equilibrio privato e ottimo sociale','Un’esternalità è un costo o beneficio su terzi non riflesso nel prezzo privato. La domanda rappresenta il beneficio marginale privato e l’offerta il costo marginale privato; le curve sociali incorporano gli effetti esterni.',`Effetto esterno netto per unità: ${f(ep+ec)}. Quantità privata ${f(q)}; quantità socialmente efficiente ${f(qopt)}.`, `<ul><li><b>Esternalità negativa di produzione:</b> costo marginale sociale superiore a quello privato.</li><li><b>Esternalità positiva di consumo:</b> beneficio marginale sociale superiore a quello privato.</li><li><b>Esternalità negativa:</b> il mercato tende a produrre troppo rispetto all'ottimo, a parità di altre condizioni.</li><li><b>Esternalità positiva:</b> il mercato tende a produrre troppo poco.</li></ul><h3>Correzione</h3><p>Nel modello con effetto marginale costante, una tassa o un sussidio pigouviano pari all'effetto esterno netto in valore assoluto può allineare incentivi privati e sociali. La quantità ottima non è necessariamente la quantità massima.</p>${common}`);
+  }else if(tab==='elasticity'){
+   const price=n('elasticPrice'),qty=Math.max(0,(a-price)/b),e=qty>0?-price/(b*qty):NaN;
+   target.innerHTML=card('Elasticità: sensibilità e ricavo totale','L’elasticità-prezzo della domanda misura la variazione percentuale della quantità domandata a fronte di una variazione percentuale del prezzo. È diversa dalla pendenza: lungo una retta la pendenza è costante, ma l’elasticità varia.',`Al prezzo ${f(price)}: Qd = ${f(qty)}, elasticità puntuale ε = ${f(e)}, ricavo totale P×Q = ${f(price*qty)}.`, `<ul><li><b>|ε| &gt; 1:</b> domanda elastica; un piccolo aumento del prezzo riduce il ricavo totale.</li><li><b>|ε| &lt; 1:</b> domanda anelastica; un piccolo aumento del prezzo aumenta il ricavo totale.</li><li><b>|ε| = 1:</b> massimo del ricavo totale per la domanda lineare nell'intervallo economicamente rilevante.</li></ul><p>Metodo del punto medio: ε = [(Q₂−Q₁)/((Q₁+Q₂)/2)] ÷ [(P₂−P₁)/((P₁+P₂)/2)]. Utilizza la media dei due prezzi e delle due quantità come denominatori: il risultato è simmetrico quando si inverte il confronto. Se i due prezzi coincidono, la variazione percentuale di prezzo è nulla e il rapporto non è definito.</p>${common}`);
+  }else if(tab==='trade'){
+   const pw=n('worldPrice'),tar=on('tariffOn')?n('tariff'):0,aut=p,importer=pw<aut,exporter=pw>aut,pi=importer?Math.min(aut,pw+tar):pw;
+   const Qd=v=>Math.max(0,(a-v)/b),Qs=v=>Math.max(0,(v-c)/d);
+   const imp=Math.max(0,Qd(pi)-Qs(pi));
+   target.innerHTML=card('Commercio internazionale e dazi: modello di paese piccolo','Il prezzo mondiale è esogeno. Con libero scambio, un prezzo mondiale inferiore a quello di autarchia genera importazioni; se superiore, esportazioni. La differenza tra domanda e offerta nazionali misura il commercio netto.',`Prezzo di autarchia ${f(aut)}; prezzo mondiale ${f(pw)}; prezzo interno ${f(pi)}. ${importer?'Paese importatore':exporter?'Paese esportatore':'Nessuno scambio netto'}; importazioni dopo la politica: ${f(imp)}.`, `<h3>Chi beneficia del commercio?</h3><p>Se il paese importa, il prezzo interno scende rispetto all'autarchia: i consumatori guadagnano e i produttori nazionali perdono. Se esporta, avviene il contrario. Nel modello concorrenziale di paese piccolo, il guadagno aggregato dello scambio è positivo rispetto all'autarchia.</p><h3>Effetto del dazio</h3><p>Un dazio sulle importazioni aumenta il prezzo interno fino al massimo del prezzo di autarchia, riduce le importazioni, favorisce i produttori nazionali e danneggia i consumatori. Genera gettito solo sulle unità ancora importate; crea perdita secca per distorsioni di consumo e produzione. Se è proibitivo, le importazioni si annullano.</p><h3>Ipotesi</h3><p>Non sono modellati potere di mercato internazionale, ritorsioni, variazioni del prezzo mondiale, costi di trasporto o distribuzione interna degli effetti per gruppi sociali.</p>${common}`);
+  }
+ }
+ function ppf(){const target=$('ppfGuide');if(!target)return;const exchange=!$('ppfExchangePane')?.hidden;
+ if(exchange){target.innerHTML=card('Specializzazione e scambio: produrre non è consumare','Il vantaggio comparato dipende dai costi opportunità relativi, non dalla produttività assoluta. Specializzandosi e scambiando a un prezzo relativo compreso fra i costi opportunità dei due paesi, entrambi possono accedere a panieri di consumo esterni alle rispettive FPP.','La retta delle possibilità di consumo passa per il punto di produzione specializzata e ha pendenza pari al prezzo relativo internazionale (con segno negativo).',`<h3>Leggere i punti del grafico</h3><ul><li><b>Produzione:</b> rimane sulla FPP del paese.</li><li><b>Consumo dopo lo scambio:</b> può trovarsi fuori dalla FPP grazie alle importazioni finanziate dalle esportazioni.</li><li><b>Riferimento in autarchia:</b> è un confronto grafico, non necessariamente la scelta ottimale dei consumatori.</li></ul><p>Un paniere esterno alla FPP non è automaticamente preferito da tutti: per parlare di aumento del benessere individuale occorrono preferenze e una distribuzione dei benefici. Nel modello illustrato si mostrano possibilità di consumo, non una funzione di utilità.</p>`)}else{target.innerHTML=card('Frontiera produttiva: risorse, tecnologia e benessere','La FPP indica le combinazioni massime di due beni ottenibili con risorse e tecnologia date. Un punto interno segnala capacità produttiva non pienamente utilizzata; un punto esterno non è realizzabile con le dotazioni correnti.','Due modi per espandere le possibilità di produzione: (1) aumentare le risorse disponibili; (2) migliorare tecnologia e produttività. Entrambi possono rendere accessibili panieri con più quantità di X e Y.',`<h3>Che cosa mostra il grafico?</h3><ul><li><b>Più risorse utilizzabili per entrambi i beni:</b> la frontiera si espande verso l'esterno.</li><li><b>Progresso tecnico in un solo settore:</b> la frontiera può ruotare, aumentando soprattutto la produzione massima di quel bene.</li><li><b>FPP lineare:</b> costo opportunità costante.</li><li><b>FPP concava:</b> costo opportunità crescente: per produrre più X si rinuncia a quantità via via maggiori di Y.</li></ul><h3>Benessere e limiti</h3><p>Con beni desiderabili, un paniere che contiene più di entrambi i beni è preferibile secondo l'ipotesi di non sazietà. L'espansione della FPP aumenta le possibilità di scelta, ma non garantisce da sola che tutti consumino di più: contano allocazione, distribuzione e preferenze.</p>`)}
+ }
+ function refresh(){try{market();ppf()}catch(err){console.warn('Guida didattica:',err)}}
+ document.addEventListener('input',refresh);document.addEventListener('change',refresh);document.addEventListener('click',()=>requestAnimationFrame(refresh));refresh();
+})();
+</script><section id="gameModule" class="epx-shell" hidden aria-label="Laboratorio di teoria dei giochi">
+ <div class="epx-heading"><h1>Teoria dei giochi · Strategie, equilibrio e cooperazione</h1><p>Lezione 11 · Due giocatori, due strategie ciascuno, scelte simultanee e payoff modificabili.</p><div class="epx-top-actions"><button type="button" id="gTopReveal">Nascondi analisi</button><button type="button" id="gProjectExit">Esci da proiezione</button></div></div>
+ <div class="epx-grid">
+  <aside class="epx-sidebar">
+   <div class="epx-panel"><h2>1. Scegli un gioco</h2>
+    <div class="epx-control"><label for="gPreset">Scenario</label><select id="gPreset"><option value="prisoner">Dilemma del prigioniero</option><option value="oligopoly">Oligopolio: collusione e guerra dei prezzi</option><option value="stag">Caccia al cervo (assicurazione reciproca)</option><option value="chicken">Gioco del pollo</option><option value="coordination">Coordinamento</option><option value="matching">Testa o croce (nessun Nash puro)</option><option value="custom">Personalizzato</option></select></div>
+    <p class="epx-small">I payoff sono numeri illustrativi. I giocatori scelgono simultaneamente e conoscono la matrice.</p>
+    <div class="epx-control"><label for="gRowName">Nome giocatore delle righe</label><input type="text" maxlength="24" id="gRowName" value="Giocatore A"></div>
+    <div class="epx-control"><label for="gColName">Nome giocatore delle colonne</label><input type="text" maxlength="24" id="gColName" value="Giocatore B"></div>
+    <div class="g-strategy-grid">
+     <div class="epx-control"><label for="gR0">A: strategia 1</label><input type="text" maxlength="22" id="gR0" value="Coopera"></div>
+     <div class="epx-control"><label for="gR1">A: strategia 2</label><input type="text" maxlength="22" id="gR1" value="Defeziona"></div>
+     <div class="epx-control"><label for="gC0">B: strategia 1</label><input type="text" maxlength="22" id="gC0" value="Coopera"></div>
+     <div class="epx-control"><label for="gC1">B: strategia 2</label><input type="text" maxlength="22" id="gC1" value="Defeziona"></div>
+    </div>
+    <div class="epx-buttons"><button type="button" id="gReset">Ripristina scenario</button><button type="button" id="gReveal" class="epx-primary">Nascondi analisi</button><button type="button" id="gProject">Proiezione</button></div>
+   </div>
+   <div class="epx-panel epx-guide"><h2>Come leggere la matrice</h2><p>In ciascuna casella il <b>primo numero (blu)</b> è il payoff di A e il <b>secondo (rosso)</b> è quello di B.</p><p>Le <b>migliori risposte</b> sono le strategie che massimizzano il payoff dato ciò che sceglie l'avversario. Una strategia <b>dominante</b> è almeno altrettanto vantaggiosa per tutte le scelte dell'altro e strettamente migliore in almeno un caso (debole), oppure sempre migliore (stretta).</p><p>Un <b>equilibrio di Nash</b> è una combinazione in cui nessuno trae vantaggio dal cambiare strategia unilateralmente.</p><details><summary>Cooperazione e collusione non sono sinonimi</summary><p>Nel dilemma del prigioniero la cooperazione può migliorare gli esiti di entrambi. Nell'oligopolio, una strategia collusiva massimizza il profitto congiunto delle imprese, ma può danneggiare i consumatori e sollevare problemi antitrust. La somma dei payoff non è automaticamente benessere sociale.</p></details></div>
+  </aside>
+  <div class="epx-main">
+   <div class="epx-panel" id="gMatrixPanel"><div class="epx-row"><h2>2. Matrice dei payoff</h2><span class="pill">Modifica ogni casella</span></div>
+     <div class="epx-tablewrap"><table class="epx-payoff" aria-label="Matrice di payoff modificabile" id="gTable"><thead><tr><th id="gCorner">A ↓ · B →</th><th id="gCol0Name">Coopera</th><th id="gCol1Name">Defeziona</th></tr></thead><tbody>
+     <tr><th id="gRow0Name">Coopera</th><td id="gCell00" class="g-cell"><div class="g-celltitle">A / B</div><div class="g-values"><label class="g-a">A <input id="gA00" aria-label="Payoff A, riga 1 colonna 1" type="number" step="0.5" value="3"></label><label class="g-b">B <input id="gB00" aria-label="Payoff B, riga 1 colonna 1" type="number" step="0.5" value="3"></label></div><span class="g-mark" id="gMark00"></span></td><td id="gCell01" class="g-cell"><div class="g-celltitle">A / B</div><div class="g-values"><label class="g-a">A <input id="gA01" aria-label="Payoff A, riga 1 colonna 2" type="number" step="0.5" value="0"></label><label class="g-b">B <input id="gB01" aria-label="Payoff B, riga 1 colonna 2" type="number" step="0.5" value="5"></label></div><span class="g-mark" id="gMark01"></span></td></tr>
+     <tr><th id="gRow1Name">Defeziona</th><td id="gCell10" class="g-cell"><div class="g-celltitle">A / B</div><div class="g-values"><label class="g-a">A <input id="gA10" aria-label="Payoff A, riga 2 colonna 1" type="number" step="0.5" value="5"></label><label class="g-b">B <input id="gB10" aria-label="Payoff B, riga 2 colonna 1" type="number" step="0.5" value="0"></label></div><span class="g-mark" id="gMark10"></span></td><td id="gCell11" class="g-cell"><div class="g-celltitle">A / B</div><div class="g-values"><label class="g-a">A <input id="gA11" aria-label="Payoff A, riga 2 colonna 2" type="number" step="0.5" value="1"></label><label class="g-b">B <input id="gB11" aria-label="Payoff B, riga 2 colonna 2" type="number" step="0.5" value="1"></label></div><span class="g-mark" id="gMark11"></span></td></tr>
+     </tbody></table></div>
+     <div class="epx-key g-analysis"><span><i class="epx-swatch" style="--sw:#2563eb"></i>Migliore risposta di A (bordo sinistro)</span><span><i class="epx-swatch" style="--sw:#dc2626"></i>Migliore risposta di B (bordo superiore)</span><span><i class="epx-swatch" style="--sw:#15803d"></i>Equilibrio di Nash puro (verde)</span><span><i class="epx-swatch" style="--sw:#a855f7"></i>Payoff congiunto massimo (viola)</span></div>
+   </div>
+   <div class="g-analysis">
+    <div class="epx-metrics" id="gMetrics" aria-live="polite"></div>
+    <div class="epx-panel"><h2>3. Migliori risposte ed equilibri</h2><div id="gResult"></div><div id="gMixed" class="g-status"></div></div>
+    <div class="epx-panel"><h2>4. Confronto tra equilibrio e cooperazione</h2><div id="gBars"></div><p id="gCooperation" class="epx-instruct"></p><p class="epx-small">Per l'oligopolio, i payoff rappresentano profitti monetari ipotetici; negli altri giochi la loro somma è soltanto indicativa, a meno che le utilità siano confrontabili tra persone.</p></div>
+    <div class="epx-panel epx-guide"><h2>Domande per la lezione</h2><p>Qual è la migliore risposta di ciascun giocatore? Cambierebbe la tua risposta se l'altro scegliesse l'altra strategia? Perché l'esito che massimizza il payoff complessivo non coincide sempre con l'equilibrio di Nash?</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+<section id="inequalityModule" class="epx-shell" hidden aria-label="Laboratorio sulla disuguaglianza">
+ <div class="epx-heading"><h1>Disuguaglianza · Curva di Lorenz, Gini e redistribuzione</h1><p>Lezione 14 · Dieci famiglie con redditi individuali modificabili, imposte progressive e trasferimenti pubblici.</p><div class="epx-top-actions"><button type="button" id="lTopReveal">Nascondi risultati</button><button type="button" id="lProjectExit">Esci da proiezione</button></div></div>
+ <div class="epx-grid">
+  <aside class="epx-sidebar">
+   <div class="epx-panel"><h2>1. Distribuzione iniziale</h2><div class="epx-control"><label for="lPreset">Scenario</label><select id="lPreset"><option value="moderate">Distribuzione moderata</option><option value="equal">Redditi uguali</option><option value="unequal">Disuguaglianza elevata</option><option value="custom">Personalizzato</option></select></div><p class="epx-small">Ogni riga rappresenta una famiglia dello stesso peso demografico. Inserisci redditi non negativi.</p><div id="lIncomes" class="l-income-grid"></div><div class="epx-buttons"><button type="button" id="lReset">Ripristina</button><button type="button" id="lReveal" class="epx-primary">Nascondi risultati</button><button type="button" id="lProject">Proiezione</button></div></div>
+   <div class="epx-panel"><h2>2. Imposte e trasferimenti</h2>
+    <div class="epx-control"><div class="epx-row"><label for="lTaxRate">Aliquota sul reddito oltre la soglia</label><output id="lTaxRateOut">25%</output></div><input type="range" id="lTaxRate" min="0" max="80" step="1" value="25"></div>
+    <div class="epx-control"><div class="epx-row"><label for="lThreshold">Soglia esente</label><output id="lThresholdOut">30</output></div><input type="range" id="lThreshold" min="0" max="250" step="5" value="30"></div>
+    <div class="epx-control"><div class="epx-row"><label for="lTransferShare">Quota del gettito redistribuita</label><output id="lTransferShareOut">100%</output></div><input type="range" id="lTransferShare" min="0" max="100" step="5" value="100"></div>
+    <div class="epx-control"><label for="lTransferType">Destinatari dei trasferimenti</label><select id="lTransferType"><option value="all">Stessa somma a tutte le famiglie</option><option value="bottom5">Solo alle 5 famiglie inizialmente più povere</option><option value="bottom3">Solo alle 3 famiglie inizialmente più povere</option></select></div>
+    <p class="epx-small">Imposta: aliquota × max(0, reddito − soglia). Il gettito redistribuito è ripartito in quote uguali tra i destinatari. La parte residua rimane allo Stato.</p>
+   </div>
+   <div class="epx-panel epx-guide"><h2>Come leggere l'indice</h2><p>La curva di Lorenz rappresenta la quota cumulata di reddito detenuta dalla quota cumulata di famiglie ordinate per reddito crescente.</p><p><b>Gini = 1 − 2 × area sotto la Lorenz.</b> Assume valori da 0 (redditi identici) a un valore prossimo a 1 (massima concentrazione, per popolazioni numerose).</p><p class="epx-small">Per dieci famiglie, il massimo teorico del Gini, con reddito positivo solo per una famiglia, è 0,9. Questo modello non misura la disuguaglianza di opportunità e non include risposte comportamentali alle imposte.</p></div>
+  </aside>
+  <div class="epx-main">
+   <div class="epx-panel"><div class="epx-row"><h2>3. Curva di Lorenz</h2><span class="pill">Calcolo in tempo reale</span></div><div id="lChart"></div><div class="epx-key"><span><i class="epx-swatch" style="--sw:#64748b"></i>Perfetta uguaglianza</span><span><i class="epx-swatch" style="--sw:#2563eb"></i>Prima delle politiche</span><span><i class="epx-swatch" style="--sw:#15803d"></i>Dopo imposte e trasferimenti</span></div></div>
+   <div class="l-analysis">
+    <div id="lMetrics" class="epx-metrics" aria-live="polite"></div>
+    <div class="epx-panel"><h2>4. Redditi e intervento pubblico</h2><p id="lExplanation" class="epx-instruct"></p><div class="epx-tablewrap"><table id="lResultsTable"></table></div></div>
+    <div class="epx-panel epx-guide"><h2>Interpretazione e limiti</h2><div id="lTeaching"></div><details><summary>Ipotesi del modello</summary><p>Dieci famiglie con uguale peso; redditi nominali non negativi. Le imposte sono calcolate sui redditi originari; i trasferimenti non modificano lavoro, risparmio o evasione. Il modello distingue le risorse rimaste alle famiglie da quelle trattenute dallo Stato: il Gini post-politica riguarda esclusivamente i redditi disponibili delle famiglie.</p><p>Una riduzione dell'indice di Gini non implica automaticamente un miglioramento del benessere complessivo: contano anche incentivi, servizi pubblici, bisogni e altri aspetti distributivi.</p></details></div>
+   </div>
+  </div>
+ </div>
+</section>
+<section id="powerModule" hidden aria-label="Potere di mercato">
+<div class="mp-shell">
+  <div class="mp-head"><div><h1>Potere di mercato e discriminazione di prezzo</h1><p>Lezioni 10–11 · Monopolio, oligopolio, concorrenza monopolistica e prezzi differenziati</p></div>
+  <div class="mp-actions"><button type="button" id="mpReveal" class="mp-primary">Nascondi risultati</button><button type="button" id="mpProject">Proiezione</button><button type="button" id="mpReset">Ripristina questa scheda</button></div></div>
+  <div class="mp-tabs" role="tablist" aria-label="Strutture di mercato">
+    <button type="button" data-mp-tab="monopoly" class="active" role="tab" aria-selected="true">Monopolio</button>
+    <button type="button" data-mp-tab="oligopoly" role="tab" aria-selected="false">Oligopolio</button>
+    <button type="button" data-mp-tab="monopolistic" role="tab" aria-selected="false">Concorrenza monopolistica</button>
+    <button type="button" data-mp-tab="discrimination" role="tab" aria-selected="false">Discriminazione di prezzo</button>
+  </div>
+  <div class="mp-layout">
+    <aside class="mp-sidebar">
+      <div data-mp-controls="monopoly"><h2>1. Impresa monopolista</h2><div class="mp-param">Domanda P = a − bQ<br>CMg = c + dQ<br>CT = F + cQ + dQ²/2</div>
+        <div class="mp-ctl"><label for="mpA">Intercetta domanda a <output id="mpAout">100</output></label><input type="range" id="mpA" min="40" max="180" step="1" value="100"></div>
+        <div class="mp-ctl"><label for="mpB">Pendenza domanda b <output id="mpBout">1</output></label><input type="range" id="mpB" min="0.5" max="4" step="0.1" value="1"></div>
+        <div class="mp-ctl"><label for="mpC">Intercetta CMg c <output id="mpCout">20</output></label><input type="range" id="mpC" min="0" max="90" step="1" value="20"></div>
+        <div class="mp-ctl"><label for="mpD">Pendenza CMg d <output id="mpDout">1</output></label><input type="range" id="mpD" min="0" max="3" step="0.1" value="1"></div>
+        <div class="mp-ctl"><label for="mpF">Costo fisso F <output id="mpFout">150</output></label><input type="range" id="mpF" min="0" max="600" step="10" value="150"></div>
+      </div>
+      <div data-mp-controls="oligopoly" hidden><h2>2. Oligopolio</h2><div class="mp-param">Domanda P = a − bQ<br>Costo marginale identico = c</div>
+        <div class="mp-ctl"><label for="olA">Intercetta a <output id="olAout">120</output></label><input type="range" id="olA" min="50" max="200" step="1" value="120"></div>
+        <div class="mp-ctl"><label for="olB">Pendenza b <output id="olBout">1</output></label><input type="range" id="olB" min="0.5" max="4" step="0.1" value="1"></div>
+        <div class="mp-ctl"><label for="olC">Costo marginale c <output id="olCout">20</output></label><input type="range" id="olC" min="0" max="90" step="1" value="20"></div>
+        <div class="mp-ctl"><label for="olN">Numero imprese n <output id="olNout">2</output></label><input type="range" id="olN" min="2" max="8" step="1" value="2"></div>
+        <div class="mp-ctl"><label for="olMode">Comportamento</label><select id="olMode"><option value="cournot">Cournot: competizione sulle quantità</option><option value="bertrand">Bertrand: competizione sui prezzi</option><option value="cartel">Cartello: massimizzazione congiunta</option></select></div>
+        <p class="mp-note">Imprese simmetriche, prodotto omogeneo, costo marginale costante, assenza di vincoli di capacità. Nel caso Bertrand si assumono almeno due imprese.</p>
+      </div>
+      <div data-mp-controls="monopolistic" hidden><h2>3. Concorrenza monopolistica</h2><div class="mp-param">Domanda di impresa P = a − bq<br>CT = F + cq + dq²/2</div>
+        <div class="mp-ctl"><label for="cmA">Intercetta domanda breve periodo <output id="cmAout">110</output></label><input type="range" id="cmA" min="40" max="180" step="1" value="110"></div>
+        <div class="mp-ctl"><label for="cmB">Pendenza domanda <output id="cmBout">1</output></label><input type="range" id="cmB" min="0.5" max="4" step="0.1" value="1"></div>
+        <div class="mp-ctl"><label for="cmC">Intercetta CMg <output id="cmCout">12</output></label><input type="range" id="cmC" min="0" max="60" step="1" value="12"></div>
+        <div class="mp-ctl"><label for="cmD">Pendenza CMg <output id="cmDout">1</output></label><input type="range" id="cmD" min="0.1" max="3" step="0.1" value="1"></div>
+        <div class="mp-ctl"><label for="cmF">Costo fisso <output id="cmFout">200</output></label><input type="range" id="cmF" min="20" max="800" step="10" value="200"></div>
+        <div class="mp-ctl"><label for="cmEntry">Aggiustamento verso il lungo periodo <output id="cmEntryout">0%</output></label><input type="range" id="cmEntry" min="0" max="100" step="1" value="0"></div>
+        <p class="mp-note">L'ingresso e l'uscita sono simulati come spostamento parallelo della domanda della singola impresa fino alla tangenza con il costo medio totale: è un modello stilizzato.</p>
+      </div>
+      <div data-mp-controls="discrimination" hidden><h2>4. Discriminazione di prezzo</h2>
+        <div class="mp-ctl"><label for="pdMode">Tipo di confronto</label><select id="pdMode"><option value="first">Primo grado: prezzo unico vs perfetta discriminazione</option><option value="second">Secondo grado: tariffa in due parti</option><option value="third">Terzo grado: due segmenti separati</option></select></div>
+        <div data-pd-first><div class="mp-param">Domanda P = a − bQ<br>CMg = c (costante)</div>
+          <div class="mp-ctl"><label for="pdA">Intercetta domanda <output id="pdAout">100</output></label><input type="range" id="pdA" min="50" max="180" step="1" value="100"></div>
+          <div class="mp-ctl"><label for="pdB">Pendenza domanda <output id="pdBout">1</output></label><input type="range" id="pdB" min="0.5" max="4" step="0.1" value="1"></div>
+          <div class="mp-ctl"><label for="pdC">Costo marginale <output id="pdCout">20</output></label><input type="range" id="pdC" min="0" max="90" step="1" value="20"></div>
+          <div data-pd-second hidden>
+            <p class="mp-note">Tariffa in due parti: un prezzo per unità e un costo fisso di accesso. Consumatori identici con possibilità di non acquistare.</p>
+            <div class="mp-ctl"><label for="pdUnit">Prezzo per unità <output id="pdUnitout">35</output></label><input type="range" id="pdUnit" min="0" max="180" step="1" value="35"></div>
+            <div class="mp-ctl"><label for="pdFee">Tariffa fissa di accesso <output id="pdFeeout">1000</output></label><input type="range" id="pdFee" min="0" max="3000" step="10" value="1000"></div>
+            <div class="mp-ctl"><label for="pdUsers">Consumatori identici <output id="pdUsersout">1</output></label><input type="range" id="pdUsers" min="1" max="10" step="1" value="1"></div>
+          </div>
+        </div>
+        <div data-pd-third hidden><div class="mp-param">P₁ = a₁ − b₁q₁<br>P₂ = a₂ − b₂q₂<br>CMg comune = c</div>
+          <div class="mp-ctl"><label for="pdA1">Intercetta segmento 1 <output id="pdA1out">120</output></label><input type="range" id="pdA1" min="40" max="180" step="1" value="120"></div>
+          <div class="mp-ctl"><label for="pdB1">Pendenza segmento 1 <output id="pdB1out">2</output></label><input type="range" id="pdB1" min="0.5" max="5" step="0.1" value="2"></div>
+          <div class="mp-ctl"><label for="pdA2">Intercetta segmento 2 <output id="pdA2out">80</output></label><input type="range" id="pdA2" min="40" max="180" step="1" value="80"></div>
+          <div class="mp-ctl"><label for="pdB2">Pendenza segmento 2 <output id="pdB2out">1</output></label><input type="range" id="pdB2" min="0.5" max="5" step="0.1" value="1"></div>
+          <div class="mp-ctl"><label for="pdC3">Costo marginale comune <output id="pdC3out">20</output></label><input type="range" id="pdC3" min="0" max="90" step="1" value="20"></div>
+        </div>
+        <p class="mp-note" id="pdSpecificNote">Primo grado: il produttore conosce ogni disponibilità marginale a pagare e impedisce la rivendita.</p>
+      </div>
+      <div class="mp-guide"><b>Domanda agli studenti</b><p id="mpQuestion">Perché il monopolista sceglie la quantità in cui RMg = CMg e determina poi il prezzo sulla domanda?</p></div>
+    </aside>
+    <main class="mp-panels">
+      <div class="mp-panel"><h2 id="mpChartTitle">Ricavo marginale, costo marginale e domanda</h2><div class="mp-chart" id="mpChart" role="img" aria-label="Grafico interattivo del potere di mercato"></div><div class="mp-key" id="mpLegend"></div></div>
+      <div class="mp-panel mp-hidden-answer"><div class="mp-metrics" id="mpMetrics" aria-live="polite"></div><h2>Confronto degli esiti</h2><div class="mp-table-scroll" id="mpTable"></div></div>
+      <div class="mp-panel mp-explanation mp-hidden-answer"><h2>Spiegazione economica</h2><div id="mpExplanation" aria-live="polite"></div><details><summary>Ipotesi e limiti del modello</summary><p id="mpAssumptions" class="mp-note"></p></details></div>
+    </main>
+  </div>
+</div>
+</section>
+
+
+<script>
+(function () {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const it = (value, digits=2) => Number.isFinite(value) ? Number(value).toLocaleString('it-IT',{minimumFractionDigits:digits,maximumFractionDigits:digits}) : 'n.d.';
+  const eq = (x,y) => Math.abs(x-y)<1e-8;
+
+  /* Moduli del laboratorio: i due moduli storici mantengono i propri script. */
+  function chooseModule(moduleName) {
+    for (const [name,id] of [['market','marketModule'],['ppf','ppfModule'],['game','gameModule'],['inequality','inequalityModule'],['power','powerModule']]) {
+      $(id).hidden = name !== moduleName;
+    }
+    for (const [name,id] of [['market','navMarket'],['ppf','navPpf'],['game','navGame'],['inequality','navInequality'],['power','navPower']]) {
+      $(id).classList.toggle('active',name===moduleName);
+      $(id).setAttribute('aria-current',name===moduleName?'page':'false');
+    }
+    $('ppfGuide').hidden=moduleName!=='ppf';
+    if (moduleName==='game') updateGame();
+    if (moduleName==='inequality') updateInequality();
+    if (moduleName==='power') window.EPLabPowerUpdate?.();
+  }
+  $('navGame').addEventListener('click',()=>chooseModule('game'));
+  $('navInequality').addEventListener('click',()=>chooseModule('inequality'));
+  $('navMarket').addEventListener('click',()=>chooseModule('market'));
+  $('navPpf').addEventListener('click',()=>chooseModule('ppf'));
+  $('navPower').addEventListener('click',()=>chooseModule('power'));
+
+  /* Gioco a due giocatori e due strategie, payoff modificabili. */
+  const presets={
+    prisoner:{row:['Coopera','Defeziona'],col:['Coopera','Defeziona'],a:[[3,0],[5,1]],b:[[3,5],[0,1]],name:['Giocatore A','Giocatore B']},
+    oligopoly:{row:['Prezzo alto','Prezzo basso'],col:['Prezzo alto','Prezzo basso'],a:[[8,1],[12,4]],b:[[8,12],[1,4]],name:['Impresa A','Impresa B']},
+    stag:{row:['Cervo','Lepre'],col:['Cervo','Lepre'],a:[[4,0],[3,3]],b:[[4,3],[0,3]],name:['Giocatore A','Giocatore B']},
+    chicken:{row:['Cede','Insiste'],col:['Cede','Insiste'],a:[[3,1],[4,0]],b:[[3,4],[1,0]],name:['Giocatore A','Giocatore B']},
+    coordination:{row:['Standard 1','Standard 2'],col:['Standard 1','Standard 2'],a:[[4,0],[0,2]],b:[[4,0],[0,2]],name:['Giocatore A','Giocatore B']},
+    matching:{row:['Testa','Croce'],col:['Testa','Croce'],a:[[1,-1],[-1,1]],b:[[-1,1],[1,-1]],name:['Giocatore A','Giocatore B']}
+  };
+  function analyzeGame(A,B){
+    const brA=Array.from({length:2},()=>[false,false]);
+    const brB=Array.from({length:2},()=>[false,false]);
+    for(let j=0;j<2;j++){let m=Math.max(A[0][j],A[1][j]);for(let i=0;i<2;i++)brA[i][j]=eq(A[i][j],m);}
+    for(let i=0;i<2;i++){let m=Math.max(B[i][0],B[i][1]);for(let j=0;j<2;j++)brB[i][j]=eq(B[i][j],m);}
+    const pure=[];let bestJoint=-Infinity, joint=[];
+    for(let i=0;i<2;i++)for(let j=0;j<2;j++){
+      if(brA[i][j]&&brB[i][j])pure.push([i,j]);
+      const sum=A[i][j]+B[i][j];
+      if(sum>bestJoint+1e-8){bestJoint=sum;joint=[[i,j]];}else if(eq(sum,bestJoint))joint.push([i,j]);
+    }
+    const dominance = (differences) => {
+      if(differences.every(x=>x>1e-8))return {index:0,type:'strettamente dominante'};
+      if(differences.every(x=>x>=-1e-8)&&differences.some(x=>x>1e-8))return {index:0,type:'debolmente dominante'};
+      if(differences.every(x=>x<-1e-8))return {index:1,type:'strettamente dominante'};
+      if(differences.every(x=>x<=1e-8)&&differences.some(x=>x<-1e-8))return {index:1,type:'debolmente dominante'};
+      return null;
+    };
+    const dominantA=dominance([A[0][0]-A[1][0],A[0][1]-A[1][1]]);
+    const dominantB=dominance([B[0][0]-B[0][1],B[1][0]-B[1][1]]);
+    // In un equilibrio interno, ciascun giocatore rende indifferente l'avversario.
+    const denP=B[0][0]-B[0][1]-B[1][0]+B[1][1];
+    const denQ=A[0][0]-A[1][0]-A[0][1]+A[1][1];
+    const mixed=Math.abs(denP)>1e-9&&Math.abs(denQ)>1e-9?
+      {p:(B[1][1]-B[1][0])/denP,q:(A[1][1]-A[0][1])/denQ}:null;
+    const interior=mixed&&mixed.p>1e-9&&mixed.p<1-1e-9&&mixed.q>1e-9&&mixed.q<1-1e-9?mixed:null;
+    const efficient=[];
+    for(let i=0;i<2;i++)for(let j=0;j<2;j++){
+      let dominated=false;
+      for(let k=0;k<2;k++)for(let z=0;z<2;z++){
+        if(A[k][z]>=A[i][j]-1e-9&&B[k][z]>=B[i][j]-1e-9&&(A[k][z]>A[i][j]+1e-9||B[k][z]>B[i][j]+1e-9))dominated=true;
+      }
+      if(!dominated)efficient.push([i,j]);
+    }
+    return {brA,brB,pure,joint,bestJoint,dominantA,dominantB,interior,efficient};
+  }
+  function applyGamePreset(k){
+    if(!presets[k])return;
+    const d=presets[k];
+    $('gRowName').value=d.name[0];$('gColName').value=d.name[1];
+    ['gR0','gR1'].forEach((id,i)=>$(id).value=d.row[i]);
+    ['gC0','gC1'].forEach((id,i)=>$(id).value=d.col[i]);
+    for(let i=0;i<2;i++)for(let j=0;j<2;j++){
+      $('gA'+i+j).value=d.a[i][j];$('gB'+i+j).value=d.b[i][j];
+    }
+    updateGame();
+  }
+  let gameConcealed=false;
+  function readGame(){
+    const a=[[0,0],[0,0]],b=[[0,0],[0,0]];
+    for(let i=0;i<2;i++)for(let j=0;j<2;j++){
+      a[i][j]=Number($('gA'+i+j).value)||0;b[i][j]=Number($('gB'+i+j).value)||0;
+    }
+    return {a,b,r:[$('gR0').value||'Strategia 1',$('gR1').value||'Strategia 2'],c:[$('gC0').value||'Strategia 1',$('gC1').value||'Strategia 2'],name:[$('gRowName').value||'A',$('gColName').value||'B']};
+  }
+  function renderGameBars(A,B,res){
+    const totals=[[A[0][0]+B[0][0],A[0][1]+B[0][1]],[A[1][0]+B[1][0],A[1][1]+B[1][1]]];
+    const values=totals.flat(),min=Math.min(0,...values),max=Math.max(0,...values),span=Math.max(1,max-min);
+    const W=640,H=255,left=55,right=18,top=22,bottom=48,bH=H-top-bottom;
+    const Y=v=>top+(max-v)/span*bH,baseline=Y(0);
+    let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Somme dei payoff per le quattro combinazioni strategiche"><rect width="${W}" height="${H}" fill="#fff"/>`;
+    s+=`<line x1="${left}" y1="${baseline}" x2="${W-right}" y2="${baseline}" stroke="#64748b" stroke-width="2"/>`;
+    for(let i=0;i<2;i++)for(let j=0;j<2;j++){
+      const v=totals[i][j],x=87+(i*2+j)*139,width=74,y=Y(v),height=Math.max(1,Math.abs(baseline-y)),nash=res.pure.some(([a,b])=>a===i&&b===j),joint=res.joint.some(([a,b])=>a===i&&b===j);
+      const color=nash?'#15803d':joint?'#7c3aed':'#94a3b8';
+      s+=`<rect x="${x}" y="${Math.min(y,baseline)}" width="${width}" height="${height}" rx="4" fill="${color}" opacity=".9"/><text x="${x+width/2}" y="${v>=0?Math.max(14,y-7):Math.min(H-43,y+19)}" fill="#334155" font-size="15" font-weight="600" text-anchor="middle">${it(v,1)}</text><text x="${x+width/2}" y="${H-20}" fill="#374151" font-size="13" text-anchor="middle">${i+1}, ${j+1}</text>`;
+    }
+    s+=`<text x="${W/2}" y="${H-3}" fill="#52637b" font-size="11" text-anchor="middle">Riga, colonna (1 o 2)</text></svg>`;
+    $('gBars').innerHTML=s;
+  }
+  function updateGame(){
+    const {a,b,r,c,name}=readGame(),res=analyzeGame(a,b);
+    $('gCorner').textContent=name[0]+' ↓ · '+name[1]+' →';
+    for(let i=0;i<2;i++){$('gRow'+i+'Name').textContent=r[i];$('gCol'+i+'Name').textContent=c[i];}
+    for(let i=0;i<2;i++)for(let j=0;j<2;j++){
+      const cell=$('gCell'+i+j),nash=res.pure.some(x=>x[0]===i&&x[1]===j),joint=res.joint.some(x=>x[0]===i&&x[1]===j);
+      cell.className='g-cell'+(res.brA[i][j]?' g-best-a':'')+(res.brB[i][j]?' g-best-b':'')+(nash?' g-nash':'')+(joint?' g-total':'');
+      $('gMark'+i+j).textContent=nash?'Nash'+(joint?' · max somma':''):joint?'Max somma':'';
+    }
+    $('gMetrics').innerHTML=`<div class="epx-metric"><small>Equilibri di Nash puri</small><strong>${res.pure.length}</strong></div><div class="epx-metric"><small>Payoff congiunto massimo</small><strong>${it(res.bestJoint)}</strong></div><div class="epx-metric"><small>Equilibrio misto interno</small><strong>${res.interior?'Sì':'Non trovato'}</strong></div>`;
+    const dom=(item,names)=>item?esc(names[item.index])+' ('+item.type+')':'nessuna strategia dominante';
+    const cellName=([i,j])=>esc(r[i])+' / '+esc(c[j]);
+    $('gResult').innerHTML=`<div class="g-status"><strong>Strategie dominanti</strong>${esc(name[0])}: ${dom(res.dominantA,r)}.<br>${esc(name[1])}: ${dom(res.dominantB,c)}.</div>`+
+      `<div class="g-status"><strong>Equilibri di Nash in strategie pure</strong>${res.pure.length?res.pure.map(cellName).join('; '):'Nessuno. Un equilibrio può esistere in strategie miste.'}</div>`+
+      `<div class="g-status"><strong>Esiti che massimizzano la somma dei payoff</strong>${res.joint.map(cellName).join('; ')} (somma: ${it(res.bestJoint)}).</div>`+
+      `<div class="g-status"><strong>Esiti Pareto-efficienti fra le quattro caselle</strong>${res.efficient.map(cellName).join('; ')}.</div>`;
+    $('gMixed').innerHTML=res.interior?`<strong>Equilibrio misto interno</strong>${esc(name[0])} sceglie ${esc(r[0])} con probabilità ${it(res.interior.p*100,1)}%; ${esc(name[1])} sceglie ${esc(c[0])} con probabilità ${it(res.interior.q*100,1)}%. Questo equilibrio può coesistere con equilibri puri.`:
+      '<strong>Strategie miste</strong>Non è stato trovato un equilibrio completamente misto interno. In casi degeneri possono esistere equilibri misti di frontiera non enumerati dal simulatore.';
+    const nashSums=res.pure.map(([i,j])=>a[i][j]+b[i][j]);
+    const chosenJoint=res.joint[0],jointA=a[chosenJoint[0]][chosenJoint[1]],jointB=b[chosenJoint[0]][chosenJoint[1]];
+    let commentary='';
+    if($('gPreset').value==='oligopoly'){
+      commentary=`Nell'oligopolio illustrato, i prezzi elevati corrispondono a un possibile esito collusivo: il profitto congiunto è ${it(res.bestJoint)}. L'incentivo individuale a ridurre il prezzo può rendere instabile l'accordo. Il maggior profitto delle imprese non equivale a maggior benessere dei consumatori.`;
+    }else if($('gPreset').value==='prisoner'){
+      commentary='Nel dilemma del prigioniero, la cooperazione reciproca può aumentare il payoff di entrambi rispetto alla defezione reciproca. Tuttavia ogni giocatore ha un incentivo a deviare quando il partner coopera.';
+    }else{
+      commentary='Un esito che massimizza la somma dei payoff non deve necessariamente essere un equilibrio di Nash né migliorare il payoff di ciascun giocatore. Confronta i due numeri di ogni casella, non soltanto la loro somma.';
+    }
+    if(res.pure.length===1)commentary+=' Nell’unico Nash puro, la somma dei payoff è '+it(nashSums[0])+', contro '+it(res.bestJoint)+' dell’esito con somma massima.';
+    else if(res.pure.length>1)commentary+=' Esistono '+res.pure.length+' equilibri puri: il confronto dipende da quale si realizza.';
+    else commentary+=' Non esiste un Nash puro; occorre analizzare le strategie miste.';
+    $('gCooperation').textContent=commentary;
+    renderGameBars(a,b,res);
+  }
+  $('gPreset').addEventListener('change',e=>applyGamePreset(e.target.value));
+  $('gReset').addEventListener('click',()=>{const k=$('gPreset').value;if(k==='custom')$('gPreset').value='prisoner';applyGamePreset($('gPreset').value);});
+  for(const id of ['gRowName','gColName','gR0','gR1','gC0','gC1'])$(''+id).addEventListener('input',()=>{$('gPreset').value='custom';updateGame();});
+  for(let i=0;i<2;i++)for(let j=0;j<2;j++)for(const pl of ['A','B']){
+    $('g'+pl+i+j).addEventListener('input',()=>{$('gPreset').value='custom';updateGame();});
+  }
+  function toggleGameReveal(){gameConcealed=!gameConcealed;$('gMatrixPanel').classList.toggle('g-concealed',gameConcealed);$('gameModule').classList.toggle('g-concealed',gameConcealed);for(const id of ['gReveal','gTopReveal'])$(id).textContent=gameConcealed?'Mostra analisi':'Nascondi analisi';}
+  function toggleGameProject(){$('gameModule').classList.toggle('g-presentation');$('gProject').textContent=$('gameModule').classList.contains('g-presentation')?'Esci da proiezione':'Proiezione';}
+  $('gReveal').addEventListener('click',toggleGameReveal);
+  $('gTopReveal').addEventListener('click',toggleGameReveal);
+  $('gProject').addEventListener('click',toggleGameProject);
+  $('gProjectExit').addEventListener('click',toggleGameProject);
+
+  /* Disuguaglianza: 10 famiglie con peso identico. Lorenz e Gini discreto. */
+  const incomePresets={moderate:[10,14,18,22,28,35,45,60,90,160],equal:[45,45,45,45,45,45,45,45,45,45],unequal:[2,3,4,6,9,15,25,50,100,350]};
+  const numValue=id=>Math.max(0,Math.min(1000000,Number($(id).value)||0));
+  function lorenz(values){
+    const a=values.map(Number).slice().sort((x,y)=>x-y),n=a.length,total=a.reduce((v,x)=>v+x,0);
+    if(total<=0)return {points:Array.from({length:n+1},(_,i)=>[i/n,i/n]),gini:null,total:0,sorted:a};
+    let cum=0;const points=[[0,0]];
+    for(let i=0;i<n;i++){cum+=a[i];points.push([(i+1)/n,cum/total]);}
+    let doubleArea=0;
+    for(let i=1;i<points.length;i++)doubleArea+=(points[i-1][1]+points[i][1])*(points[i][0]-points[i-1][0]);
+    return {points,gini:Math.max(0,Math.min(1,1-doubleArea)),total,sorted:a};
+  }
+  function redistribution(values,rate,threshold,share,kind){
+    const n=values.length,taxes=values.map(y=>Math.min(y,Math.max(0,y-threshold)*rate/100));
+    const revenue=taxes.reduce((a,b)=>a+b,0),totalTransfers=revenue*share/100,grants=Array(n).fill(0);
+    const order=values.map((value,i)=>({value,i})).sort((a,b)=>a.value-b.value||a.i-b.i);
+    const recipients=kind==='bottom3'?order.slice(0,3):kind==='bottom5'?order.slice(0,5):order;
+    const gift=recipients.length?totalTransfers/recipients.length:0;
+    recipients.forEach(x=>grants[x.i]=gift);
+    const after=values.map((y,i)=>y-taxes[i]+grants[i]);
+    return {taxes,grants,after,revenue,totalTransfers,retained:revenue-totalTransfers};
+  }
+  for(let i=0;i<10;i++){
+    const div=document.createElement('label');div.className='l-income-row';
+    const span=document.createElement('span');span.textContent='Famiglia '+(i+1);
+    const input=document.createElement('input');input.id='lIncome'+i;input.type='number';input.min='0';input.max='1000000';input.step='1';input.inputMode='numeric';input.value=incomePresets.moderate[i];input.setAttribute('aria-label','Reddito iniziale famiglia '+(i+1));
+    input.addEventListener('input',()=>{$('lPreset').value='custom';updateInequality();});
+    div.append(span,input);$('lIncomes').appendChild(div);
+  }
+  const GINI='Indice di Gini';
+  function applyIncomePreset(k){if(!incomePresets[k])return;incomePresets[k].forEach((v,i)=>$('lIncome'+i).value=v);updateInequality();}
+  $('lPreset').addEventListener('change',e=>applyIncomePreset(e.target.value));
+  $('lReset').addEventListener('click',()=>{$('lPreset').value='moderate';$('lTaxRate').value=25;$('lThreshold').value=30;$('lTransferShare').value=100;$('lTransferType').value='all';applyIncomePreset('moderate');});
+  ['lTaxRate','lThreshold','lTransferShare','lTransferType'].forEach(id=>$(id).addEventListener('input',updateInequality));
+  let inequalityConcealed=false;
+  function toggleInequalityReveal(){inequalityConcealed=!inequalityConcealed;$('inequalityModule').classList.toggle('l-concealed',inequalityConcealed);for(const id of ['lReveal','lTopReveal'])$(id).textContent=inequalityConcealed?'Mostra risultati':'Nascondi risultati';}
+  function toggleInequalityProject(){$('inequalityModule').classList.toggle('l-presentation');$('lProject').textContent=$('inequalityModule').classList.contains('l-presentation')?'Esci da proiezione':'Proiezione';}
+  $('lReveal').addEventListener('click',toggleInequalityReveal);
+  $('lTopReveal').addEventListener('click',toggleInequalityReveal);
+  $('lProject').addEventListener('click',toggleInequalityProject);
+  $('lProjectExit').addEventListener('click',toggleInequalityProject);
+  function renderLorenz(before,after){
+    const W=690,H=460,left=65,top=23,width=595,height=385,X=x=>left+width*x,Y=y=>top+height*(1-y);
+    const poly=points=>points.map(([x,y])=>X(x).toFixed(1)+','+Y(y).toFixed(1)).join(' ');
+    let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Curva di Lorenz prima e dopo la redistribuzione, con diagonale della perfetta uguaglianza"><rect width="${W}" height="${H}" fill="white"/>`;
+    for(let i=0;i<=5;i++){const x=i/5;svg+=`<line x1="${X(x)}" y1="${Y(0)}" x2="${X(x)}" y2="${Y(1)}" stroke="#e8edf4"/><line x1="${X(0)}" y1="${Y(x)}" x2="${X(1)}" y2="${Y(x)}" stroke="#e8edf4"/><text x="${X(x)}" y="${Y(0)+19}" font-size="13" text-anchor="middle" fill="#475569">${i*20}</text><text x="${X(0)-10}" y="${Y(x)+4}" font-size="13" text-anchor="end" fill="#475569">${i*20}</text>`;}
+    svg+=`<path d="M${X(0)} ${Y(1)}V${Y(0)}H${X(1)}" stroke="#334155" stroke-width="2" fill="none"/>`;
+    if(before.total>0){const path=poly(before.points);svg+=`<polygon points="${X(0)},${Y(0)} ${X(1)},${Y(1)} ${before.points.slice().reverse().map(([x,y])=>X(x)+','+Y(y)).join(' ')}" fill="#bfdbfe" opacity="0.35"/>`;
+      svg+=`<polyline points="${path}" fill="none" stroke="#2563eb" stroke-width="3.5" stroke-linejoin="round"/>`;
+    }
+    if(after.total>0)svg+=`<polyline points="${poly(after.points)}" fill="none" stroke="#15803d" stroke-width="3.5" stroke-linejoin="round"/>`;
+    svg+=`<line x1="${X(0)}" y1="${Y(0)}" x2="${X(1)}" y2="${Y(1)}" stroke="#64748b" stroke-width="2.2" stroke-dasharray="8 6"/><text x="${left+width/2}" y="${H-9}" text-anchor="middle" font-size="14" fill="#334155">Quota cumulata di famiglie (%)</text><text transform="translate(18 ${top+height/2}) rotate(-90)" text-anchor="middle" font-size="14" fill="#334155">Quota cumulata di reddito (%)</text></svg>`;
+    $('lChart').innerHTML=svg;
+  }
+  function updateInequality(){
+    const incomes=Array.from({length:10},(_,i)=>numValue('lIncome'+i));
+    const rate=Number($('lTaxRate').value),threshold=Number($('lThreshold').value),share=Number($('lTransferShare').value),kind=$('lTransferType').value;
+    $('lTaxRateOut').textContent=it(rate,0)+'%';$('lThresholdOut').textContent=it(threshold,0);$('lTransferShareOut').textContent=it(share,0)+'%';
+    const before=lorenz(incomes),policy=redistribution(incomes,rate,threshold,share,kind),after=lorenz(policy.after);
+    renderLorenz(before,after);
+    const diff=before.gini===null||after.gini===null?null:after.gini-before.gini;
+    const metrics=[[GINI+' prima',before.gini],[GINI+' dopo',after.gini],['Variazione del Gini',diff],['Gettito fiscale',policy.revenue],['Trasferimenti',policy.totalTransfers],['Gettito non redistribuito',policy.retained]];
+    $('lMetrics').innerHTML=metrics.map(([k,v])=>`<div class="epx-metric"><small>${k}</small><strong>${it(v, k.includes('Gini')?3:2)}</strong></div>`).join('');
+    let rows='<thead><tr><th>Famiglia</th><th>Reddito iniziale</th><th>Imposte</th><th>Trasferimento</th><th>Reddito disponibile</th></tr></thead><tbody>';
+    for(let i=0;i<10;i++)rows+=`<tr><td>${i+1}</td><td>${it(incomes[i])}</td><td>${it(policy.taxes[i])}</td><td>${it(policy.grants[i])}</td><td>${it(policy.after[i])}</td></tr>`;
+    rows+=`<tr><th>Totale</th><th>${it(before.total)}</th><th>${it(policy.revenue)}</th><th>${it(policy.totalTransfers)}</th><th>${it(after.total)}</th></tr></tbody>`;
+    $('lResultsTable').innerHTML=rows;
+    const preShare=before.total>0?before.sorted.slice(0,5).reduce((a,b)=>a+b,0)/before.total:null;
+    const postShare=after.total>0?after.sorted.slice(0,5).reduce((a,b)=>a+b,0)/after.total:null;
+    $('lExplanation').textContent=before.total===0?'Tutti i redditi iniziali sono nulli: il Gini non è definito e non si può tracciare una Lorenz informativa.':
+      'Prima delle politiche, il 50% delle famiglie con reddito più basso percepisce il '+it(100*preShare,1)+'% del reddito complessivo. Dopo il prelievo e i trasferimenti, la quota del 50% con i redditi disponibili più bassi è '+it(100*postShare,1)+'%. Il Gini '+(diff< -1e-7?'diminuisce':diff>1e-7?'aumenta':'rimane invariato')+' di '+it(Math.abs(diff),3)+' punti.';
+    $('lTeaching').innerHTML=`<p>Gettito raccolto: <b>${it(policy.revenue)}</b>. Alle famiglie vengono restituiti <b>${it(policy.totalTransfers)}</b>; lo Stato trattiene <b>${it(policy.retained)}</b> per altri possibili usi. Il reddito disponibile aggregato delle famiglie è ${it(after.total)}.</p>`+
+      `<p>Le famiglie sono ordinate di nuovo in base al reddito disponibile per tracciare la Lorenz dopo l'intervento. Se il reddito totale cambia, la curva confronta <b>quote di reddito</b>, non livelli assoluti.</p>`+
+      `<p>Una politica redistributiva può ridurre la disuguaglianza misurata senza necessariamente aumentare la produzione totale. Il modello non considera gli effetti sugli incentivi economici né il valore dei servizi finanziati con il gettito non trasferito.</p>`;
+  }
+  // Funzioni pure esposte per collaudi numerici indipendenti.
+  window.EPLabMath={analyzeGame,lorenz,redistribution};
+  applyGamePreset('prisoner');applyIncomePreset('moderate');chooseModule('market');
+})();
+
+</script>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const F=(v,d=2)=>Number.isFinite(v)?Number(v).toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d}):'–';
+const near=(x,y)=>Math.abs(x-y)<1e-7;
+const positive=(x)=>Math.max(0,x);
+const cur={tab:'monopoly',conceal:false,project:false};
+const defaults={mpA:100,mpB:1,mpC:20,mpD:1,mpF:150,olA:120,olB:1,olC:20,olN:2,olMode:'cournot',cmA:110,cmB:1,cmC:12,cmD:1,cmF:200,cmEntry:0,pdMode:'first',pdA:100,pdB:1,pdC:20,pdUnit:35,pdFee:1000,pdUsers:1,pdA1:120,pdB1:2,pdA2:80,pdB2:1,pdC3:20};
+const read=(id)=>Number($(id).value);
+const C={blue:'#2563eb',red:'#dc2626',green:'#15803d',purple:'#7c3aed',orange:'#d97706',dark:'#334155',grey:'#94a3b8',cyan:'#0891b2'};
+const info=(title,val)=>`<div class="mp-metric"><small>${title}</small><strong>${val}</strong></div>`;
+const key=(name,col)=>`<span><i style="--key:${col}"></i>${name}</span>`;
+function monopoly(a,b,c,d,f){
+ const q=positive((a-c)/(2*b+d)),p=q>0?a-b*q:null,mc=c+d*q,atc=q>0?f/q+c+d*q/2:null;
+ const qc=positive((a-c)/(b+d)),pc=qc>0?a-b*qc:null;
+ const cs=b*q*q/2,ps=q>0?(p-c)*q-d*q*q/2:0;
+ const csEff=b*qc*qc/2,psEff=(pc===null?0:(pc-c)*qc-d*qc*qc/2);
+ const w=cs+ps,eff=csEff+psEff,dwl=Math.max(0,eff-w);
+ const eta=q>0&&p>0?-(p/(b*q)):null;
+ return {q,p,mc,atc,qc,pc,cs,ps,profit:ps-f,dwl,eff,eta,lerner:q>0&&p>0?(p-mc)/p:null,w};
+}
+function oligopoly(a,b,c,n,mode='cournot'){
+ const qc=positive((a-c)/b),qm=qc/2,pc=qc>0?c:null;
+ const qCour=qc*n/(n+1),pCour=a-b*qCour;
+ const qmPrice=a-b*qm;
+ let q,p;
+ if(mode==='cartel'){q=qm;p=qmPrice;}
+ else if(mode==='bertrand'){q=qc;p=qc>0?c:null;}
+ else {q=qCour;p=q>0?pCour:null;}
+ const cs=b*q*q/2,ps=q>0?(p-c)*q:0,wt=cs+ps,wmax=b*qc*qc/2;
+ return {q,p,cs,ps,wt,dwl:Math.max(0,wmax-wt),profitFirm:ps/n,qFirm:q/n,qc,qm,qCour,pCour,qmPrice,pc,wmax};
+}
+function monopolistic(a,b,c,d,f,entry=0){
+ const qLong=Math.sqrt(f/(b+d/2)),aLong=c+(2*b+d)*qLong;
+ const aEffective=a+(aLong-a)*entry/100;
+ const r=monopoly(aEffective,b,c,d,f);
+ const qmin=Math.sqrt(2*f/d);
+ return {...r,aLong,aEffective,qLong,pLong:aLong-b*qLong,qmin,entry};
+}
+function firstDegree(a,b,c){
+ const qOne=positive((a-c)/(2*b)),pOne=qOne>0?a-b*qOne:null;
+ const qEff=positive((a-c)/b);
+ const csOne=b*qOne*qOne/2,psOne=qOne>0?(pOne-c)*qOne:0;
+ const wEff=b*qEff*qEff/2,wtOne=csOne+psOne;
+ return {qOne,pOne,qEff,csOne,psOne,wtOne,wEff,dwl:Math.max(0,wEff-wtOne),psPerfect:wEff};
+}
+function secondDegree(a,b,c,unit,fee,users){
+ const maxQ=positive((a-unit)/b);
+ const grossCS=b*maxQ*maxQ/2;
+ const enters= maxQ>0 && grossCS+1e-9>=fee;
+ const q=enters?maxQ:0;
+ const cs=enters?Math.max(0,grossCS-fee)*users:0;
+ const ps=enters?((unit-c)*q+fee)*users:0;
+ const efficient=positive((a-c)/b);
+ const welfare=(a-c)*q-b*q*q/2;
+ const maxW=b*efficient*efficient/2;
+ return {enters,q,cs,ps,wt:cs+ps,dwl:Math.max(0,users*(maxW-welfare)),grossCS,efficient,unit,fee,users};
+}
+function uniformThird(a1,b1,a2,b2,c){
+ const qAt=(a,b,p)=>Math.max(0,(a-p)/b);
+ const profit=(p)=>(p-c)*(qAt(a1,b1,p)+qAt(a2,b2,p));
+ const aHi=Math.max(a1,a2),aLo=Math.min(a1,a2);
+ const A=a1/b1+a2/b2,B=1/b1+1/b2;
+ const candidates=[c,aLo,aHi,(A/B+c)/2,(aHi+c)/2];
+ let best={p:c,profit:0};
+ for(const raw of candidates){const p=Math.max(c,Math.min(aHi,raw)),gain=profit(p);
+   if(gain>best.profit+1e-8)best={p,profit:gain};}
+ return {price:best.p,profit:best.profit,quantity:[qAt(a1,b1,best.p),qAt(a2,b2,best.p)]};
+}
+function thirdDegree(a1,b1,a2,b2,c){
+ const params=[[a1,b1],[a2,b2]],base=uniformThird(a1,b1,a2,b2,c);
+ const segmented=params.map(([a,b])=>{const q=positive((a-c)/(2*b));return {q,p:q>0?(a+c)/2:null};});
+ const summary=(pArr,qArr)=>{
+   let cs=0,ps=0,dwl=0,q=0;
+   params.forEach(([a,b],i)=>{const qi=qArr[i];q+=qi;
+     cs+=b*qi*qi/2;
+     ps+=(pArr[i]===null?0:(pArr[i]-c)*qi);
+     const optimum=positive((a-c)/b);
+     dwl+=b*(optimum-qi)*(optimum-qi)/2;
+   });
+   return {q,cs,ps,w:cs+ps,dwl};
+ };
+ const common=summary([base.price,base.price],base.quantity);
+ const dis=summary(segmented.map(x=>x.p),segmented.map(x=>x.q));
+ return {base,segmented,common,dis,deltaW:dis.w-common.w,deltaProfit:dis.ps-common.ps};
+}
+function chart({curves=[],areas=[],points=[],xmax=100,ymax=120,width=860,height=510,tag='',horizontal=[]}){
+ const L=64,R=25,T=28,B=55,w=width-L-R,h=height-T-B;
+ xmax=Math.max(1,xmax);ymax=Math.max(1,ymax);
+ const X=q=>L+w*q/xmax,Y=p=>T+h*(1-p/ymax);
+ const P=arr=>arr.map(([q,p])=>`${X(q).toFixed(2)},${Y(p).toFixed(2)}`).join(' ');
+ const clip='clip'+Math.random().toString(36).slice(2);
+ let s=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="${tag}"><defs><clipPath id="${clip}"><rect x="${L}" y="${T}" width="${w}" height="${h}"/></clipPath></defs><rect width="${width}" height="${height}" fill="white"/>`;
+ for(let i=0;i<=5;i++){
+   const q=xmax*i/5,p=ymax*i/5;
+   s+=`<path d="M${X(q)} ${T}V${T+h}" stroke="#e8edf4"/><path d="M${L} ${Y(p)}H${L+w}" stroke="#e8edf4"/>`;
+   s+=`<text x="${X(q)}" y="${T+h+20}" text-anchor="middle" font-size="12" fill="#52637b">${F(q,0)}</text>`;
+   s+=`<text x="${L-10}" y="${Y(p)+4}" text-anchor="end" font-size="12" fill="#52637b">${F(p,0)}</text>`;
+ }
+ s+=`<path d="M${L},${T}V${T+h}H${L+w}" stroke="#334155" stroke-width="1.8" fill="none"/><text x="${L+w/2}" y="${height-10}" text-anchor="middle" font-size="15" fill="#334155">Quantità (Q)</text><text x="17" y="${T+h/2}" transform="rotate(-90 17 ${T+h/2})" text-anchor="middle" font-size="15" fill="#334155">Prezzo / costo marginale</text>`;
+ s+=`<g clip-path="url(#${clip})">`;
+ for(const a of areas){s+=`<polygon class="mp-solution-mark" points="${P(a.pts)}" fill="${a.color}" opacity="${a.opacity||0.20}"/>`;}
+ for(const line of curves){
+   const arr=Array.from({length:151},(_,i)=>{const q=xmax*i/150;let yy=line.fn(Math.max(1e-6,q));yy=Number.isFinite(yy)?Math.max(-4*ymax,Math.min(4*ymax,yy)): -4*ymax;return [q,yy]});
+   s+=`<polyline points="${P(arr)}" fill="none" stroke="${line.color}" stroke-width="${line.width||3}" ${line.dash?'stroke-dasharray="8 6"':''} stroke-linejoin="round"/>`;
+ }
+ for(const z of horizontal){s+=`<line class="mp-solution-mark" x1="${X(0)}" y1="${Y(z.y)}" x2="${X(xmax)}" y2="${Y(z.y)}" stroke="${z.color}" stroke-dasharray="6 5" stroke-width="2"/>`;}
+ s+='</g>';
+ for(const t of points){if(t.x<0||t.x>xmax||t.y<0||t.y>ymax||!Number.isFinite(t.y))continue;
+   s+=`<line class="mp-solution-mark" x1="${X(t.x)}" y1="${Y(t.y)}" x2="${X(t.x)}" y2="${Y(0)}" stroke="${t.color}" stroke-dasharray="4 5" opacity="0.7"/>`;
+   s+=`<circle class="mp-solution-mark" cx="${X(t.x)}" cy="${Y(t.y)}" r="6" fill="${t.color}" stroke="white" stroke-width="2"/>`;
+   s+=`<text class="mp-solution-mark" x="${X(t.x)+10}" y="${Y(t.y)-12}" font-size="13" font-weight="700" stroke="white" stroke-width="4" paint-order="stroke" fill="${t.color}">${t.label||''}</text>`;
+ }
+ return s+'</svg>';
+}
+function table(head,rows){return `<table><thead><tr>${head.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table>`;}
+const put=(v)=>{ $('mpChartTitle').textContent=v.title;
+ $('mpChart').innerHTML=v.graph; $('mpLegend').innerHTML=v.legend;
+ $('mpMetrics').innerHTML=v.metrics;$('mpTable').innerHTML=v.table;
+ $('mpExplanation').innerHTML=v.explanation;$('mpAssumptions').textContent=v.assumptions;
+ $('mpQuestion').textContent=v.question;
+};
+function drawMonopoly(){const a=read('mpA'),b=read('mpB'),c=read('mpC'),d=read('mpD'),f=read('mpF'),m=monopoly(a,b,c,d,f);
+ const D=q=>a-b*q,MR=q=>a-2*b*q,MC=q=>c+d*q,ATC=q=>q>0?f/q+c+d*q/2:NaN;
+ const x=Math.max(10,1.34*m.qc,1.1*m.q);const y=Math.max(a,c+d*x,m.p||0,ATC(Math.max(1,m.q)))*1.13;
+ const areas=[];
+ if(m.q>0){areas.push({pts:[[0,a],[m.q,m.p],[0,m.p]],color:C.blue});
+ if(m.profit>0)areas.push({pts:[[0,m.p],[m.q,m.p],[m.q,m.atc],[0,m.atc]],color:C.green,opacity:.22});}
+ if(m.dwl>1e-6)areas.push({pts:[[m.q,D(m.q)],[m.q,MC(m.q)],[m.qc,D(m.qc)]],color:C.orange,opacity:.37});
+ const curves=[{fn:D,color:C.blue},{fn:MR,color:C.purple},{fn:MC,color:C.red},{fn:ATC,color:C.green,width:2.8}];
+ put({title:'Monopolio: RMg = CMg, prezzo dalla curva di domanda',graph:chart({curves,areas,points:[...(m.q>0?[{x:m.q,y:m.p,label:'M',color:C.blue}]:[]),...(m.qc>0?[{x:m.qc,y:m.pc,label:'C',color:C.orange}]:[])],xmax:x,ymax:y,tag:'Domanda, ricavo marginale, costo marginale e costo medio, monopolio contro concorrenza'}),
+ legend:key('Domanda',C.blue)+key('RMg',C.purple)+key('CMg',C.red)+key('CMeT',C.green)+key('Perdita secca',C.orange),
+ metrics:info('Quantità monopolio',F(m.q))+info('Prezzo monopolio',F(m.p))+info('Profitto economico',F(m.profit))+info('Perdita secca',F(m.dwl)),
+ table:table(['Grandezza','Monopolio','Benchmark P = CMg'],[['Quantità',F(m.q),F(m.qc)],['Prezzo',F(m.p),F(m.pc)],['Surplus consumatori',F(m.cs),F(b*m.qc*m.qc/2)],['Surplus produttori (prima di F)',F(m.ps),F(m.eff-b*m.qc*m.qc/2)],['Benessere lordo di F',F(m.w),F(m.eff)],['Markup unitario',F(m.q>0?m.p-m.mc:null),'0,00']]),
+ explanation:`<p>Il monopolista sceglie <b>Q = ${F(m.q)}</b> uguagliando ricavo marginale e costo marginale, purché sia conveniente produrre; applica poi il prezzo <b>P = ${F(m.p)}</b> leggendo la curva di domanda. Il ricavo marginale è più basso del prezzo perché, con un prezzo unico, vendere un'unità in più richiede una riduzione del prezzo sulle unità già vendute.</p><p>Il benchmark concorrenziale ha <b>Q = ${F(m.qc)}</b>. La restrizione dell'output crea una perdita secca di <b>${F(m.dwl)}</b>. L'indice di Lerner è <b>${F(m.lerner,3)}</b> e l'elasticità puntuale della domanda al prezzo monopolistico è <b>${F(m.eta,2)}</b>.</p>${m.profit<0?'<p class="mp-warn">Il profitto economico è negativo. Con costi fissi già sostenuti, la produzione può ancora massimizzare il profitto nel breve periodo; nel lungo periodo la permanenza sul mercato richiede valutare l’uscita.</p>':''}`,
+ assumptions:'Un solo prodotto, domanda lineare, costo marginale lineare, informazione completa, prezzo uniforme e quantità scelta per massimizzare il profitto. F è considerato sunk nel breve periodo; il confronto del benessere usa surplus lordi del costo fisso, comune nelle alternative con output positivo. Non è una previsione per mercati reali.',
+ question:'Qual è la differenza tra il punto in cui RMg = CMg e il punto in cui la domanda incontra il costo marginale?'});
+}
+function drawOligopoly(){const a=read('olA'),b=read('olB'),c=read('olC'),n=read('olN'),mode=$('olMode').value;const m=oligopoly(a,b,c,n,mode);
+ const x=Math.max(10,1.25*m.qc),y=Math.max(a,c,20)*1.15;
+ const DC=q=>a-b*q,MC=()=>c;
+ const actual=m.q>0&&m.p!==null?[{x:m.q,y:m.p,label:'Esito scelto',color:C.blue}]:[];
+ const curves=[{fn:DC,color:C.blue},{fn:MC,color:C.red},{fn:q=>a-2*b*q,color:C.purple,dash:true,width:2.2}];
+ const area=m.dwl>0?[{pts:[[m.q,DC(m.q)],[m.q,c],[m.qc,c]],color:C.orange,opacity:.32}]:[];
+ const modeLabel={cournot:'Cournot (equilibrio di Nash sulle quantità)',bertrand:'Bertrand (equilibrio sui prezzi)',cartel:'Cartello (massimo profitto congiunto)'}[mode];
+ const compare=['cartel','cournot','bertrand'].map(t=>{let z=oligopoly(a,b,c,n,t);return [{cartel:'Cartello',cournot:'Cournot',bertrand:'Bertrand'}[t],F(z.q),F(z.p),F(z.ps),F(z.cs),F(z.dwl)];});
+ let narrative='';if(mode==='cournot')narrative=`Con ${n} imprese simmetriche che scelgono simultaneamente le quantità, l’equilibrio di Cournot determina Q = ${F(m.q)}, con ${F(m.qFirm)} per impresa. Ogni impresa tiene conto del fatto che produrre di più riduce il prezzo di mercato.`;
+ if(mode==='bertrand')narrative=`Con almeno due imprese identiche, prodotto omogeneo, assenza di capacità limitata e costi marginali costanti, la concorrenza à la Bertrand conduce a P = CMg = ${F(c)}. Questo risultato dipende in modo cruciale dalle ipotesi.`;
+ if(mode==='cartel')narrative=`Se le imprese massimizzassero congiuntamente il profitto, sceglierebbero la quantità del monopolista Q = ${F(m.q)}. La ripartizione simmetrica delle quote è un'ipotesi illustrativa; deviare dall'accordo può essere individualmente conveniente.`;
+ put({title:'Oligopolio: quantità, prezzi e collusione',graph:chart({curves,areas:area,points:actual.concat(m.qc>0?[{x:m.qc,y:c,label:'P = CMg',color:C.green}]:[]),xmax:x,ymax:y,tag:'Confronto tra Cournot, Bertrand e cartello'}),
+ legend:key('Domanda',C.blue)+key('RMg cartello',C.purple)+key('CMg costante',C.red)+key('Perdita secca',C.orange),
+ metrics:info('Regime',mode==='cournot'?'Cournot':mode==='bertrand'?'Bertrand':'Cartello')+info('Prezzo',F(m.p))+info('Quantità totale',F(m.q))+info('Profitto per impresa',F(m.profitFirm)),
+ table:table(['Regime','Quantità','Prezzo','Profitto industria','Surplus consumatori','Perdita secca'],compare),
+ explanation:`<p><b>${modeLabel}.</b> ${narrative}</p><p>La quantità socialmente efficiente nel modello è <b>${F(m.qc)}</b>. Nel regime selezionato la perdita secca rispetto all'efficienza allocativa è <b>${F(m.dwl)}</b>. Confronta i profitti industriali con il surplus dei consumatori: <b>massimizzare i profitti congiunti non coincide con massimizzare il benessere sociale.</b></p><p>Collega questo risultato alla matrice dei payoff nella scheda «Teoria dei giochi»: un cartello può essere profittevole collettivamente ma instabile per effetto degli incentivi individuali.</p>`,
+ assumptions:'Modello di oligopolio simmetrico: n imprese identiche, beni omogenei, domanda lineare P=a−bQ, costi marginali costanti c, nessun costo fisso. Cournot: quantità simultanee. Bertrand: prezzi simultanei, n≥2 e nessun vincolo di capacità. Cartello: profitto congiunto massimizzato, non equilibrio non cooperativo. Non include differenziazione né domanda dinamica.',
+ question:'Se aumentano le imprese nel modello di Cournot, che cosa succede a quantità totale, prezzo e markup? Perché Bertrand può dare un risultato molto diverso?'});
+}
+function drawMonopolistic(){const a=read('cmA'),b=read('cmB'),c=read('cmC'),d=read('cmD'),f=read('cmF'),en=read('cmEntry');const m=monopolistic(a,b,c,d,f,en);
+ const D=q=>m.aEffective-b*q,MR=q=>m.aEffective-2*b*q,MC=q=>c+d*q,ATC=q=>q>0?f/q+c+d*q/2:NaN;
+ const D0=q=>a-b*q;
+ const x=Math.max(10,m.qmin*1.55,m.q*1.4,m.qLong*1.5),y=Math.max(a,m.aEffective,c+d*x,m.p||0)*1.2;
+ const curves=[{fn:D,color:C.blue},{fn:MR,color:C.purple},{fn:MC,color:C.red},{fn:ATC,color:C.green},{fn:D0,color:C.grey,dash:true,width:2}];
+ const area=m.q>0&&m.profit>0?[{pts:[[0,m.p],[m.q,m.p],[m.q,m.atc],[0,m.atc]],color:C.green,opacity:.21}]:[];
+ put({title:'Concorrenza monopolistica: differenziazione, ingresso e lungo periodo',graph:chart({curves,areas:area,points:[...(m.q>0?[{x:m.q,y:m.p,label:'Impresa',color:C.blue}]:[]),{x:m.qLong,y:m.pLong,label:'LP',color:C.orange}],xmax:x,ymax:y,tag:'Domanda individuale, ricavo marginale, costo marginale, costo medio e tangenza di lungo periodo'}),
+ legend:key('Domanda corrente',C.blue)+key('Domanda iniziale',C.grey)+key('Ricavo marginale',C.purple)+key('CMg',C.red)+key('CMeT',C.green),
+ metrics:info('Quantità impresa',F(m.q))+info('Prezzo impresa',F(m.p))+info('Profitto economico',F(m.profit))+info('Entrata/uscita simulata',F(en,0)+'%'),
+ table:table(['Indicatore','Situazione corrente','Lungo periodo'],[['Quantità per impresa',F(m.q),F(m.qLong)],['Prezzo',F(m.p),F(m.pLong)],['Costo medio totale',F(m.atc),F(m.pLong)],['Profitto economico',F(m.profit),'0,00'],['Quantità al minimo CMeT',F(m.qmin),F(m.qmin)],['Markup P − CMg',F(m.q>0?m.p-m.mc:null),F(b*m.qLong)]]),
+ explanation:`<p>Le imprese vendono <b>prodotti differenziati</b> e affrontano una domanda individuale decrescente. Nel breve periodo, quantità e prezzo dipendono dalla domanda e dai costi. Il profitto economico corrente è <b>${F(m.profit)}</b>.</p><p>Muovendo lo slider di ingresso/uscita, l'intercetta della domanda individuale si avvicina al livello di lungo periodo. Al 100%, con <b>Q = ${F(m.qLong)}</b> e <b>P = ${F(m.pLong)}</b>, la domanda è tangente al CMeT: <b>profitto economico nullo ma prezzo superiore al costo marginale</b>. La quantità rimane inferiore a quella che minimizza il costo medio totale (${F(m.qmin)}): è la cosiddetta <i>capacità in eccesso</i>.</p>`,
+ assumptions:'Equilibrio parziale per impresa rappresentativa, domanda lineare con pendenza fissa e spostamento parallelo al crescere del numero di imprese; costo totale quadratico con F>0 e d>0. Il sentiero di aggiustamento è illustrativo, non una stima dinamica dell’ingresso. Il prezzo superiore al costo marginale permane per la differenziazione del prodotto.',
+ question:'Perché nel lungo periodo il profitto economico è nullo mentre P resta maggiore del costo marginale?'});
+}
+function drawDiscrimination(){const mode=$('pdMode').value;
+ if(mode==='second'){
+  const a=read('pdA'),b=read('pdB'),c=read('pdC'),unit=read('pdUnit'),fee=read('pdFee'),users=read('pdUsers');
+  const z=secondDegree(a,b,c,unit,fee,users),one=firstDegree(a,b,c);
+  const x=Math.max(10,1.3*z.efficient,1.1*z.q),y=Math.max(a,unit,c)*1.14;
+  const areas=z.q>0?[{pts:[[0,a],[z.q,a-b*z.q],[0,unit]],color:C.blue,opacity:.2}]:[];
+  put({title:'Secondo grado: tariffa in due parti (prezzo unitario + accesso)',
+   graph:chart({curves:[{fn:q=>a-b*q,color:C.blue},{fn:()=>c,color:C.red}],horizontal:[{y:unit,color:C.green}],areas,
+    points:[...(z.q>0?[{x:z.q,y:unit,label:'Consumo',color:C.green}]:[]),...(z.efficient>0?[{x:z.efficient,y:c,label:'Efficiente',color:C.orange}]:[])],xmax:x,ymax:y,tag:'Tariffa in due parti: domanda, prezzo unitario e costo marginale'}),
+   legend:key('Domanda individuale',C.blue)+key('CMg',C.red)+key('Prezzo unitario',C.green),
+   metrics:info('Partecipazione',z.enters?'Sì':'No')+info('Quantità per persona',F(z.q))+info('Surplus consumatori totale',F(z.cs))+info('Profitto impresa',F(z.ps)),
+   table:table(['Grandezza','Prezzo unico ottimale','Tariffa in due parti'],[['Quantità totale',F(one.qOne*users),F(z.q*users)],['Prezzo per unità',F(one.pOne),F(unit)],['Quota fissa accesso','0,00',F(fee)],['Surplus consumatori',F(one.csOne*users),F(z.cs)],['Surplus produttori',F(one.psOne*users),F(z.ps)],['Benessere totale',F(one.wtOne*users),F(z.wt)],['Perdita secca',F(one.dwl*users),F(z.dwl)]]),
+   explanation:`<p>La <b>tariffa in due parti</b> richiede un pagamento fisso di accesso di <b>${F(fee)}</b>, oltre a un prezzo di <b>${F(unit)}</b> per unità consumata. Ogni consumatore decide se partecipare confrontando la quota fissa con il surplus lordo ottenibile al prezzo unitario (${F(z.grossCS)}).</p><p>${z.enters?`Con questi parametri, i ${users} consumatori partecipano e ciascuno acquista ${F(z.q)} unità.`:'La quota fissa supera il surplus disponibile o la quantità domandata è nulla: i consumatori non partecipano.'} Il surplus dei consumatori dopo la tariffa di ingresso è ${F(z.cs)}. La perdita secca è ${F(z.dwl)}.</p><p>Il risultato efficiente richiede prezzo unitario uguale al costo marginale e quota d'accesso che non scoraggi la partecipazione. Questo esempio illustra una <b>tariffazione non lineare</b>, non la selezione tra tipi di consumatori eterogenei.</p>`,
+   assumptions:'N consumatori identici, stessa domanda individuale, costo marginale costante, nessuna interazione strategica e nessun costo fisso per l’impresa. Una tariffa in due parti è una forma di tariffazione non lineare, frequentemente trattata come discriminazione di secondo grado; qui non si modella un menu di contratti auto-selezionati da consumatori eterogenei. La tassa di accesso è pagata soltanto se il surplus lordo copre la quota, con partecipazione in caso di indifferenza.',
+   question:'Come cambia la quantità consumata se diminuisce il prezzo unitario, ma cresce la quota fissa? Quando conviene non entrare nel mercato?'});
+  return;
+ }
+ if(mode==='first'){
+ const a=read('pdA'),b=read('pdB'),c=read('pdC');const m=firstDegree(a,b,c),D=q=>a-b*q,MR=q=>a-2*b*q,MC=()=>c;
+ const x=Math.max(10,1.3*m.qEff),y=Math.max(a,c)*1.15;
+ const area=m.dwl>0?[{pts:[[m.qOne,m.pOne],[m.qOne,c],[m.qEff,c]],color:C.orange,opacity:.37}]:[];
+ put({title:'Primo grado: prezzo unico e perfetta discriminazione',graph:chart({curves:[{fn:D,color:C.blue},{fn:MR,color:C.purple},{fn:MC,color:C.red}],areas:area,points:[...(m.qOne>0?[{x:m.qOne,y:m.pOne,label:'Prezzo unico',color:C.purple}]:[]),...(m.qEff>0?[{x:m.qEff,y:c,label:'Primo grado',color:C.green}]:[])],xmax:x,ymax:y,tag:'Monopolio a prezzo unico confrontato con discriminazione perfetta di primo grado'}),
+ legend:key('Domanda',C.blue)+key('Ricavo marginale (prezzo unico)',C.purple)+key('Costo marginale',C.red)+key('Perdita secca prezzo unico',C.orange),
+ metrics:info('Q prezzo unico',F(m.qOne))+info('Q perfetta discriminaz.',F(m.qEff))+info('Surplus consumatori, primo grado','0,00')+info('Perdita secca eliminata',F(m.dwl)),
+ table:table(['Grandezza','Prezzo unico','Primo grado perfetto'],[['Quantità',F(m.qOne),F(m.qEff)],['Prezzo unitario',F(m.pOne),'Variabile per unità'],['Surplus consumatori',F(m.csOne),'0,00'],['Surplus produttori',F(m.psOne),F(m.psPerfect)],['Benessere totale',F(m.wtOne),F(m.wEff)],['Perdita secca',F(m.dwl),'0,00']]),
+ explanation:`<p>Con un <b>prezzo unico</b>, il monopolista produce <b>${F(m.qOne)}</b> unità. Se conoscesse perfettamente la disponibilità a pagare marginale e potesse praticare un prezzo diverso per ogni unità, produrrebbe fino a <b>domanda = costo marginale</b>, ossia <b>${F(m.qEff)}</b> unità.</p><p>La discriminazione perfetta elimina la perdita secca di <b>${F(m.dwl)}</b> rispetto al prezzo unico, ma trasferisce integralmente il surplus del consumatore al produttore. È un caso limite teorico, non una descrizione di un normale listino con sconti.</p>`,
+ assumptions:'Domanda lineare, costo marginale costante, nessun costo fisso o vincolo di capacità. Discriminazione perfetta: informazione completa su disponibilità a pagare e nessuna possibilità di rivendita. Il surplus è calcolato prima dei costi fissi eventualmente comuni.',
+ question:'È possibile eliminare la perdita secca senza lasciare ai consumatori alcun surplus?'});
+ return;
+ }
+ const a1=read('pdA1'),b1=read('pdB1'),a2=read('pdA2'),b2=read('pdB2'),c=read('pdC3');const m=thirdDegree(a1,b1,a2,b2,c);
+ const mk=(i)=>{const a=i===0?a1:a2,b=i===0?b1:b2,seg=m.segmented[i],uq=m.base.quantity[i];
+ const x=Math.max(10,1.3*positive((a-c)/b)),y=Math.max(a,c)*1.15;
+ return `<div><h3>Segmento ${i+1}</h3>${chart({curves:[{fn:q=>a-b*q,color:C.blue},{fn:q=>a-2*b*q,color:C.purple},{fn:()=>c,color:C.red}],horizontal:[{y:m.base.price,color:C.grey}],points:seg.q>0?[{x:seg.q,y:seg.p,label:'Discriminazione',color:C.green}]:[],xmax:x,ymax:y,width:600,height:430,tag:'Domanda e prezzo segmentato nel mercato '+(i+1)})}<p class="mp-note">Prezzo unico ${F(m.base.price)}; quantità senza segmentazione ${F(uq)}. Prezzo segmentato ${F(seg.p)}; quantità ${F(seg.q)}.</p></div>`;};
+ const sign=m.deltaW>1e-7?'aumenta':m.deltaW<-1e-7?'diminuisce':'rimane invariato';
+ put({title:'Terzo grado: prezzi diversi per segmenti di clientela',graph:`<div class="mp-gridtwo">${mk(0)}${mk(1)}</div>`,legend:key('Domanda',C.blue)+key('RMg',C.purple)+key('CMg',C.red)+key('Prezzo unico (tratteggio)',C.grey),
+ metrics:info('Prezzo unico',F(m.base.price))+info('Prezzo segmento 1',F(m.segmented[0].p))+info('Prezzo segmento 2',F(m.segmented[1].p))+info('Δ benessere totale',F(m.deltaW)),
+ table:table(['Grandezza','Prezzo uniforme','Prezzi segmentati'],[['Quantità totale',F(m.common.q),F(m.dis.q)],['Surplus consumatori',F(m.common.cs),F(m.dis.cs)],['Surplus produttori',F(m.common.ps),F(m.dis.ps)],['Benessere complessivo',F(m.common.w),F(m.dis.w)],['Perdita secca',F(m.common.dwl),F(m.dis.dwl)],['Profitto aggiuntivo', '–', F(m.deltaProfit)]]),
+ explanation:`<p>Quando si possono separare due gruppi di consumatori e impedire la rivendita, l'impresa può scegliere prezzi differenti. Con costo marginale comune, sceglie per ciascun gruppo il punto in cui <b>RMgᵢ = CMg</b>, purché sia profittevole servire quel gruppo.</p><p>In questo scenario il profitto dell'impresa aumenta di <b>${F(m.deltaProfit)}</b> passando dal prezzo unico alla segmentazione; il benessere totale <b>${sign}</b> di <b>${F(Math.abs(m.deltaW))}</b>. La discriminazione di terzo grado <b>non elimina necessariamente la perdita secca</b> e non migliora sempre il benessere.</p>`,
+ assumptions:'Due mercati separati senza arbitraggio, inverse demands lineari, costo marginale costante e comune, nessun costo fisso. Il prezzo uniforme è ottimizzato globalmente sulla domanda aggregata, tenendo conto dei punti in cui uno dei gruppi smette di acquistare. Nessun dato empirico, nessuna risposta dinamica dei consumatori.',
+ question:'La segmentazione fa sempre aumentare il benessere sociale? Il profitto aggiuntivo dell’impresa coincide con il beneficio per la società?'});
+}
+function update(){
+ for(const [id,def] of Object.entries(defaults)){
+  const el=$(id);if(!el||el.tagName==='SELECT')continue;
+  const out=$(id+'out');if(out)out.textContent=el.value+(id==='cmEntry'?'%':'');
+ }
+ document.querySelector('[data-pd-first]').hidden=$('pdMode').value==='third';document.querySelector('[data-pd-second]').hidden=$('pdMode').value!=='second';document.querySelector('[data-pd-third]').hidden=$('pdMode').value!=='third';$('pdSpecificNote').textContent=({first:'Primo grado: il produttore conosce ogni disponibilità marginale a pagare e impedisce la rivendita.',second:'Secondo grado: la quota di accesso è pagata solo quando il surplus lordo al prezzo unitario la copre. Si tratta di consumatori identici.',third:'Terzo grado: gruppi separati, niente arbitraggio, stesso costo marginale. Il benessere può aumentare o diminuire rispetto al prezzo unico.'})[$('pdMode').value];
+ if(cur.tab==='monopoly')drawMonopoly();
+ if(cur.tab==='oligopoly')drawOligopoly();
+ if(cur.tab==='monopolistic')drawMonopolistic();
+ if(cur.tab==='discrimination')drawDiscrimination();
+}
+function choose(tab){cur.tab=tab;
+ document.querySelectorAll('[data-mp-tab]').forEach(el=>{const on=el.dataset.mpTab===tab;el.classList.toggle('active',on);el.setAttribute('aria-selected',String(on));});
+ document.querySelectorAll('[data-mp-controls]').forEach(el=>{el.hidden=el.dataset.mpControls!==tab;});
+ update();
+}
+const root=$('powerModule');
+function open(){if(root.hidden)return;update();}
+for(const [id] of Object.entries(defaults))$(id).addEventListener('input',update);
+for(const id of ['olMode','pdMode'])$(id).addEventListener('change',update);
+document.querySelectorAll('[data-mp-tab]').forEach(el=>el.addEventListener('click',()=>choose(el.dataset.mpTab)));
+$('mpReset').addEventListener('click',()=>{const map={monopoly:['mpA','mpB','mpC','mpD','mpF'],oligopoly:['olA','olB','olC','olN','olMode'],monopolistic:['cmA','cmB','cmC','cmD','cmF','cmEntry'],discrimination:['pdMode','pdA','pdB','pdC','pdUnit','pdFee','pdUsers','pdA1','pdB1','pdA2','pdB2','pdC3']};map[cur.tab].forEach(id=>$(id).value=defaults[id]);update();});
+$('mpReveal').addEventListener('click',()=>{cur.conceal=!cur.conceal;root.classList.toggle('mp-conceal',cur.conceal);$('mpReveal').textContent=cur.conceal?'Mostra risultati':'Nascondi risultati';});
+$('mpProject').addEventListener('click',()=>{cur.project=!cur.project;root.classList.toggle('mp-project',cur.project);$('mpProject').textContent=cur.project?'Esci da proiezione':'Proiezione';});
+window.EPLabMarketPowerMath={monopoly,oligopoly,monopolistic,firstDegree,secondDegree,thirdDegree,uniformThird};
+window.EPLabPowerUpdate=open;
+choose('monopoly');
+})();
+
+</script>
+</body></html>
