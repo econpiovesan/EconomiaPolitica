@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SCELTE — Il laboratorio dell’economia</title>
+<style>
+:root{
+  --ink:#18232c;--muted:#64717a;--paper:#fffdf8;--card:#fff;
+  --line:#e7e2d8;--navy:#12324a;--yellow:#ffd84d;
+  --coral:#ff6b5e;--mint:#54d6b0;--blue:#5aa7ff;
+  --shadow:0 14px 40px rgba(18,50,74,.10)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font:16px/1.55 ui-rounded,"SF Pro Rounded","Segoe UI",system-ui,sans-serif
+}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.topbar{
+  height:72px;display:flex;align-items:center;gap:24px;
+  padding:0 clamp(18px,4vw,64px);position:sticky;top:0;z-index:20;
+  background:rgba(255,253,248,.93);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)
+}
+.brand{
+  border:0;background:none;font-weight:950;letter-spacing:.09em;
+  font-size:1.18rem;color:var(--navy)
+}
+.brand span{
+  display:inline-grid;place-items:center;width:29px;height:29px;
+  margin-right:8px;border-radius:9px;background:var(--yellow);
+  transform:rotate(-4deg)
+}
+.nav{display:flex;gap:7px;margin-left:auto}
+.nav button{
+  border:0;background:transparent;padding:10px 13px;border-radius:13px;
+  color:var(--muted);font-weight:750
+}
+.nav button:hover,.nav button.active{background:#eef3f5;color:var(--navy)}
+.progress-pill{
+  display:flex;align-items:center;gap:8px;background:var(--navy);
+  color:#fff;padding:8px 12px;border-radius:999px;font-size:.86rem;
+  font-weight:800;white-space:nowrap
+}
+.progress-dot{width:9px;height:9px;border-radius:50%;background:var(--mint)}
+main{max-width:1240px;margin:auto;padding:0 clamp(18px,4vw,54px) 80px}
+.view{display:none}.view.active{display:block}
+.hero{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:48px;
+  align-items:center;min-height:590px;padding:70px 0 50px
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;color:#355469;
+  background:#eaf5f3;border:1px solid #cfe9e4;border-radius:999px;
+  padding:7px 12px;font-weight:850;font-size:.84rem;
+  text-transform:uppercase;letter-spacing:.06em
+}
+.hero h1{
+  font-size:clamp(3rem,7vw,6.4rem);line-height:.91;
+  letter-spacing:-.065em;margin:22px 0 24px;color:var(--navy)
+}
+.hero h1 em{font-style:normal;color:var(--coral);position:relative}
+.hero h1 em:after{
+  content:"";position:absolute;height:10px;left:2%;right:0;bottom:-8px;
+  background:var(--yellow);border-radius:999px;transform:rotate(-1deg);z-index:-1
+}
+.hero-copy{font-size:1.16rem;color:#52636e;max-width:650px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.primary,.secondary{
+  border:0;padding:14px 19px;border-radius:15px;font-weight:900;
+  transition:.2s transform,.2s box-shadow
+}
+.primary{background:var(--navy);color:#fff;box-shadow:0 8px 0 #081e2d}
+.secondary{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.primary:hover,.secondary:hover{transform:translateY(-2px)}
+.hero-visual{position:relative;min-height:420px;display:grid;place-items:center}
+.orbit{
+  width:360px;height:360px;border:2px dashed #b9c9cc;
+  border-radius:50%;position:relative;animation:spin 35s linear infinite
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.planet{
+  position:absolute;display:grid;place-items:center;width:80px;height:80px;
+  background:#fff;border:2px solid var(--ink);border-radius:22px;
+  font-size:2.1rem;box-shadow:6px 7px 0 var(--ink);
+  animation:counter 35s linear infinite
+}
+@keyframes counter{to{transform:rotate(-360deg)}}
+.planet:nth-child(1){top:-20px;left:140px;background:var(--yellow)}
+.planet:nth-child(2){top:135px;right:-24px;background:var(--mint)}
+.planet:nth-child(3){bottom:-20px;left:140px;background:var(--blue)}
+.planet:nth-child(4){top:135px;left:-24px;background:var(--coral)}
+.center-coin{
+  position:absolute;width:172px;height:172px;border-radius:50%;
+  display:grid;place-items:center;text-align:center;background:var(--navy);
+  color:#fff;border:9px solid #fff;box-shadow:var(--shadow);font-size:3.8rem
+}
+.center-coin small{
+  font-size:.7rem;display:block;letter-spacing:.1em;
+  text-transform:uppercase;font-weight:900;margin-top:-30px
+}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  margin-top:-30px;margin-bottom:70px
+}
+.stat{
+  padding:22px;background:#fff;border:1px solid var(--line);
+  border-radius:20px;box-shadow:0 7px 20px rgba(18,50,74,.05)
+}
+.stat b{display:block;font-size:1.65rem;color:var(--navy)}
+.stat span{color:var(--muted)}
+.section-head{
+  display:flex;justify-content:space-between;align-items:end;
+  gap:22px;margin:55px 0 25px
+}
+.section-head h2{
+  font-size:clamp(2rem,4vw,3.5rem);line-height:1;
+  letter-spacing:-.045em;margin:0;color:var(--navy)
+}
+.section-head p{color:var(--muted);max-width:480px;margin:0}
+.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:22px}
+.search{flex:1;min-width:220px;position:relative}
+.search span{position:absolute;left:15px;top:11px}
+.search input{
+  width:100%;padding:12px 15px 12px 44px;border:1px solid var(--line);
+  border-radius:14px;background:#fff;outline:none
+}
+.search input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(90,167,255,.14)}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.chip{
+  border:1px solid var(--line);background:#fff;padding:9px 12px;
+  border-radius:999px;font-size:.87rem;font-weight:800;color:var(--muted)
+}
+.chip.active{color:var(--navy);background:var(--yellow);border-color:#e0bc29}
+.module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.module-card{
+  min-height:270px;background:#fff;border:1px solid var(--line);
+  border-radius:24px;padding:24px;display:flex;flex-direction:column;
+  position:relative;overflow:hidden;transition:.22s transform,.22s box-shadow
+}
+.module-card:before{
+  content:"";position:absolute;width:125px;height:125px;border-radius:50%;
+  right:-45px;top:-50px;background:var(--accent);opacity:.18
+}
+.module-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.module-top{display:flex;justify-content:space-between;align-items:center;position:relative}
+.module-icon{
+  width:49px;height:49px;border-radius:15px;background:var(--accent);
+  display:grid;place-items:center;font-size:1.55rem;border:1.5px solid var(--ink);
+  box-shadow:3px 3px 0 var(--ink)
+}
+.done-badge{
+  font-size:.75rem;font-weight:900;color:#13755c;background:#def8ef;
+  padding:5px 8px;border-radius:999px
+}
+.module-card h3{
+  font-size:1.38rem;line-height:1.1;margin:25px 0 10px;
+  color:var(--navy);letter-spacing:-.02em
+}
+.module-card p{color:var(--muted);margin:0 0 20px}
+.module-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:auto;color:#71808a;font-size:.85rem
+}
+.open-link{border:0;background:transparent;color:var(--navy);font-weight:900}
+.lab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.lab-card{
+  min-height:260px;border-radius:28px;padding:30px;color:#fff;
+  position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start
+}
+.lab-card:nth-child(1){background:#12324a}
+.lab-card:nth-child(2){background:#705ed4}
+.lab-card:nth-child(3){background:#147b65}
+.lab-card:nth-child(4){background:#d94f43}
+.lab-card:after{
+  content:"";position:absolute;width:210px;height:210px;
+  border:32px solid rgba(255,255,255,.1);border-radius:50%;
+  right:-70px;bottom:-95px
+}
+.lab-card .emoji{font-size:2.4rem}
+.lab-card h3{font-size:1.6rem;line-height:1.1;margin:16px 0 9px}
+.lab-card p{opacity:.84;max-width:75%;margin:0 0 22px}
+.lab-card button{
+  margin-top:auto;border:0;padding:11px 15px;border-radius:12px;
+  font-weight:900;color:var(--navy);z-index:1
+}
+.teacher{
+  margin-top:70px;background:#fff1b8;border:2px solid var(--ink);
+  box-shadow:8px 8px 0 var(--ink);border-radius:30px;padding:35px;
+  display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center
+}
+.teacher h2{font-size:2rem;line-height:1;margin:0 0 12px}
+.teacher p{margin:0;max-width:760px;color:#525d62}
+.teacher button{
+  border:0;background:var(--ink);color:#fff;border-radius:14px;
+  padding:14px 18px;font-weight:900
+}
+footer{
+  padding:35px 0 0;color:var(--muted);display:flex;
+  justify-content:space-between;border-top:1px solid var(--line);margin-top:80px
+}
+.lesson,.lab-view{padding-top:42px}
+.back{
+  border:0;background:#eef3f5;color:var(--navy);
+  font-weight:900;padding:10px 14px;border-radius:12px
+}
+.lesson-hero{
+  margin-top:22px;border-radius:32px;padding:36px;
+  display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;
+  border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);
+  background:var(--lesson)
+}
+.lesson-big-icon{
+  width:100px;height:100px;border-radius:28px;background:rgba(255,255,255,.7);
+  display:grid;place-items:center;font-size:3.3rem;border:2px solid var(--ink)
+}
+.lesson-hero h1{
+  font-size:clamp(2rem,5vw,4.3rem);line-height:.95;
+  letter-spacing:-.05em;color:var(--navy);margin:6px 0 8px
+}
+.lesson-hero p{margin:0;color:#354854;max-width:700px}
+.lesson-count{
+  font-weight:900;color:var(--navy);background:#fff;
+  padding:9px 13px;border-radius:999px;align-self:start
+}
+.lesson-tabs{
+  display:flex;gap:8px;margin:32px 0 22px;overflow:auto;padding-bottom:5px
+}
+.lesson-tab{
+  border:1px solid var(--line);background:#fff;border-radius:13px;
+  padding:11px 14px;font-weight:850;color:var(--muted);white-space:nowrap
+}
+.lesson-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.lesson-pane{display:none}.lesson-pane.active{display:block}
+.content-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:22px}
+.paper{
+  background:#fff;border:1px solid var(--line);
+  border-radius:24px;padding:28px
+}
+.paper h2,.paper h3{color:var(--navy);margin-top:0}
+.lead{font-size:1.16rem;color:#40535f}
+.concept-list{display:grid;gap:12px;margin:22px 0}
+.concept{
+  padding:17px;border-radius:17px;background:#f5f7f6;
+  display:flex;gap:12px
+}
+.concept b{color:var(--navy)}
+.concept-num{
+  flex:none;width:29px;height:29px;border-radius:9px;background:var(--lesson);
+  display:grid;place-items:center;font-weight:950
+}
+.example{
+  background:#eaf5f3;border-left:5px solid var(--mint);
+  padding:20px;border-radius:4px 18px 18px 4px;margin-top:20px
+}
+.example strong{display:block;margin-bottom:6px;color:var(--navy)}
+.side-note{background:var(--navy);color:#fff}
+.side-note h3{color:#fff}.side-note p{opacity:.84}
+.key{
+  display:inline-block;background:var(--yellow);color:var(--ink);
+  font-weight:900;padding:4px 8px;border-radius:8px;margin:3px
+}
+.challenge{
+  background:#fff;border:1px solid var(--line);
+  border-radius:24px;padding:30px
+}
+.challenge-label{
+  color:#966700;text-transform:uppercase;letter-spacing:.09em;
+  font-weight:950;font-size:.8rem
+}
+.challenge h2{font-size:2rem;line-height:1.15;color:var(--navy)}
+.answer-box{
+  width:100%;min-height:120px;border:2px solid var(--line);
+  border-radius:15px;padding:15px;resize:vertical;outline:none
+}
+.model-answer{
+  display:none;margin-top:15px;padding:17px;border-radius:15px;background:#f1f7f5
+}
+.model-answer.show{display:block}
+.activity-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.activity{
+  background:#fff;border:1px solid var(--line);
+  border-radius:24px;padding:28px
+}
+.activity.family{border-top:8px solid var(--coral)}
+.activity.classroom{border-top:8px solid var(--blue)}
+.activity .tag{
+  font-weight:950;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem
+}
+.activity h2{color:var(--navy)}
+.steps{padding-left:21px}.steps li{margin:9px 0}
+.quiz{
+  max-width:760px;margin:auto;background:#fff;border:1px solid var(--line);
+  border-radius:28px;padding:34px
+}
+.quiz h2{color:var(--navy);font-size:2rem;line-height:1.15}
+.options{display:grid;gap:11px}
+.option{
+  border:2px solid var(--line);background:#fff;text-align:left;
+  padding:15px 17px;border-radius:15px;font-weight:750;color:var(--ink)
+}
+.option.correct{background:#dcf7ed;border-color:#31a982}
+.option.wrong{background:#ffe4e1;border-color:#e75d50}
+.quiz-feedback{min-height:54px;padding:13px 0;color:var(--muted)}
+.quiz-actions{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.complete{display:none}.complete.show{display:inline-block}
+.lab-head{display:flex;gap:18px;align-items:center;margin:25px 0}
+.lab-head .big{font-size:3rem}
+.lab-head h1{
+  font-size:clamp(2.2rem,5vw,4rem);line-height:1;
+  margin:0;color:var(--navy);letter-spacing:-.05em
+}
+.lab-head p{margin:8px 0 0;color:var(--muted)}
+.sim-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:22px}
+.controls,.screen{
+  background:#fff;border:1px solid var(--line);
+  border-radius:24px;padding:27px
+}
+.controls h3,.screen h3{margin-top:0;color:var(--navy)}
+.control{margin:23px 0}
+.control label{font-weight:850;display:flex;justify-content:space-between;margin-bottom:9px}
+.control input[type=range]{width:100%;accent-color:var(--coral)}
+.readouts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.readout{padding:15px;border-radius:15px;background:#f2f5f5}
+.readout b{display:block;font-size:1.45rem;color:var(--navy)}
+.status{
+  margin-top:15px;padding:15px;border-radius:15px;
+  background:#fff4c9;font-weight:800
+}
+canvas{width:100%;height:320px;background:#fbfbf8;border-radius:16px}
+.choice-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
+.choice-row button{
+  border:2px solid var(--navy);background:#fff;padding:12px 17px;
+  border-radius:13px;font-weight:900;color:var(--navy)
+}
+.choice-row button:hover{background:var(--yellow)}
+.game-log{margin-top:18px;display:grid;gap:8px;max-height:260px;overflow:auto}
+.log-row{
+  display:grid;grid-template-columns:70px 1fr auto;gap:10px;
+  padding:11px;background:#f5f7f6;border-radius:12px;font-size:.9rem
+}
+.resource-bar{
+  height:25px;background:#e8eeec;border-radius:999px;
+  overflow:hidden;margin:18px 0
+}
+.resource-fill{
+  height:100%;background:linear-gradient(90deg,#54d6b0,#16896e);
+  transition:.4s width
+}
+.payoff{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}
+.payoff div{padding:13px;border-radius:12px;background:#f1f4f5;font-size:.88rem}
+.result-box{
+  padding:18px;border-radius:16px;background:#eef3f5;
+  margin-top:15px;min-height:64px
+}
+.score-ring{
+  width:140px;height:140px;border-radius:50%;display:grid;
+  place-items:center;margin:15px auto;
+  background:conic-gradient(var(--mint) var(--score),#edf0ef 0);
+  position:relative
+}
+.score-ring:after{
+  content:"";position:absolute;inset:13px;background:#fff;border-radius:50%
+}
+.score-ring b{z-index:1;font-size:2rem;color:var(--navy)}
+.toast{
+  position:fixed;left:50%;bottom:25px;transform:translate(-50%,120px);
+  background:var(--ink);color:#fff;padding:12px 18px;border-radius:13px;
+  font-weight:800;transition:.3s;z-index:50
+}
+.toast.show{transform:translate(-50%,0)}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:50px}
+  .hero-visual{display:none}.stats{margin-top:0}
+  .module-grid{grid-template-columns:repeat(2,1fr)}
+  .content-grid,.sim-grid{grid-template-columns:1fr}
+  .lesson-hero{grid-template-columns:auto 1fr}
+  .lesson-count{display:none}
+}
+@media(max-width:620px){
+  .topbar{height:64px;padding:0 16px}
+  .nav button{display:none}.nav button:first-child{display:block}
+  .progress-pill{font-size:0;padding:10px}
+  .hero{min-height:auto;padding:48px 0 35px}.hero h1{font-size:3.7rem}
+  .stats,.module-grid,.lab-grid,.activity-grid{grid-template-columns:1fr}
+  .section-head{align-items:start;flex-direction:column}
+  .teacher{grid-template-columns:1fr}
+  .lesson-hero{padding:23px;grid-template-columns:1fr}
+  .lesson-big-icon{width:72px;height:72px;font-size:2.3rem}
+  .paper,.quiz,.challenge{padding:22px}
+  .readouts{grid-template-columns:1fr}
+  .lab-card p{max-width:100%}
+  footer{flex-direction:column;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <button class="brand" onclick="goHome()"><span>↗</span>SCELTE</button>
+  <nav class="nav">
+    <button class="active" onclick="goHome()">Esplora</button>
+    <button onclick="goSection('percorsi')">Percorsi</button>
+    <button onclick="goSection('laboratori')">Laboratori</button>
+    <button onclick="goSection('attivita')">Per adulti</button>
+  </nav>
+  <div class="progress-pill">
+    <span class="progress-dot"></span>
+    <span id="progressText">0/16 completati</span>
+  </div>
+</header>
+
+<main>
+<section id="homeView" class="view active">
+  <div class="hero">
+    <div>
+      <span class="eyebrow">⚡ Economia, senza formule inutili</span>
+      <h1>Ogni scelta<br>muove il <em>mondo.</em></h1>
+      <p class="hero-copy">
+        Perché un biglietto costa di più proprio quando lo vuoi?
+        Chi paga davvero una tassa? Perché collaboriamo — o non lo facciamo?
+        Scopri l’economia che incontri ogni giorno.
+      </p>
+      <div class="hero-actions">
+        <button class="primary" onclick="startJourney()">Inizia dal primo tema →</button>
+        <button class="secondary" onclick="goSection('laboratori')">Prova un gioco</button>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orbit">
+        <div class="planet">🛒</div><div class="planet">🏭</div>
+        <div class="planet">🌍</div><div class="planet">🎲</div>
+      </div>
+      <div class="center-coin">€<small>le tue scelte</small></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>16 temi</b><span>dalle scelte ai giochi strategici</span></div>
+    <div class="stat"><b>4 laboratori</b><span>per imparare provando</span></div>
+    <div class="stat"><b>0 paura</b><span>parole chiare, esempi concreti</span></div>
+  </div>
+
+  <section id="percorsi">
+    <div class="section-head">
+      <div><span class="eyebrow">Il percorso</span><h2>Un’idea alla volta.</h2></div>
+      <p>Segui l’ordine suggerito oppure parti dalla domanda che ti incuriosisce di più.</p>
+    </div>
+    <div class="toolbar">
+      <label class="search">
+        <span>⌕</span>
+        <input id="searchInput" placeholder="Cerca: prezzi, tasse, lavoro…" oninput="renderModules()">
+      </label>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="module-grid" id="moduleGrid"></div>
+  </section>
+
+  <section id="laboratori">
+    <div class="section-head">
+      <div><span class="eyebrow">Impara facendo</span><h2>Laboratori interattivi.</h2></div>
+      <p>Sposta cursori, prendi decisioni e osserva cosa cambia. Qui sbagliare è parte del gioco.</p>
+    </div>
+    <div class="lab-grid">
+      <article class="lab-card">
+        <span class="emoji">⚖️</span><h3>Trova il prezzo</h3>
+        <p>Porta domanda e offerta verso l’equilibrio.</p>
+        <button onclick="openLab('market')">Apri il mercato →</button>
+      </article>
+      <article class="lab-card">
+        <span class="emoji">🧾</span><h3>Chi paga la tassa?</h3>
+        <p>Osserva come l’elasticità divide il peso fiscale.</p>
+        <button onclick="openLab('tax')">Apri il simulatore →</button>
+      </article>
+      <article class="lab-card">
+        <span class="emoji">🐟</span><h3>Il lago condiviso</h3>
+        <p>Pesca, ma lascia che la risorsa possa rigenerarsi.</p>
+        <button onclick="openLab('commons')">Vai al lago →</button>
+      </article>
+      <article class="lab-card">
+        <span class="emoji">🤝</span><h3>Fidarsi o no?</h3>
+        <p>Gioca cinque round e scopri come nasce la cooperazione.</p>
+        <button onclick="openLab('strategy')">Sfida il computer →</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="teacher" id="attivita">
+    <div>
+      <h2>Adulti ammessi. Ma solo se partecipano.</h2>
+      <p>Ogni tema contiene un’attività per casa e una per la classe: aste, indagini sui prezzi, giochi di cooperazione e discussioni guidate.</p>
+    </div>
+    <button onclick="openLesson(0,'activities')">Guarda un’attività →</button>
+  </section>
+
+  <footer>
+    <span>SCELTE · Il laboratorio dell’economia</span>
+    <span>Capire. Provare. Discutere.</span>
+  </footer>
+</section>
+
+<section id="lessonView" class="view lesson">
+  <button class="back" onclick="goHome()">← Tutti i temi</button>
+  <div id="lessonContent"></div>
+</section>
+
+<section id="labView" class="view lab-view">
+  <button class="back" onclick="goHome();goSection('laboratori')">← Tutti i laboratori</button>
+  <div id="labContent"></div>
+</section>
+</main>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const modules=[
+{
+ cat:"Fondamenti",icon:"🧭",color:"#ffd84d",title:"Scegliere significa rinunciare",
+ kicker:"I principi base",time:"8 min",
+ intro:"L’economia studia come persone e società usano risorse limitate per soddisfare desideri che sembrano non finire mai. Ogni scelta ha un costo, anche quando non paghiamo denaro.",
+ points:[
+  ["Scarsità","Tempo, denaro, energia e materie prime non bastano per fare tutto. Per questo dobbiamo scegliere."],
+  ["Costo opportunità","È il valore della migliore alternativa a cui rinunci."],
+  ["Incentivi","Premi, prezzi, regole e conseguenze cambiano le nostre decisioni."]
+ ],
+ example:"Hai 20 euro. Se scegli il cinema, il costo non è solo il biglietto: è anche la pizza, il libro o il risparmio a cui rinunci.",
+ exercise:"Pensa alla tua ultima domenica. Qual è stata la decisione più importante? Indica la migliore alternativa scartata.",
+ answer:"Una buona risposta descrive una scelta concreta e una sola alternativa: la migliore tra quelle non scelte. Il costo opportunità non è la somma di tutto ciò che non hai fatto.",
+ q:"Il costo opportunità di andare a un concerto è…",
+ opts:["Solo il prezzo del biglietto","Il valore della migliore alternativa a cui rinunci","Tutto il denaro che possiedi","Sempre uguale per tutti"],
+ correct:1,
+ feedback:"Conta l’alternativa migliore, che può essere diversa da persona a persona.",
+ family:"Scegliete insieme come usare due ore libere. Ognuno propone un’attività e spiega a cosa rinuncerebbe.",
+ classroom:"Distribuite 100 gettoni a gruppi che devono costruire un bilancio tra scuola, sport, cultura e ambiente. Confrontate rinunce e priorità."
+},
+{
+ cat:"Mercati",icon:"🛍️",color:"#54d6b0",title:"Come funziona un mercato",
+ kicker:"Domanda e offerta",time:"10 min",
+ intro:"Un mercato non è solo un luogo. È qualsiasi sistema in cui chi vuole comprare incontra chi vuole vendere: una piazza, un’app, un’asta online o il mercato del lavoro.",
+ points:[
+  ["Domanda","Di solito, se il prezzo scende, le persone vogliono comprare di più."],
+  ["Offerta","Di solito, se il prezzo sale, produrre e vendere diventa più conveniente."],
+  ["Equilibrio","Il prezzo tende verso il punto in cui quantità domandata e offerta coincidono."]
+ ],
+ example:"Se una borraccia costa 40 euro, molti rinunciano e i negozi ne hanno troppe. Se costa 2 euro, va esaurita. Tra i due estremi esiste un prezzo che coordina meglio compratori e venditori.",
+ exercise:"Al bar della scuola restano ogni giorno 30 panini invenduti. Quale segnale sta inviando il mercato? Proponi due risposte del gestore.",
+ answer:"C’è un’eccedenza: al prezzo attuale l’offerta supera la domanda. Il gestore potrebbe ridurre il prezzo o la quantità preparata, oppure migliorare il prodotto.",
+ q:"Se il prezzo è sotto quello di equilibrio, è probabile che si crei…",
+ opts:["Un’eccedenza","Una scarsità","Nessuno scambio","Un aumento automatico dell’offerta"],
+ correct:1,
+ feedback:"A un prezzo basso molti vogliono comprare, ma pochi vogliono vendere.",
+ family:"Scegliete un prodotto acquistato spesso. Annotatene il prezzo in tre negozi o siti e discutete perché cambia.",
+ classroom:"Organizzate un’asta doppia: metà classe riceve un valore massimo di acquisto, l’altra metà un costo minimo di vendita."
+},
+{
+ cat:"Mercati",icon:"📡",color:"#5aa7ff",title:"I prezzi parlano",
+ kicker:"Informazioni disperse",time:"9 min",
+ intro:"Nessuno conosce tutto: gusti, costi, scorte e difficoltà sono distribuiti tra milioni di persone. Il prezzo raccoglie parte di queste informazioni in un unico segnale.",
+ points:[
+  ["Segnale","Un prezzo che sale comunica che qualcosa è diventato più richiesto o più raro."],
+  ["Coordinamento","Consumatori e imprese reagiscono senza doversi parlare o conoscere."],
+  ["Limiti","Il prezzo non registra bene ciò che non passa dal mercato, come aria pulita o biodiversità."]
+ ],
+ example:"Una gelata riduce il raccolto di arance. Il prezzo sale: i consumatori ne comprano meno e i produttori cercano nuove fonti. Il sistema si adatta prima che tutti conoscano la causa.",
+ exercise:"Immagina che il prezzo delle biciclette usate salga rapidamente. Scrivi una possibile causa dal lato della domanda e una dal lato dell’offerta.",
+ answer:"Domanda: più persone vogliono evitare l’auto. Offerta: mancano pezzi per le bici nuove e meno persone vendono l’usato. Lo stesso movimento può avere cause diverse.",
+ q:"Un prezzo che aumenta ci dice con certezza che…",
+ opts:["La domanda è aumentata","L’offerta è diminuita","C’è più scarsità rispetto alla domanda, ma non sappiamo subito perché","Il venditore è disonesto"],
+ correct:2,
+ feedback:"Il prezzo dà un segnale sintetico, non una diagnosi completa.",
+ family:"Scegliete tre prezzi cambiati nell’ultimo anno. Inventate più spiegazioni e cercate quelle plausibili.",
+ classroom:"Date a ogni gruppo un’informazione privata su raccolti, gusti o trasporti. Fate scambiare un bene e osservate il prezzo finale."
+},
+{
+ cat:"Mercati",icon:"🪀",color:"#ff8f82",title:"Quanto reagiamo ai prezzi?",
+ kicker:"Elasticità",time:"12 min",
+ intro:"L’elasticità misura quanto una quantità reagisce a un cambiamento di prezzo, reddito o altra variabile. Reagire molto significa essere elastici; reagire poco significa essere rigidi.",
+ points:[
+  ["Domanda elastica","Un piccolo aumento di prezzo fa calare molto gli acquisti: spesso esistono buoni sostituti."],
+  ["Domanda rigida","Gli acquisti cambiano poco: il bene può essere necessario o difficile da sostituire."],
+  ["Tempo","Con più tempo troviamo alternative; domanda e offerta tendono a diventare più elastiche."]
+ ],
+ example:"Se aumenta il prezzo di una specifica bibita, puoi sceglierne un’altra. Se aumenta il prezzo di un farmaco indispensabile, è molto più difficile ridurne il consumo.",
+ exercise:"Ordina dal meno al più elastico: sale, biglietti per un concerto specifico, benzina nel giro di una settimana. Motiva.",
+ answer:"Una risposta plausibile è: sale, benzina nel breve periodo, biglietti per uno specifico concerto. Contano sostituti, necessità, tempo e quota di reddito.",
+ q:"Quale domanda è probabilmente più elastica?",
+ opts:["Insulina per chi ne ha bisogno","Acqua potabile","Una marca specifica di biscotti","Elettricità nelle prossime due ore"],
+ correct:2,
+ feedback:"Una marca specifica ha molti sostituti vicini.",
+ family:"Scegliete cinque prodotti della spesa. Date a ciascuno un punteggio di elasticità da 1 a 5.",
+ classroom:"Ogni gruppo riceve un prodotto e deve prevedere la variazione delle vendite dopo un aumento del prezzo del 10%."
+},
+{
+ cat:"Decisioni",icon:"🏭",color:"#b9a7ff",title:"Dentro l’impresa",
+ kicker:"Produzione e costi",time:"11 min",
+ intro:"Un’impresa combina lavoro, strumenti, idee e materiali per produrre. Per decidere quanto offrire deve distinguere i costi fissi da quelli che crescono con la produzione.",
+ points:[
+  ["Costi fissi","Affitto, licenze o macchinari vanno pagati anche producendo zero."],
+  ["Costi variabili","Ingredienti, energia e ore di lavoro aumentano con la produzione."],
+  ["Costo marginale","È il costo di produrre un’unità in più."]
+ ],
+ example:"Per una pizzeria forno e affitto sono costi fissi nel breve periodo. Impasto e mozzarella sono variabili. La centesima pizza può costare più della decima se la cucina è affollata.",
+ exercise:"Un podcast ha 2.000 euro di attrezzatura e 5 euro di costo per ogni nuovo abbonato. Calcola il costo totale per 100 abbonati.",
+ answer:"L’attrezzatura è un costo fisso; 5 euro per abbonato è variabile. Costo totale: 2.000 + 5×100 = 2.500 euro.",
+ q:"Il costo marginale è…",
+ opts:["Il costo totale diviso per la produzione","Il costo di un’unità aggiuntiva","Sempre uguale al costo fisso","Il prezzo scelto dai consumatori"],
+ correct:1,
+ feedback:"Marginale significa aggiuntivo: riguarda la prossima unità.",
+ family:"Inventate una piccola attività familiare. Elencate tre costi fissi e tre variabili.",
+ classroom:"Costruite una torre di carta e misurate il tempo richiesto per ogni piano aggiuntivo."
+},
+{
+ cat:"Decisioni",icon:"🧠",color:"#ffd84d",title:"Preferenze e scelte",
+ kicker:"Il consumatore",time:"10 min",
+ intro:"Le persone hanno gusti diversi e un budget limitato. Scelgono combinazioni di beni cercando il massimo benessere possibile, anche se abitudini, emozioni e contesto possono influire.",
+ points:[
+  ["Preferenze","Ordinano le alternative: preferisco A a B, oppure per me sono equivalenti."],
+  ["Vincolo di bilancio","Mostra cosa possiamo permetterci dati reddito e prezzi."],
+  ["Scelta al margine","Confrontiamo il beneficio di un euro speso qui con quello dello stesso euro speso altrove."]
+ ],
+ example:"Con 12 euro puoi comprare due fumetti, quattro merende o combinazioni intermedie. Se i fumetti costano meno, aumentano le possibilità.",
+ exercise:"Hai 15 euro: musica costa 5 euro al mese e cinema 7,50 a biglietto. Trova tre combinazioni accessibili e una non accessibile.",
+ answer:"Accessibili: tre mesi di musica; due ingressi al cinema; un mese di musica e un ingresso. Non accessibile: due mesi di musica e un ingresso.",
+ q:"Se il tuo reddito aumenta e i prezzi non cambiano…",
+ opts:["Il vincolo di bilancio si restringe","Puoi permetterti più combinazioni","Le preferenze cambiano per forza","Tutti i beni diventano gratuiti"],
+ correct:1,
+ feedback:"Aumentano le possibilità, anche se gusti e scelte possono restare gli stessi.",
+ family:"Date a ciascuno 20 punti da distribuire tra tempo libero, cibo, tecnologia e risparmio.",
+ classroom:"Create menu di scelta equivalenti, cambiando ordine e opzione predefinita. Osservate se le decisioni cambiano."
+},
+{
+ cat:"Istituzioni",icon:"🚦",color:"#ff8f82",title:"Quando lo Stato fissa il prezzo",
+ kicker:"Quote, minimi e massimi",time:"12 min",
+ intro:"Lo Stato può limitare prezzi o quantità per proteggere alcuni gruppi o perseguire obiettivi sociali. Occorre però osservare anche gli effetti indiretti.",
+ points:[
+  ["Prezzo massimo","Se sotto l’equilibrio, rende il bene più economico ma può creare scarsità."],
+  ["Prezzo minimo","Se sopra l’equilibrio, sostiene chi vende ma può creare eccedenze."],
+  ["Quote","Limitano direttamente la quantità e possono generare rendite."]
+ ],
+ example:"Un tetto agli affitti può aiutare chi trova casa a prezzo ridotto, ma può diminuire nuove costruzioni o manutenzione e rendere più difficile trovare un appartamento.",
+ exercise:"Perché un prezzo massimo fissato sopra il prezzo di equilibrio non produce effetti immediati?",
+ answer:"Perché il mercato si ferma già a un prezzo più basso. Il limite non è vincolante.",
+ q:"Un prezzo minimo vincolante è fissato…",
+ opts:["Sotto l’equilibrio","Esattamente a zero","Sopra l’equilibrio","Sempre dal venditore"],
+ correct:2,
+ feedback:"Sopra l’equilibrio impedisce al prezzo di scendere e tende a creare un’eccedenza.",
+ family:"Discutete un caso: affitti, biglietti rivenduti o salario minimo. Separate obiettivo, beneficiari e possibili effetti inattesi.",
+ classroom:"Simulate un mercato e introducete un prezzo massimo. Contate chi riesce a comprare."
+},
+{
+ cat:"Istituzioni",icon:"🧾",color:"#5aa7ff",title:"Le tasse cambiano gli scambi",
+ kicker:"Tassazione e incidenza",time:"11 min",
+ intro:"Una tassa crea una differenza tra ciò che paga chi compra e ciò che riceve chi vende. Può finanziare servizi o correggere danni, ma in genere riduce gli scambi.",
+ points:[
+  ["Incidenza","Chi versa materialmente la tassa non è per forza chi ne sopporta davvero il costo."],
+  ["Elasticità","Il lato meno elastico porta una quota maggiore del peso fiscale."],
+  ["Perdita secca","Alcuni scambi utili non avvengono più."]
+ ],
+ example:"Una tassa di 1 euro su una bibita non deve tradursi in un euro in più sul prezzo. Una parte può ricadere sui consumatori e una sui venditori.",
+ exercise:"La domanda è molto rigida e l’offerta molto elastica. Chi sopporterà gran parte della tassa?",
+ answer:"I consumatori: hanno poche possibilità di ridurre gli acquisti, mentre i produttori possono spostarsi altrove.",
+ q:"Il peso economico di una tassa dipende soprattutto…",
+ opts:["Da chi consegna il denaro allo Stato","Dalle elasticità di domanda e offerta","Dal colore della ricevuta","Solo dalla legge"],
+ correct:1,
+ feedback:"La legge decide chi versa; il mercato contribuisce a decidere chi paga davvero.",
+ family:"Prendete uno scontrino e cercate l’IVA. Discutete quali servizi vengono finanziati dalle imposte.",
+ classroom:"Ripetete un’asta con una tassa per scambio. Confrontate prezzi, quantità e gettito."
+},
+{
+ cat:"Istituzioni",icon:"🌫️",color:"#b9a7ff",title:"Effetti sugli altri",
+ kicker:"Esternalità",time:"10 min",
+ intro:"Un’esternalità esiste quando una scelta influisce su persone che non partecipano allo scambio. Il prezzo allora non contiene tutti i costi o benefici sociali.",
+ points:[
+  ["Negativa","Inquinamento, rumore o congestione impongono costi a terzi."],
+  ["Positiva","Istruzione, vaccinazioni o cura degli spazi generano benefici per altri."],
+  ["Correzioni","Tasse, sussidi, regole o diritti possono riallineare gli incentivi."]
+ ],
+ example:"Guidare in centro dà un beneficio privato, ma aggiunge traffico e aria sporca. Se questi costi non hanno prezzo, si guiderà più di quanto sia socialmente desiderabile.",
+ exercise:"Individua un’esternalità positiva nella tua scuola. Chi produce il beneficio? Chi lo riceve?",
+ answer:"Esempi: condividere appunti, tenere pulito uno spazio, organizzare tutoraggio. Il beneficio raggiunge anche persone esterne alla decisione.",
+ q:"Con un’esternalità negativa, il costo sociale è…",
+ opts:["Minore del costo privato","Uguale a zero","Maggiore del costo privato","Sempre pagato interamente dal produttore"],
+ correct:2,
+ feedback:"Al costo privato si aggiunge quello imposto agli altri.",
+ family:"Scegliete una vostra azione settimanale e annotate effetti positivi e negativi su altre persone.",
+ classroom:"Dividete la classe in impresa, residenti e amministrazione. Negoziate una soluzione al rumore di un festival."
+},
+{
+ cat:"Istituzioni",icon:"🏞️",color:"#54d6b0",title:"Condividere senza esaurire",
+ kicker:"Beni pubblici e risorse comuni",time:"12 min",
+ intro:"Alcuni beni sono difficili da riservare a chi paga; altri si consumano quando qualcuno li usa. Nascono così free riding e sfruttamento eccessivo.",
+ points:[
+  ["Bene pubblico","È non escludibile e non rivale, come l’illuminazione stradale."],
+  ["Risorsa comune","È difficile escludere, ma l’uso di uno lascia meno agli altri."],
+  ["Regole condivise","Monitoraggio, fiducia, quote e sanzioni possono proteggere la cooperazione."]
+ ],
+ example:"Se tutti aspettano che paghino gli altri, lo spettacolo pubblico potrebbe non essere finanziato. In un lago, troppa pesca oggi significa meno pesci domani.",
+ exercise:"Classifica: streaming con password, parco affollato, allarme antiaereo, tonni nell’oceano.",
+ answer:"Streaming: bene privato o di club; parco affollato: bene congestionabile; allarme: bene pubblico; tonni: risorsa comune.",
+ q:"Il free riding è tipico quando…",
+ opts:["È facile escludere chi non paga","Si può godere del beneficio senza contribuire","Ogni unità ha un prezzo alto","La risorsa è privata"],
+ correct:1,
+ feedback:"Se non si può escludere chi non paga, ciascuno può sperare che contribuiscano gli altri.",
+ family:"Scegliete una risorsa condivisa in casa e scrivete una regola semplice per usarla.",
+ classroom:"Giocate più round di contributo volontario a un fondo comune, cambiando una regola per volta."
+},
+{
+ cat:"Mondo",icon:"🚢",color:"#ffd84d",title:"Scambiare oltre i confini",
+ kicker:"Commercio internazionale",time:"11 min",
+ intro:"Paesi e persone possono guadagnare dallo scambio specializzandosi in ciò che producono a costo opportunità più basso. Non significa che tutti guadagnino nello stesso modo.",
+ points:[
+  ["Vantaggio comparato","Conta il costo opportunità, non essere i migliori in assoluto."],
+  ["Guadagni dallo scambio","Specializzazione e scambio ampliano le possibilità di consumo."],
+  ["Distribuzione","Le importazioni aiutano alcuni gruppi e possono danneggiarne altri."]
+ ],
+ example:"Anche se Giulia è più veloce sia a fare grafica sia a tradurre, può convenirle concentrarsi nell’attività in cui il vantaggio è relativamente maggiore.",
+ exercise:"Anna produce in un’ora 4 poster o 2 video; Luca 3 poster o 1 video. Chi ha il vantaggio comparato nei video?",
+ answer:"Anna: per lei un video costa 2 poster; per Luca costa 3 poster. Anna rinuncia a meno poster.",
+ q:"Il vantaggio comparato dipende…",
+ opts:["Solo dalla produttività assoluta","Dal costo opportunità relativo","Dalla popolazione del paese","Soltanto dal tasso di cambio"],
+ correct:1,
+ feedback:"È il costo di ciò a cui si rinuncia a determinare la specializzazione conveniente.",
+ family:"Guardate le etichette di dieci oggetti in casa e ricostruite quante economie hanno contribuito alla giornata.",
+ classroom:"Due gruppi producono forme di carta con tecnologie diverse. Calcolate i costi opportunità e poi scambiate."
+},
+{
+ cat:"Mondo",icon:"🧰",color:"#ff8f82",title:"Lavoro, salari e competenze",
+ kicker:"Il mercato del lavoro",time:"11 min",
+ intro:"Nel mercato del lavoro le persone offrono tempo e competenze, mentre imprese e organizzazioni le domandano. Salari e condizioni dipendono da produttività, scarsità e potere contrattuale.",
+ points:[
+  ["Domanda derivata","Le imprese assumono perché il lavoro contribuisce a produrre qualcosa che altri vogliono."],
+  ["Capitale umano","Istruzione, esperienza e salute possono aumentare produttività e opportunità."],
+  ["Istituzioni","Contratti, sindacati e norme influenzano potere e condizioni di lavoro."]
+ ],
+ example:"Se cresce la domanda di videogiochi accessibili, può aumentare la domanda di sviluppatori con competenze specifiche.",
+ exercise:"Perché due persone con la stessa istruzione possono ricevere salari diversi? Elenca almeno tre ragioni.",
+ answer:"Esperienza, settore, località, rischio, orario, responsabilità, produttività, discriminazione, potere negoziale o fortuna.",
+ q:"La domanda di lavoro è detta derivata perché…",
+ opts:["Deriva dalla domanda dei beni e servizi prodotti","È stabilita solo dalla scuola","Scende sempre nel tempo","È uguale in ogni settore"],
+ correct:0,
+ feedback:"Il lavoro è richiesto perché aiuta a produrre qualcosa che qualcuno desidera.",
+ family:"Intervistate un adulto sul suo primo lavoro: competenze, formazione e cambiamenti tecnologici.",
+ classroom:"Confrontate annunci di lavoro. Classificate competenze, condizioni e informazioni mancanti."
+},
+{
+ cat:"Mondo",icon:"📊",color:"#5aa7ff",title:"Perché i redditi sono diversi?",
+ kicker:"Disuguaglianza",time:"12 min",
+ intro:"La disuguaglianza descrive quanto reddito, ricchezza o opportunità sono distribuiti diversamente. Misurarla è distinto dal decidere quanta sia giusta.",
+ points:[
+  ["Reddito e ricchezza","Il reddito è un flusso; la ricchezza è uno stock di attività meno debiti."],
+  ["Mobilità","Conta anche quanto è possibile cambiare posizione nel tempo."],
+  ["Cause multiple","Competenze, eredità, istituzioni, discriminazione, potere e fortuna interagiscono."]
+ ],
+ example:"Due famiglie possono avere lo stesso reddito mensile, ma una possiede casa e risparmi mentre l’altra ha debiti.",
+ exercise:"I redditi di cinque persone sono 10, 10, 10, 10 e 60. Calcola media e mediana.",
+ answer:"Media = 20; mediana = 10. La mediana descrive meglio la persona tipica perché la media è spinta verso l’alto dal valore 60.",
+ q:"Quale affermazione è corretta?",
+ opts:["Reddito e ricchezza sono sinonimi","La media racconta sempre tutta la distribuzione","Stesso reddito non implica stessa ricchezza","La disuguaglianza non si può misurare"],
+ correct:2,
+ feedback:"Patrimonio, debiti e sicurezza economica possono essere diversi a parità di reddito.",
+ family:"Inventate due famiglie con uguale reddito ma spese, risparmi e rischi diversi.",
+ classroom:"Distribuite 100 gettoni in modi diversi. Calcolate media, mediana e quota del gruppo più ricco."
+},
+{
+ cat:"Decisioni",icon:"🎲",color:"#b9a7ff",title:"Decidere senza sapere",
+ kicker:"Rischio e incertezza",time:"10 min",
+ intro:"Nel rischio conosciamo almeno in parte esiti e probabilità; nell’incertezza profonda non conosciamo bene nemmeno quelli.",
+ points:[
+  ["Valore atteso","Pesa ogni esito per la sua probabilità."],
+  ["Avversione al rischio","Molti preferiscono un esito sicuro a una lotteria con lo stesso valore medio."],
+  ["Diversificazione","Distribuire risorse tra rischi diversi può ridurre le oscillazioni."]
+ ],
+ example:"Ricevere 50 euro sicuri o lanciare una moneta per averne 100 oppure zero ha lo stesso valore atteso. Molti scelgono 50.",
+ exercise:"Una lotteria dà 120 euro con probabilità 25% e zero altrimenti. Qual è il valore atteso?",
+ answer:"Il valore atteso è 0,25×120 = 30 euro. Una persona avversa al rischio potrebbe comunque non pagare 30 euro per partecipare.",
+ q:"Diversificare significa…",
+ opts:["Eliminare ogni rischio","Concentrare tutto sull’esito migliore","Distribuire l’esposizione tra rischi diversi","Conoscere con certezza il futuro"],
+ correct:2,
+ feedback:"Non elimina ogni rischio, ma evita che un solo evento determini tutto.",
+ family:"Confrontate tre modi per affrontare un telefono rotto: risparmio, assicurazione e rischio personale.",
+ classroom:"Fate scegliere tra somme sicure e lotterie. Costruite una mappa anonima delle preferenze della classe."
+},
+{
+ cat:"Decisioni",icon:"🔍",color:"#54d6b0",title:"Quando uno sa più dell’altro",
+ kicker:"Asimmetrie informative",time:"11 min",
+ intro:"Molti scambi avvengono con informazioni diverse: chi vende conosce meglio la qualità, mentre chi compra può conoscere meglio il proprio rischio o impegno.",
+ points:[
+  ["Selezione avversa","Prima dello scambio, l’informazione nascosta può allontanare le qualità migliori."],
+  ["Azzardo morale","Dopo lo scambio, essere protetti può cambiare il comportamento."],
+  ["Segnali e controlli","Garanzie, reputazione e certificazioni possono rendere l’informazione più credibile."]
+ ],
+ example:"Nel mercato dell’usato il venditore sa se il telefono ha difetti. Il compratore, temendo problemi, offre poco. Anche chi possiede un buon telefono può rinunciare a venderlo.",
+ exercise:"Una palestra offre un rimborso se frequenti almeno 20 volte. Quale problema informativo cerca di ridurre?",
+ answer:"Cerca di rendere credibile l’impegno e di ridurre il rischio che una persona si iscriva ma non frequenti.",
+ q:"L’azzardo morale nasce tipicamente…",
+ opts:["Prima del contratto, da qualità nascoste","Dopo il contratto, quando la protezione cambia il comportamento","Solo nei mercati finanziari","Quando tutti sanno le stesse cose"],
+ correct:1,
+ feedback:"Dopo essere protetti, alcuni possono diventare meno prudenti.",
+ family:"Cercate una garanzia o una recensione. Chiedetevi quale informazione rende più credibile.",
+ classroom:"Simulate un mercato di oggetti con qualità segreta, poi introducete una garanzia."
+},
+{
+ cat:"Strategia",icon:"♟️",color:"#ffd84d",title:"Le tue scelte dipendono dagli altri",
+ kicker:"Giochi strategici",time:"12 min",
+ intro:"Una situazione è strategica quando il risultato di una tua scelta dipende anche dalle decisioni altrui. Servono giocatori, strategie, regole e risultati.",
+ points:[
+  ["Strategia","È un piano di azione per le possibili situazioni del gioco."],
+  ["Migliore risposta","È la scelta più conveniente dato ciò che fa l’altro."],
+  ["Equilibrio","Nessuno vuole cambiare da solo, anche se il risultato può non essere il migliore per tutti."]
+ ],
+ example:"Due negozi decidono se fare forti sconti. Se entrambi scontano guadagnano poco; se nessuno sconta stanno meglio, ma ciascuno teme di perdere clienti.",
+ exercise:"Inventa una tabella in cui due compagni stanno meglio collaborando, ma ciascuno è tentato di non impegnarsi.",
+ answer:"Una possibile struttura: entrambi collaborano 3–3; uno non collabora 4–1; nessuno collabora 2–2. È un dilemma del prigioniero.",
+ q:"Un equilibrio strategico…",
+ opts:["È sempre il risultato migliore per tutti","È una situazione in cui nessuno guadagna cambiando da solo","Richiede che tutti siano amici","Esiste solo negli scacchi"],
+ correct:1,
+ feedback:"Stabilità individuale e benessere collettivo non coincidono necessariamente.",
+ family:"Scegliete una regola domestica che richiede cooperazione e disegnate incentivi e tentazioni.",
+ classroom:"Giocate un dilemma ripetuto in coppie. Poi consentite la comunicazione e confrontate la cooperazione."
+}
+];
+
+const categories=["Tutti","Fondamenti","Mercati","Decisioni","Istituzioni","Mondo","Strategia"];
+let activeCat="Tutti",currentModule=0,selectedAnswer=null;
+let completed=new Set(JSON.parse(localStorage.getItem("scelte-completed")||"[]"));
+
+function renderFilters(){
+ document.getElementById("filters").innerHTML=categories.map(c=>
+ `<button class="chip ${c===activeCat?"active":""}" onclick="setFilter('${c}')">${c}</button>`
+ ).join("");
+}
+function setFilter(c){activeCat=c;renderFilters();renderModules()}
+function renderModules(){
+ const q=(document.getElementById("searchInput")?.value||"").toLowerCase();
+ const list=modules.map((m,i)=>({...m,i})).filter(m=>
+  (activeCat==="Tutti"||m.cat===activeCat)&&
+  `${m.title} ${m.kicker} ${m.intro}`.toLowerCase().includes(q)
+ );
+ document.getElementById("moduleGrid").innerHTML=list.length?list.map(m=>`
+ <article class="module-card" style="--accent:${m.color}">
+  <div class="module-top">
+   <div class="module-icon">${m.icon}</div>
+   ${completed.has(m.i)?'<span class="done-badge">✓ completato</span>':""}
+  </div>
+  <h3>${m.title}</h3>
+  <p>${m.kicker} · ${m.intro.split(".")[0]}.</p>
+  <div class="module-meta">
+   <span>${String(m.i+1).padStart(2,"0")} · ${m.time}</span>
+   <button class="open-link" onclick="openLesson(${m.i})">Apri →</button>
+  </div>
+ </article>`).join(""):`<div class="paper"><h3>Nessun risultato</h3><p>Prova con una parola diversa.</p></div>`;
+}
+function updateProgress(){
+ document.getElementById("progressText").textContent=`${completed.size}/${modules.length} completati`;
+}
+function showView(id){
+ document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function goHome(){showView("homeView");renderModules()}
+function goSection(id){
+ goHome();
+ setTimeout(()=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}),50);
+}
+function startJourney(){
+ const first=modules.findIndex((_,i)=>!completed.has(i));
+ openLesson(first<0?0:first);
+}
+function openLesson(i,tab="explain"){
+ currentModule=i;selectedAnswer=null;
+ const m=modules[i];
+ document.getElementById("lessonContent").innerHTML=`
+ <div class="lesson-hero" style="--lesson:${m.color}">
+  <div class="lesson-big-icon">${m.icon}</div>
+  <div><small>${m.kicker}</small><h1>${m.title}</h1><p>${m.intro}</p></div>
+  <span class="lesson-count">Tema ${i+1} / ${modules.length}</span>
+ </div>
+ <div class="lesson-tabs">
+  <button class="lesson-tab ${tab==="explain"?"active":""}" onclick="switchTab('explain',this)">01 · Capire</button>
+  <button class="lesson-tab ${tab==="challenge"?"active":""}" onclick="switchTab('challenge',this)">02 · Prova tu</button>
+  <button class="lesson-tab ${tab==="activities"?"active":""}" onclick="switchTab('activities',this)">03 · Insieme</button>
+  <button class="lesson-tab ${tab==="quiz"?"active":""}" onclick="switchTab('quiz',this)">04 · Quiz</button>
+ </div>
+ <div class="lesson-pane ${tab==="explain"?"active":""}" data-pane="explain">
+  <div class="content-grid">
+   <article class="paper">
+    <h2>Il punto essenziale</h2><p class="lead">${m.intro}</p>
+    <div class="concept-list">${m.points.map((p,j)=>`
+     <div class="concept"><span class="concept-num">${j+1}</span>
+     <div><b>${p[0]}</b><br>${p[1]}</div></div>`).join("")}</div>
+    <div class="example"><strong>💡 Un esempio vicino a te</strong>${m.example}</div>
+   </article>
+   <aside class="paper side-note">
+    <h3>Parole da portare via</h3>
+    <p>${m.points.map(p=>`<span class="key">${p[0]}</span>`).join("")}</p>
+    <p>Prova a spiegare ogni parola con un esempio tuo.</p>
+    <button class="primary" onclick="clickTab('challenge')">Ora prova tu →</button>
+   </aside>
+  </div>
+ </div>
+ <div class="lesson-pane ${tab==="challenge"?"active":""}" data-pane="challenge">
+  <div class="challenge">
+   <span class="challenge-label">✏️ Sfida ragionata</span>
+   <h2>${m.exercise}</h2>
+   <textarea class="answer-box" placeholder="Scrivi qui il tuo ragionamento…"></textarea><br><br>
+   <button class="secondary" onclick="document.getElementById('modelAnswer').classList.toggle('show')">Confronta con una possibile risposta</button>
+   <div class="model-answer" id="modelAnswer"><b>Una possibile risposta</b><br>${m.answer}</div>
+  </div>
+ </div>
+ <div class="lesson-pane ${tab==="activities"?"active":""}" data-pane="activities">
+  <div class="activity-grid">
+   <article class="activity family">
+    <span class="tag">🏠 In famiglia · 15 minuti</span>
+    <h2>Economia intorno al tavolo</h2><p>${m.family}</p>
+    <ol class="steps"><li>Prima ognuno risponde da solo.</li><li>Confrontate le risposte.</li><li>Annotate cosa vi ha fatto cambiare idea.</li></ol>
+   </article>
+   <article class="activity classroom">
+    <span class="tag">🏫 In classe · 25 minuti</span>
+    <h2>Esperimento di gruppo</h2><p>${m.classroom}</p>
+    <ol class="steps"><li>Formate piccoli gruppi.</li><li>Registrate decisioni e risultati.</li><li>Discutete cosa cambierebbe con regole diverse.</li></ol>
+   </article>
+  </div>
+ </div>
+ <div class="lesson-pane ${tab==="quiz"?"active":""}" data-pane="quiz">
+  <div class="quiz">
+   <span class="challenge-label">Verifica lampo</span><h2>${m.q}</h2>
+   <div class="options">${m.opts.map((o,j)=>`
+    <button class="option" onclick="answerQuiz(${j},this)"><b>${"ABCD"[j]}.</b> ${o}</button>`).join("")}</div>
+   <div class="quiz-feedback" id="quizFeedback">Scegli una risposta.</div>
+   <div class="quiz-actions">
+    <button class="back" onclick="openLesson(${(i-1+modules.length)%modules.length},'quiz')">← Tema prima</button>
+    <button class="primary complete" id="nextButton" onclick="finishAndNext()">Segna e continua →</button>
+   </div>
+  </div>
+ </div>`;
+ showView("lessonView");
+}
+function switchTab(name,btn){
+ document.querySelectorAll(".lesson-tab").forEach(b=>b.classList.remove("active"));
+ btn.classList.add("active");
+ document.querySelectorAll(".lesson-pane").forEach(p=>p.classList.toggle("active",p.dataset.pane===name));
+}
+function clickTab(name){
+ const btn=[...document.querySelectorAll(".lesson-tab")].find(b=>b.getAttribute("onclick").includes(`'${name}'`));
+ switchTab(name,btn);
+ window.scrollTo({top:250,behavior:"smooth"});
+}
+function answerQuiz(idx){
+ if(selectedAnswer!==null)return;
+ selectedAnswer=idx;
+ const m=modules[currentModule];
+ document.querySelectorAll(".option").forEach((b,j)=>{
+  if(j===m.correct)b.classList.add("correct");
+  else if(j===idx)b.classList.add("wrong");
+  b.disabled=true;
+ });
+ document.getElementById("quizFeedback").innerHTML=idx===m.correct
+  ?`<b>✓ Risposta corretta.</b> ${m.feedback}`
+  :`<b>Non proprio.</b> La risposta corretta è <b>${"ABCD"[m.correct]}</b>. ${m.feedback}`;
+ document.getElementById("nextButton").classList.add("show");
+}
+function finishAndNext(){
+ completed.add(currentModule);
+ localStorage.setItem("scelte-completed",JSON.stringify([...completed]));
+ updateProgress();toast("Tema completato! Progresso salvato.");
+ openLesson((currentModule+1)%modules.length);
+}
+function toast(msg){
+ const t=document.getElementById("toast");
+ t.textContent=msg;t.classList.add("show");
+ setTimeout(()=>t.classList.remove("show"),2400);
+}
+
+const labs={
+ market:{icon:"⚖️",title:"Trova il prezzo",sub:"Domanda, offerta e segnali di mercato"},
+ tax:{icon:"🧾",title:"Chi paga la tassa?",sub:"Scopri come l’elasticità divide il peso fiscale"},
+ commons:{icon:"🐟",title:"Il lago condiviso",sub:"Cinque pescatori, una risorsa che può finire"},
+ strategy:{icon:"🤝",title:"Fidarsi o no?",sub:"Cinque round contro un avversario che ricorda"}
+};
+function openLab(type){
+ showView("labView");
+ const l=labs[type];
+ document.getElementById("labContent").innerHTML=`
+ <div class="lab-head"><span class="big">${l.icon}</span>
+ <div><h1>${l.title}</h1><p>${l.sub}</p></div></div><div id="simArea"></div>`;
+ if(type==="market")renderMarket();
+ if(type==="tax")renderTax();
+ if(type==="commons")renderCommons();
+ if(type==="strategy")renderStrategy();
+}
+function renderMarket(){
+ document.getElementById("simArea").innerHTML=`
+ <div class="sim-grid">
+  <div class="controls">
+   <h3>Il tuo comando</h3>
+   <div class="control"><label>Prezzo della borraccia <b id="pLabel">€12</b></label>
+   <input id="price" type="range" min="2" max="22" value="12" oninput="updateMarket()"></div>
+   <p>Muovi il prezzo. Cerca di far coincidere quante borracce le persone vogliono comprare e quante le imprese vogliono vendere.</p>
+   <div class="status" id="marketStatus"></div>
+  </div>
+  <div class="screen">
+   <h3>Il mercato in diretta</h3><canvas id="marketCanvas" width="700" height="320"></canvas>
+   <div class="readouts">
+    <div class="readout">Domanda<b id="qd">–</b></div>
+    <div class="readout">Offerta<b id="qs">–</b></div>
+    <div class="readout">Differenza<b id="gap">–</b></div>
+   </div>
+  </div>
+ </div>`;
+ updateMarket();
+}
+function updateMarket(){
+ const p=+document.getElementById("price").value;
+ const qd=Math.max(0,120-5*p),qs=Math.max(0,10+5*p),gap=qs-qd;
+ pLabel.textContent=`€${p}`;document.getElementById("qd").textContent=qd;
+ document.getElementById("qs").textContent=qs;document.getElementById("gap").textContent=Math.abs(gap);
+ document.getElementById("marketStatus").innerHTML=Math.abs(gap)<=5
+  ?"🎯 <b>Equilibrio!</b> Il prezzo coordina i due lati."
+  :gap>0?`📦 <b>Eccedenza di ${gap}.</b> Il prezzo è troppo alto.`
+  :`🏃 <b>Scarsità di ${-gap}.</b> Il prezzo è troppo basso.`;
+ drawMarket(p);
+}
+function drawMarket(p){
+ const c=document.getElementById("marketCanvas"),x=c.getContext("2d"),W=c.width,H=c.height;
+ x.clearRect(0,0,W,H);x.strokeStyle="#dfe6e5";x.lineWidth=1;
+ for(let i=1;i<6;i++){x.beginPath();x.moveTo(50,i*45);x.lineTo(W-30,i*45);x.stroke()}
+ x.strokeStyle="#18232c";x.lineWidth=3;x.beginPath();
+ x.moveTo(50,20);x.lineTo(50,H-35);x.lineTo(W-30,H-35);x.stroke();
+ x.strokeStyle="#ff6b5e";x.lineWidth=6;x.beginPath();x.moveTo(70,40);x.lineTo(W-50,H-55);x.stroke();
+ x.strokeStyle="#54d6b0";x.beginPath();x.moveTo(70,H-55);x.lineTo(W-50,40);x.stroke();
+ const y=H-35-(p/24)*(H-60);
+ x.setLineDash([8,7]);x.strokeStyle="#12324a";x.lineWidth=3;
+ x.beginPath();x.moveTo(50,y);x.lineTo(W-30,y);x.stroke();x.setLineDash([]);
+ x.fillStyle="#12324a";x.font="bold 20px system-ui";x.fillText(`€${p}`,8,y+6);
+ x.fillStyle="#ff6b5e";x.fillText("D",W-75,H-70);
+ x.fillStyle="#16896e";x.fillText("O",W-75,55);
+}
+function renderTax(){
+ document.getElementById("simArea").innerHTML=`
+ <div class="sim-grid">
+  <div class="controls"><h3>Imposta il mercato</h3>
+   <div class="control"><label>Tassa per unità <b id="taxLabel">€4</b></label>
+   <input id="taxVal" type="range" min="0" max="10" value="4" oninput="updateTax()"></div>
+   <div class="control"><label>Elasticità della domanda <b id="edLabel">1.0</b></label>
+   <input id="edVal" type="range" min="2" max="20" value="10" oninput="updateTax()"></div>
+   <div class="control"><label>Elasticità dell’offerta <b id="esLabel">1.0</b></label>
+   <input id="esVal" type="range" min="2" max="20" value="10" oninput="updateTax()"></div>
+   <p>Un valore basso indica poca capacità di reagire: quel lato rimane più bloccato nel mercato.</p>
+  </div>
+  <div class="screen"><h3>Come si divide il peso</h3>
+   <div class="score-ring" id="taxRing" style="--score:50%"><b id="consumerPct">50%</b></div>
+   <div class="readouts">
+    <div class="readout">Consumatori<b id="consumerPay">€2,00</b></div>
+    <div class="readout">Produttori<b id="producerPay">€2,00</b></div>
+    <div class="readout">Tassa totale<b id="taxTotal">€4,00</b></div>
+   </div><div class="status" id="taxStatus"></div>
+  </div>
+ </div>`;
+ updateTax();
+}
+function updateTax(){
+ const tax=+taxVal.value,ed=+edVal.value/10,es=+esVal.value/10;
+ const cp=es/(es+ed),pp=1-cp;
+ taxLabel.textContent=`€${tax}`;edLabel.textContent=ed.toFixed(1);esLabel.textContent=es.toFixed(1);
+ consumerPct.textContent=`${Math.round(cp*100)}%`;
+ taxRing.style.setProperty("--score",`${cp*100}%`);
+ consumerPay.textContent=`€${(tax*cp).toFixed(2).replace(".",",")}`;
+ producerPay.textContent=`€${(tax*pp).toFixed(2).replace(".",",")}`;
+ taxTotal.textContent=`€${tax.toFixed(2).replace(".",",")}`;
+ taxStatus.innerHTML=cp>.58
+  ?"🧍 La domanda è relativamente meno elastica: i consumatori sopportano più peso."
+  :cp<.42?"🏭 L’offerta è relativamente meno elastica: i produttori sopportano più peso."
+  :"⚖️ Le elasticità sono simili: il peso è quasi diviso a metà.";
+}
+
+let lake={round:1,fish:60,score:0,log:[]};
+function renderCommons(){
+ lake={round:1,fish:60,score:0,log:[]};
+ document.getElementById("simArea").innerHTML=`
+ <div class="sim-grid">
+  <div class="controls"><h3>Regole del lago</h3>
+   <p>Siete in cinque. A ogni round scegli quanti pesci prendere. I pesci rimasti si riproducono del 35%, fino a un massimo di 60.</p>
+   <div class="resource-bar"><div class="resource-fill" id="fishFill"></div></div>
+   <div class="readouts">
+    <div class="readout">Round<b id="lakeRound">1/6</b></div>
+    <div class="readout">Pesci<b id="fishCount">60</b></div>
+    <div class="readout">Il tuo totale<b id="lakeScore">0</b></div>
+   </div>
+   <div class="choice-row">
+    <button onclick="fish(2)">Prendine 2</button>
+    <button onclick="fish(5)">Prendine 5</button>
+    <button onclick="fish(9)">Prendine 9</button>
+   </div>
+   <div class="result-box" id="lakeResult">Pescare molto aiuta oggi, ma riduce la risorsa di domani.</div>
+  </div>
+  <div class="screen"><h3>Diario della pesca</h3>
+   <div class="game-log" id="lakeLog"><p>Le decisioni compariranno qui.</p></div>
+  </div>
+ </div>`;
+ updateLake();
+}
+function fish(mine){
+ if(lake.round>6||lake.fish<=0)return;
+ const others=[0,0,0,0].map(()=>lake.fish<25?2:(Math.random()<.55?5:9));
+ const wanted=mine+others.reduce((a,b)=>a+b,0);
+ const actual=Math.min(lake.fish,wanted),ratio=actual/wanted;
+ const myCatch=Math.round(mine*ratio*10)/10;
+ lake.fish-=actual;lake.score+=myCatch;
+ lake.fish=Math.min(60,Math.round(lake.fish*1.35));
+ lake.log.unshift({r:lake.round,mine:myCatch,others:Math.round((actual-myCatch)*10)/10,left:lake.fish});
+ lake.round++;
+ lakeResult.innerHTML=lake.fish<=0
+  ?"💥 <b>Il lago è esaurito.</b> Nessuno potrà pescare nei prossimi round."
+  :`Hai preso <b>${myCatch}</b>. Gli altri ${Math.round((actual-myCatch)*10)/10}. Dopo la riproduzione: <b>${lake.fish}</b> pesci.`;
+ if(lake.round>6&&lake.fish>0)lakeResult.innerHTML+=`<br>🏁 Fine: hai raccolto ${lake.score.toFixed(1)}, lasciando ${lake.fish} pesci.`;
+ updateLake();
+}
+function updateLake(){
+ fishFill.style.width=`${lake.fish/60*100}%`;
+ lakeRound.textContent=`${Math.min(lake.round,6)}/6`;
+ fishCount.textContent=lake.fish;lakeScore.textContent=lake.score.toFixed(1);
+ lakeLog.innerHTML=lake.log.length?lake.log.map(x=>`
+ <div class="log-row"><b>Round ${x.r}</b><span>Tu ${x.mine} · Altri ${x.others}</span><span>Restano ${x.left}</span></div>`
+ ).join(""):"<p>Le decisioni compariranno qui.</p>";
+}
+
+let game={round:1,you:0,cpu:0,last:null,log:[]};
+function renderStrategy(){
+ game={round:1,you:0,cpu:0,last:null,log:[]};
+ document.getElementById("simArea").innerHTML=`
+ <div class="sim-grid">
+  <div class="controls"><h3>La scelta</h3>
+   <p>Se collaborate entrambi: 3 punti ciascuno. Se uno approfitta dell’altro: 5 a chi tradisce, 0 a chi collabora. Se tradite entrambi: 1 punto ciascuno.</p>
+   <div class="payoff">
+    <div>🤝 + 🤝<br><b>3 · 3</b></div><div>🤝 + 🐍<br><b>0 · 5</b></div>
+    <div>🐍 + 🤝<br><b>5 · 0</b></div><div>🐍 + 🐍<br><b>1 · 1</b></div>
+   </div>
+   <div class="choice-row">
+    <button onclick="playStrategy('C')">🤝 Collaboro</button>
+    <button onclick="playStrategy('D')">🐍 Penso a me</button>
+   </div>
+   <div class="result-box" id="strategyResult">Round 1: il computer osserva le tue scelte passate.</div>
+  </div>
+  <div class="screen"><h3>Punteggio</h3>
+   <div class="readouts">
+    <div class="readout">Tu<b id="youScore">0</b></div>
+    <div class="readout">Computer<b id="cpuScore">0</b></div>
+    <div class="readout">Round<b id="gameRound">1/5</b></div>
+   </div><div class="game-log" id="strategyLog"></div>
+  </div>
+ </div>`;
+}
+function playStrategy(choice){
+ if(game.round>5)return;
+ const cpu=game.round===1?"C":(Math.random()<.8?game.last:(game.last==="C"?"D":"C"));
+ let yp,cp;
+ if(choice==="C"&&cpu==="C"){yp=3;cp=3}
+ else if(choice==="D"&&cpu==="C"){yp=5;cp=0}
+ else if(choice==="C"&&cpu==="D"){yp=0;cp=5}
+ else{yp=1;cp=1}
+ game.you+=yp;game.cpu+=cp;game.last=choice;
+ game.log.unshift({r:game.round,choice,cpu,yp,cp});game.round++;
+ youScore.textContent=game.you;cpuScore.textContent=game.cpu;
+ gameRound.textContent=`${Math.min(game.round,5)}/5`;
+ strategyLog.innerHTML=game.log.map(x=>`
+ <div class="log-row"><b>Round ${x.r}</b>
+ <span>Tu ${x.choice==="C"?"🤝":"🐍"} · Computer ${x.cpu==="C"?"🤝":"🐍"}</span>
+ <span>${x.yp} · ${x.cp}</span></div>`).join("");
+ strategyResult.innerHTML=game.round>5
+  ?`🏁 <b>Fine: ${game.you} a ${game.cpu}.</b> Nei giochi ripetuti, reputazione e reciprocità possono sostenere la cooperazione.`
+  :`Il computer ha scelto ${cpu==="C"?"di collaborare 🤝":"di pensare a sé 🐍"}. Tu +${yp}, lui +${cp}.`;
+}
+
+renderFilters();renderModules();updateProgress();
+</script>
+</body>
+</html>
